@@ -1,0 +1,1779 @@
+{
+  "source": "Renata_Guimaraes_Portfolio_MOYA_PAGINA4_NOVO_LAYOUT.pdf",
+  "originalPdf": "/assets/portfolio-renata-guimaraes.pdf",
+  "notes": {
+    "pt": "Todas as imagens foram extraídas ou renderizadas do portfólio original, sem geração artificial. As pranchas completas preservam os textos e créditos originais. Algumas imagens de origem têm resolução limitada.",
+    "en": "All images were extracted or rendered from the original portfolio, without AI generation. Full boards preserve the original wording and credits. Some source images have limited resolution."
+  },
+  "projects": {
+    "brito": {
+      "pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "name": {
+        "pt": "Residência Brito",
+        "en": "Brito Residence"
+      },
+      "cover": "/assets/cover-brito.webp",
+      "coverCaption": {
+        "pt": "Renderização noturna da fachada da Residência Brito.",
+        "en": "Night rendering of the Brito Residence façade."
+      }
+    },
+    "ambrosini": {
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "name": {
+        "pt": "Residência Ambrosini",
+        "en": "Ambrosini Residence"
+      },
+      "cover": "/assets/cover-ambrosini.webp",
+      "coverCaption": {
+        "pt": "Renderização noturna da fachada da Residência Ambrosini.",
+        "en": "Night rendering of the Ambrosini Residence façade."
+      }
+    },
+    "cool": {
+      "pages": [
+        14,
+        15,
+        16
+      ],
+      "name": {
+        "pt": "Cool Barber Shop",
+        "en": "Cool Barber Shop"
+      },
+      "cover": "/assets/cover-cool.webp",
+      "coverCaption": {
+        "pt": "Interior da Cool Barber Shop, com tijolos aparentes, mobiliário escuro e iluminação quente.",
+        "en": "Cool Barber Shop interior with exposed brick, dark furniture and warm lighting."
+      }
+    },
+    "pastore": {
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "name": {
+        "pt": "Centro Médico Pastore",
+        "en": "Centro Médico Pastore"
+      },
+      "cover": "/assets/cover-pastore.webp",
+      "coverCaption": {
+        "pt": "Renderização da recepção do Centro Médico Pastore.",
+        "en": "Rendering of the Centro Médico Pastore reception."
+      }
+    },
+    "r2s": {
+      "pages": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "name": {
+        "pt": "R2S Med",
+        "en": "R2S Med"
+      },
+      "cover": "/assets/cover-r2s.webp",
+      "coverCaption": {
+        "pt": "Renderização do mezanino e da circulação do escritório R2S Med.",
+        "en": "Rendering of the R2S Med office mezzanine and circulation area."
+      }
+    },
+    "na-regua": {
+      "pages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "name": {
+        "pt": "Na Régua",
+        "en": "Na Régua"
+      },
+      "cover": "/assets/cover-na-regua.webp",
+      "coverCaption": {
+        "pt": "Prancha técnica com planta, cobertura e corte para o programa Na Régua.",
+        "en": "Technical board with floor plan, roof plan and section for the Na Régua programme."
+      }
+    },
+    "krauzer": {
+      "pages": [
+        32,
+        33
+      ],
+      "name": {
+        "pt": "Residência Krauzer",
+        "en": "Krauzer Residence"
+      },
+      "cover": "/assets/cover-krauzer.webp",
+      "coverCaption": {
+        "pt": "Plantas da Residência Krauzer, em colaboração com Huber Architecture.",
+        "en": "Krauzer Residence plans, in collaboration with Huber Architecture."
+      }
+    },
+    "stark": {
+      "pages": [
+        34,
+        35
+      ],
+      "name": {
+        "pt": "Residência Stark",
+        "en": "Stark Residence"
+      },
+      "cover": "/assets/cover-stark.webp",
+      "coverCaption": {
+        "pt": "Estudo da Residência Stark com planta e vista 3D, em colaboração com Huber Architecture.",
+        "en": "Stark Residence study with floor plan and 3D view, in collaboration with Huber Architecture."
+      }
+    },
+    "mag": {
+      "pages": [
+        36,
+        37,
+        38
+      ],
+      "name": {
+        "pt": "MAG — Museu Águas da Guanabara",
+        "en": "MAG — Guanabara Waters Museum"
+      },
+      "cover": "/assets/cover-mag.webp",
+      "coverCaption": {
+        "pt": "Renderização aérea do projeto acadêmico MAG — Museu Águas da Guanabara.",
+        "en": "Aerial rendering of the MAG — Guanabara Waters Museum academic project."
+      }
+    },
+    "crea": {
+      "pages": [
+        39
+      ],
+      "name": {
+        "pt": "CREA-RJ — Setor de Fiscalização",
+        "en": "CREA-RJ — Inspection Department"
+      },
+      "cover": "/assets/cover-crea.webp",
+      "coverCaption": {
+        "pt": "Renderização do ambiente de trabalho proposto para o Setor de Fiscalização do CREA-RJ, via Kingline Engenharia.",
+        "en": "Rendering of the proposed CREA-RJ Inspection Department workspace, via Kingline Engenharia."
+      }
+    }
+  },
+  "pages": {
+    "5": {
+      "project": "brito",
+      "src": "/assets/page-05.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 182268,
+      "sourcePage": 5,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 5.",
+        "en": "Brito Residence — original portfolio board, page 5."
+      },
+      "thumbnail": "/assets/thumb-05.webp"
+    },
+    "6": {
+      "project": "brito",
+      "src": "/assets/page-06.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 164540,
+      "sourcePage": 6,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 6.",
+        "en": "Brito Residence — original portfolio board, page 6."
+      },
+      "thumbnail": "/assets/thumb-06.webp"
+    },
+    "7": {
+      "project": "brito",
+      "src": "/assets/page-07.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 142530,
+      "sourcePage": 7,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 7.",
+        "en": "Brito Residence — original portfolio board, page 7."
+      },
+      "thumbnail": "/assets/thumb-07.webp"
+    },
+    "8": {
+      "project": "brito",
+      "src": "/assets/page-08.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 107292,
+      "sourcePage": 8,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 8.",
+        "en": "Brito Residence — original portfolio board, page 8."
+      },
+      "thumbnail": "/assets/thumb-08.webp"
+    },
+    "9": {
+      "project": "ambrosini",
+      "src": "/assets/page-09.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 153634,
+      "sourcePage": 9,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 9.",
+        "en": "Ambrosini Residence — original portfolio board, page 9."
+      },
+      "thumbnail": "/assets/thumb-09.webp"
+    },
+    "10": {
+      "project": "ambrosini",
+      "src": "/assets/page-10.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 208522,
+      "sourcePage": 10,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 10.",
+        "en": "Ambrosini Residence — original portfolio board, page 10."
+      },
+      "thumbnail": "/assets/thumb-10.webp"
+    },
+    "11": {
+      "project": "ambrosini",
+      "src": "/assets/page-11.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 128836,
+      "sourcePage": 11,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 11.",
+        "en": "Ambrosini Residence — original portfolio board, page 11."
+      },
+      "thumbnail": "/assets/thumb-11.webp"
+    },
+    "12": {
+      "project": "ambrosini",
+      "src": "/assets/page-12.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 141436,
+      "sourcePage": 12,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 12.",
+        "en": "Ambrosini Residence — original portfolio board, page 12."
+      },
+      "thumbnail": "/assets/thumb-12.webp"
+    },
+    "13": {
+      "project": "ambrosini",
+      "src": "/assets/page-13.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 182416,
+      "sourcePage": 13,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 13.",
+        "en": "Ambrosini Residence — original portfolio board, page 13."
+      },
+      "thumbnail": "/assets/thumb-13.webp"
+    },
+    "14": {
+      "project": "cool",
+      "src": "/assets/page-14.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 239084,
+      "sourcePage": 14,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Cool Barber Shop — prancha original do portfólio, página 14.",
+        "en": "Cool Barber Shop — original portfolio board, page 14."
+      },
+      "thumbnail": "/assets/thumb-14.webp"
+    },
+    "15": {
+      "project": "cool",
+      "src": "/assets/page-15.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 226766,
+      "sourcePage": 15,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Cool Barber Shop — prancha original do portfólio, página 15.",
+        "en": "Cool Barber Shop — original portfolio board, page 15."
+      },
+      "thumbnail": "/assets/thumb-15.webp"
+    },
+    "16": {
+      "project": "cool",
+      "src": "/assets/page-16.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 189418,
+      "sourcePage": 16,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Cool Barber Shop — prancha original do portfólio, página 16.",
+        "en": "Cool Barber Shop — original portfolio board, page 16."
+      },
+      "thumbnail": "/assets/thumb-16.webp"
+    },
+    "17": {
+      "project": "pastore",
+      "src": "/assets/page-17.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 189364,
+      "sourcePage": 17,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 17.",
+        "en": "Centro Médico Pastore — original portfolio board, page 17."
+      },
+      "thumbnail": "/assets/thumb-17.webp"
+    },
+    "18": {
+      "project": "pastore",
+      "src": "/assets/page-18.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 156814,
+      "sourcePage": 18,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 18.",
+        "en": "Centro Médico Pastore — original portfolio board, page 18."
+      },
+      "thumbnail": "/assets/thumb-18.webp"
+    },
+    "19": {
+      "project": "pastore",
+      "src": "/assets/page-19.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 130736,
+      "sourcePage": 19,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 19.",
+        "en": "Centro Médico Pastore — original portfolio board, page 19."
+      },
+      "thumbnail": "/assets/thumb-19.webp"
+    },
+    "20": {
+      "project": "pastore",
+      "src": "/assets/page-20.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 161458,
+      "sourcePage": 20,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 20.",
+        "en": "Centro Médico Pastore — original portfolio board, page 20."
+      },
+      "thumbnail": "/assets/thumb-20.webp"
+    },
+    "21": {
+      "project": "pastore",
+      "src": "/assets/page-21.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 121580,
+      "sourcePage": 21,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 21.",
+        "en": "Centro Médico Pastore — original portfolio board, page 21."
+      },
+      "thumbnail": "/assets/thumb-21.webp"
+    },
+    "22": {
+      "project": "r2s",
+      "src": "/assets/page-22.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 189412,
+      "sourcePage": 22,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 22.",
+        "en": "R2S Med — original portfolio board, page 22."
+      },
+      "thumbnail": "/assets/thumb-22.webp"
+    },
+    "23": {
+      "project": "r2s",
+      "src": "/assets/page-23.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 167498,
+      "sourcePage": 23,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 23.",
+        "en": "R2S Med — original portfolio board, page 23."
+      },
+      "thumbnail": "/assets/thumb-23.webp"
+    },
+    "24": {
+      "project": "r2s",
+      "src": "/assets/page-24.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 58732,
+      "sourcePage": 24,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 24.",
+        "en": "R2S Med — original portfolio board, page 24."
+      },
+      "thumbnail": "/assets/thumb-24.webp"
+    },
+    "25": {
+      "project": "r2s",
+      "src": "/assets/page-25.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 64730,
+      "sourcePage": 25,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 25.",
+        "en": "R2S Med — original portfolio board, page 25."
+      },
+      "thumbnail": "/assets/thumb-25.webp"
+    },
+    "26": {
+      "project": "r2s",
+      "src": "/assets/page-26.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 69184,
+      "sourcePage": 26,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 26.",
+        "en": "R2S Med — original portfolio board, page 26."
+      },
+      "thumbnail": "/assets/thumb-26.webp"
+    },
+    "27": {
+      "project": "na-regua",
+      "src": "/assets/page-27.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 172874,
+      "sourcePage": 27,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 27.",
+        "en": "Na Régua — original portfolio board, page 27."
+      },
+      "thumbnail": "/assets/thumb-27.webp"
+    },
+    "28": {
+      "project": "na-regua",
+      "src": "/assets/page-28.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 207434,
+      "sourcePage": 28,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 28.",
+        "en": "Na Régua — original portfolio board, page 28."
+      },
+      "thumbnail": "/assets/thumb-28.webp"
+    },
+    "29": {
+      "project": "na-regua",
+      "src": "/assets/page-29.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 155108,
+      "sourcePage": 29,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 29.",
+        "en": "Na Régua — original portfolio board, page 29."
+      },
+      "thumbnail": "/assets/thumb-29.webp"
+    },
+    "30": {
+      "project": "na-regua",
+      "src": "/assets/page-30.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 133178,
+      "sourcePage": 30,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 30.",
+        "en": "Na Régua — original portfolio board, page 30."
+      },
+      "thumbnail": "/assets/thumb-30.webp"
+    },
+    "31": {
+      "project": "na-regua",
+      "src": "/assets/page-31.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 255016,
+      "sourcePage": 31,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 31.",
+        "en": "Na Régua — original portfolio board, page 31."
+      },
+      "thumbnail": "/assets/thumb-31.webp"
+    },
+    "32": {
+      "project": "krauzer",
+      "src": "/assets/page-32.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 161974,
+      "sourcePage": 32,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Krauzer — prancha original do portfólio, página 32.",
+        "en": "Krauzer Residence — original portfolio board, page 32."
+      },
+      "thumbnail": "/assets/thumb-32.webp"
+    },
+    "33": {
+      "project": "krauzer",
+      "src": "/assets/page-33.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 102390,
+      "sourcePage": 33,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Krauzer — prancha original do portfólio, página 33.",
+        "en": "Krauzer Residence — original portfolio board, page 33."
+      },
+      "thumbnail": "/assets/thumb-33.webp"
+    },
+    "34": {
+      "project": "stark",
+      "src": "/assets/page-34.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 131696,
+      "sourcePage": 34,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Stark — prancha original do portfólio, página 34.",
+        "en": "Stark Residence — original portfolio board, page 34."
+      },
+      "thumbnail": "/assets/thumb-34.webp"
+    },
+    "35": {
+      "project": "stark",
+      "src": "/assets/page-35.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 89416,
+      "sourcePage": 35,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Stark — prancha original do portfólio, página 35.",
+        "en": "Stark Residence — original portfolio board, page 35."
+      },
+      "thumbnail": "/assets/thumb-35.webp"
+    },
+    "36": {
+      "project": "mag",
+      "src": "/assets/page-36.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 279588,
+      "sourcePage": 36,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "MAG — Museu Águas da Guanabara — prancha original do portfólio, página 36.",
+        "en": "MAG — Guanabara Waters Museum — original portfolio board, page 36."
+      },
+      "thumbnail": "/assets/thumb-36.webp"
+    },
+    "37": {
+      "project": "mag",
+      "src": "/assets/page-37.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 187018,
+      "sourcePage": 37,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "MAG — Museu Águas da Guanabara — prancha original do portfólio, página 37.",
+        "en": "MAG — Guanabara Waters Museum — original portfolio board, page 37."
+      },
+      "thumbnail": "/assets/thumb-37.webp"
+    },
+    "38": {
+      "project": "mag",
+      "src": "/assets/page-38.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 226272,
+      "sourcePage": 38,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "MAG — Museu Águas da Guanabara — prancha original do portfólio, página 38.",
+        "en": "MAG — Guanabara Waters Museum — original portfolio board, page 38."
+      },
+      "thumbnail": "/assets/thumb-38.webp"
+    },
+    "39": {
+      "project": "crea",
+      "src": "/assets/page-39.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 161584,
+      "sourcePage": 39,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "CREA-RJ — Setor de Fiscalização — prancha original do portfólio, página 39.",
+        "en": "CREA-RJ — Inspection Department — original portfolio board, page 39."
+      },
+      "thumbnail": "/assets/thumb-39.webp"
+    }
+  },
+  "images": {
+    "page-05": {
+      "src": "/assets/page-05.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 182268,
+      "sourcePage": 5,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 5.",
+        "en": "Brito Residence — original portfolio board, page 5."
+      }
+    },
+    "thumb-05": {
+      "src": "/assets/thumb-05.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 52978,
+      "sourcePage": 5,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 5.",
+        "en": "Brito Residence — original portfolio board, page 5."
+      }
+    },
+    "page-06": {
+      "src": "/assets/page-06.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 164540,
+      "sourcePage": 6,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 6.",
+        "en": "Brito Residence — original portfolio board, page 6."
+      }
+    },
+    "thumb-06": {
+      "src": "/assets/thumb-06.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 46802,
+      "sourcePage": 6,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 6.",
+        "en": "Brito Residence — original portfolio board, page 6."
+      }
+    },
+    "page-07": {
+      "src": "/assets/page-07.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 142530,
+      "sourcePage": 7,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 7.",
+        "en": "Brito Residence — original portfolio board, page 7."
+      }
+    },
+    "thumb-07": {
+      "src": "/assets/thumb-07.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 35646,
+      "sourcePage": 7,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 7.",
+        "en": "Brito Residence — original portfolio board, page 7."
+      }
+    },
+    "page-08": {
+      "src": "/assets/page-08.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 107292,
+      "sourcePage": 8,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 8.",
+        "en": "Brito Residence — original portfolio board, page 8."
+      }
+    },
+    "thumb-08": {
+      "src": "/assets/thumb-08.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 26816,
+      "sourcePage": 8,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Brito — prancha original do portfólio, página 8.",
+        "en": "Brito Residence — original portfolio board, page 8."
+      }
+    },
+    "page-09": {
+      "src": "/assets/page-09.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 153634,
+      "sourcePage": 9,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 9.",
+        "en": "Ambrosini Residence — original portfolio board, page 9."
+      }
+    },
+    "thumb-09": {
+      "src": "/assets/thumb-09.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 46246,
+      "sourcePage": 9,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 9.",
+        "en": "Ambrosini Residence — original portfolio board, page 9."
+      }
+    },
+    "page-10": {
+      "src": "/assets/page-10.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 208522,
+      "sourcePage": 10,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 10.",
+        "en": "Ambrosini Residence — original portfolio board, page 10."
+      }
+    },
+    "thumb-10": {
+      "src": "/assets/thumb-10.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 56716,
+      "sourcePage": 10,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 10.",
+        "en": "Ambrosini Residence — original portfolio board, page 10."
+      }
+    },
+    "page-11": {
+      "src": "/assets/page-11.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 128836,
+      "sourcePage": 11,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 11.",
+        "en": "Ambrosini Residence — original portfolio board, page 11."
+      }
+    },
+    "thumb-11": {
+      "src": "/assets/thumb-11.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 38822,
+      "sourcePage": 11,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 11.",
+        "en": "Ambrosini Residence — original portfolio board, page 11."
+      }
+    },
+    "page-12": {
+      "src": "/assets/page-12.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 141436,
+      "sourcePage": 12,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 12.",
+        "en": "Ambrosini Residence — original portfolio board, page 12."
+      }
+    },
+    "thumb-12": {
+      "src": "/assets/thumb-12.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 35848,
+      "sourcePage": 12,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 12.",
+        "en": "Ambrosini Residence — original portfolio board, page 12."
+      }
+    },
+    "page-13": {
+      "src": "/assets/page-13.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 182416,
+      "sourcePage": 13,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 13.",
+        "en": "Ambrosini Residence — original portfolio board, page 13."
+      }
+    },
+    "thumb-13": {
+      "src": "/assets/thumb-13.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 40006,
+      "sourcePage": 13,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Ambrosini — prancha original do portfólio, página 13.",
+        "en": "Ambrosini Residence — original portfolio board, page 13."
+      }
+    },
+    "page-14": {
+      "src": "/assets/page-14.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 239084,
+      "sourcePage": 14,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Cool Barber Shop — prancha original do portfólio, página 14.",
+        "en": "Cool Barber Shop — original portfolio board, page 14."
+      }
+    },
+    "thumb-14": {
+      "src": "/assets/thumb-14.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 80238,
+      "sourcePage": 14,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Cool Barber Shop — prancha original do portfólio, página 14.",
+        "en": "Cool Barber Shop — original portfolio board, page 14."
+      }
+    },
+    "page-15": {
+      "src": "/assets/page-15.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 226766,
+      "sourcePage": 15,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Cool Barber Shop — prancha original do portfólio, página 15.",
+        "en": "Cool Barber Shop — original portfolio board, page 15."
+      }
+    },
+    "thumb-15": {
+      "src": "/assets/thumb-15.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 64590,
+      "sourcePage": 15,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Cool Barber Shop — prancha original do portfólio, página 15.",
+        "en": "Cool Barber Shop — original portfolio board, page 15."
+      }
+    },
+    "page-16": {
+      "src": "/assets/page-16.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 189418,
+      "sourcePage": 16,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Cool Barber Shop — prancha original do portfólio, página 16.",
+        "en": "Cool Barber Shop — original portfolio board, page 16."
+      }
+    },
+    "thumb-16": {
+      "src": "/assets/thumb-16.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 50764,
+      "sourcePage": 16,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Cool Barber Shop — prancha original do portfólio, página 16.",
+        "en": "Cool Barber Shop — original portfolio board, page 16."
+      }
+    },
+    "page-17": {
+      "src": "/assets/page-17.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 189364,
+      "sourcePage": 17,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 17.",
+        "en": "Centro Médico Pastore — original portfolio board, page 17."
+      }
+    },
+    "thumb-17": {
+      "src": "/assets/thumb-17.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 55404,
+      "sourcePage": 17,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 17.",
+        "en": "Centro Médico Pastore — original portfolio board, page 17."
+      }
+    },
+    "page-18": {
+      "src": "/assets/page-18.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 156814,
+      "sourcePage": 18,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 18.",
+        "en": "Centro Médico Pastore — original portfolio board, page 18."
+      }
+    },
+    "thumb-18": {
+      "src": "/assets/thumb-18.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 38364,
+      "sourcePage": 18,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 18.",
+        "en": "Centro Médico Pastore — original portfolio board, page 18."
+      }
+    },
+    "page-19": {
+      "src": "/assets/page-19.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 130736,
+      "sourcePage": 19,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 19.",
+        "en": "Centro Médico Pastore — original portfolio board, page 19."
+      }
+    },
+    "thumb-19": {
+      "src": "/assets/thumb-19.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 31582,
+      "sourcePage": 19,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 19.",
+        "en": "Centro Médico Pastore — original portfolio board, page 19."
+      }
+    },
+    "page-20": {
+      "src": "/assets/page-20.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 161458,
+      "sourcePage": 20,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 20.",
+        "en": "Centro Médico Pastore — original portfolio board, page 20."
+      }
+    },
+    "thumb-20": {
+      "src": "/assets/thumb-20.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 38650,
+      "sourcePage": 20,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 20.",
+        "en": "Centro Médico Pastore — original portfolio board, page 20."
+      }
+    },
+    "page-21": {
+      "src": "/assets/page-21.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 121580,
+      "sourcePage": 21,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 21.",
+        "en": "Centro Médico Pastore — original portfolio board, page 21."
+      }
+    },
+    "thumb-21": {
+      "src": "/assets/thumb-21.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 30510,
+      "sourcePage": 21,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Centro Médico Pastore — prancha original do portfólio, página 21.",
+        "en": "Centro Médico Pastore — original portfolio board, page 21."
+      }
+    },
+    "page-22": {
+      "src": "/assets/page-22.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 189412,
+      "sourcePage": 22,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 22.",
+        "en": "R2S Med — original portfolio board, page 22."
+      }
+    },
+    "thumb-22": {
+      "src": "/assets/thumb-22.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 57454,
+      "sourcePage": 22,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 22.",
+        "en": "R2S Med — original portfolio board, page 22."
+      }
+    },
+    "page-23": {
+      "src": "/assets/page-23.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 167498,
+      "sourcePage": 23,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 23.",
+        "en": "R2S Med — original portfolio board, page 23."
+      }
+    },
+    "thumb-23": {
+      "src": "/assets/thumb-23.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 46526,
+      "sourcePage": 23,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 23.",
+        "en": "R2S Med — original portfolio board, page 23."
+      }
+    },
+    "page-24": {
+      "src": "/assets/page-24.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 58732,
+      "sourcePage": 24,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 24.",
+        "en": "R2S Med — original portfolio board, page 24."
+      }
+    },
+    "thumb-24": {
+      "src": "/assets/thumb-24.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 15920,
+      "sourcePage": 24,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 24.",
+        "en": "R2S Med — original portfolio board, page 24."
+      }
+    },
+    "page-25": {
+      "src": "/assets/page-25.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 64730,
+      "sourcePage": 25,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 25.",
+        "en": "R2S Med — original portfolio board, page 25."
+      }
+    },
+    "thumb-25": {
+      "src": "/assets/thumb-25.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 18048,
+      "sourcePage": 25,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 25.",
+        "en": "R2S Med — original portfolio board, page 25."
+      }
+    },
+    "page-26": {
+      "src": "/assets/page-26.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 69184,
+      "sourcePage": 26,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 26.",
+        "en": "R2S Med — original portfolio board, page 26."
+      }
+    },
+    "thumb-26": {
+      "src": "/assets/thumb-26.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 20020,
+      "sourcePage": 26,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "R2S Med — prancha original do portfólio, página 26.",
+        "en": "R2S Med — original portfolio board, page 26."
+      }
+    },
+    "page-27": {
+      "src": "/assets/page-27.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 172874,
+      "sourcePage": 27,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 27.",
+        "en": "Na Régua — original portfolio board, page 27."
+      }
+    },
+    "thumb-27": {
+      "src": "/assets/thumb-27.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 51860,
+      "sourcePage": 27,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 27.",
+        "en": "Na Régua — original portfolio board, page 27."
+      }
+    },
+    "page-28": {
+      "src": "/assets/page-28.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 207434,
+      "sourcePage": 28,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 28.",
+        "en": "Na Régua — original portfolio board, page 28."
+      }
+    },
+    "thumb-28": {
+      "src": "/assets/thumb-28.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 57818,
+      "sourcePage": 28,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 28.",
+        "en": "Na Régua — original portfolio board, page 28."
+      }
+    },
+    "page-29": {
+      "src": "/assets/page-29.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 155108,
+      "sourcePage": 29,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 29.",
+        "en": "Na Régua — original portfolio board, page 29."
+      }
+    },
+    "thumb-29": {
+      "src": "/assets/thumb-29.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 42000,
+      "sourcePage": 29,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 29.",
+        "en": "Na Régua — original portfolio board, page 29."
+      }
+    },
+    "page-30": {
+      "src": "/assets/page-30.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 133178,
+      "sourcePage": 30,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 30.",
+        "en": "Na Régua — original portfolio board, page 30."
+      }
+    },
+    "thumb-30": {
+      "src": "/assets/thumb-30.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 34724,
+      "sourcePage": 30,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 30.",
+        "en": "Na Régua — original portfolio board, page 30."
+      }
+    },
+    "page-31": {
+      "src": "/assets/page-31.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 255016,
+      "sourcePage": 31,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 31.",
+        "en": "Na Régua — original portfolio board, page 31."
+      }
+    },
+    "thumb-31": {
+      "src": "/assets/thumb-31.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 67520,
+      "sourcePage": 31,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Na Régua — prancha original do portfólio, página 31.",
+        "en": "Na Régua — original portfolio board, page 31."
+      }
+    },
+    "page-32": {
+      "src": "/assets/page-32.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 161974,
+      "sourcePage": 32,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Krauzer — prancha original do portfólio, página 32.",
+        "en": "Krauzer Residence — original portfolio board, page 32."
+      }
+    },
+    "thumb-32": {
+      "src": "/assets/thumb-32.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 46304,
+      "sourcePage": 32,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Krauzer — prancha original do portfólio, página 32.",
+        "en": "Krauzer Residence — original portfolio board, page 32."
+      }
+    },
+    "page-33": {
+      "src": "/assets/page-33.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 102390,
+      "sourcePage": 33,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Krauzer — prancha original do portfólio, página 33.",
+        "en": "Krauzer Residence — original portfolio board, page 33."
+      }
+    },
+    "thumb-33": {
+      "src": "/assets/thumb-33.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 26630,
+      "sourcePage": 33,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Krauzer — prancha original do portfólio, página 33.",
+        "en": "Krauzer Residence — original portfolio board, page 33."
+      }
+    },
+    "page-34": {
+      "src": "/assets/page-34.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 131696,
+      "sourcePage": 34,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Stark — prancha original do portfólio, página 34.",
+        "en": "Stark Residence — original portfolio board, page 34."
+      }
+    },
+    "thumb-34": {
+      "src": "/assets/thumb-34.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 38984,
+      "sourcePage": 34,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Stark — prancha original do portfólio, página 34.",
+        "en": "Stark Residence — original portfolio board, page 34."
+      }
+    },
+    "page-35": {
+      "src": "/assets/page-35.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 89416,
+      "sourcePage": 35,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "Residência Stark — prancha original do portfólio, página 35.",
+        "en": "Stark Residence — original portfolio board, page 35."
+      }
+    },
+    "thumb-35": {
+      "src": "/assets/thumb-35.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 24930,
+      "sourcePage": 35,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "Residência Stark — prancha original do portfólio, página 35.",
+        "en": "Stark Residence — original portfolio board, page 35."
+      }
+    },
+    "page-36": {
+      "src": "/assets/page-36.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 279588,
+      "sourcePage": 36,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "MAG — Museu Águas da Guanabara — prancha original do portfólio, página 36.",
+        "en": "MAG — Guanabara Waters Museum — original portfolio board, page 36."
+      }
+    },
+    "thumb-36": {
+      "src": "/assets/thumb-36.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 83496,
+      "sourcePage": 36,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "MAG — Museu Águas da Guanabara — prancha original do portfólio, página 36.",
+        "en": "MAG — Guanabara Waters Museum — original portfolio board, page 36."
+      }
+    },
+    "page-37": {
+      "src": "/assets/page-37.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 187018,
+      "sourcePage": 37,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "MAG — Museu Águas da Guanabara — prancha original do portfólio, página 37.",
+        "en": "MAG — Guanabara Waters Museum — original portfolio board, page 37."
+      }
+    },
+    "thumb-37": {
+      "src": "/assets/thumb-37.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 51424,
+      "sourcePage": 37,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "MAG — Museu Águas da Guanabara — prancha original do portfólio, página 37.",
+        "en": "MAG — Guanabara Waters Museum — original portfolio board, page 37."
+      }
+    },
+    "page-38": {
+      "src": "/assets/page-38.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 226272,
+      "sourcePage": 38,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "MAG — Museu Águas da Guanabara — prancha original do portfólio, página 38.",
+        "en": "MAG — Guanabara Waters Museum — original portfolio board, page 38."
+      }
+    },
+    "thumb-38": {
+      "src": "/assets/thumb-38.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 60186,
+      "sourcePage": 38,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "MAG — Museu Águas da Guanabara — prancha original do portfólio, página 38.",
+        "en": "MAG — Guanabara Waters Museum — original portfolio board, page 38."
+      }
+    },
+    "page-39": {
+      "src": "/assets/page-39.webp",
+      "width": 2000,
+      "height": 1125,
+      "bytes": 161584,
+      "sourcePage": 39,
+      "sourceKind": "full-page-render",
+      "caption": {
+        "pt": "CREA-RJ — Setor de Fiscalização — prancha original do portfólio, página 39.",
+        "en": "CREA-RJ — Inspection Department — original portfolio board, page 39."
+      }
+    },
+    "thumb-39": {
+      "src": "/assets/thumb-39.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 39106,
+      "sourcePage": 39,
+      "sourceKind": "full-page-render-thumbnail",
+      "caption": {
+        "pt": "CREA-RJ — Setor de Fiscalização — prancha original do portfólio, página 39.",
+        "en": "CREA-RJ — Inspection Department — original portfolio board, page 39."
+      }
+    },
+    "cover-brito": {
+      "src": "/assets/cover-brito.webp",
+      "width": 1405,
+      "height": 1290,
+      "bytes": 139328,
+      "sourcePage": 5,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Renderização noturna da fachada da Residência Brito.",
+        "en": "Night rendering of the Brito Residence façade."
+      }
+    },
+    "cover-ambrosini": {
+      "src": "/assets/cover-ambrosini.webp",
+      "width": 843,
+      "height": 897,
+      "bytes": 60918,
+      "sourcePage": 9,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Renderização noturna da fachada da Residência Ambrosini.",
+        "en": "Night rendering of the Ambrosini Residence façade."
+      }
+    },
+    "cover-cool": {
+      "src": "/assets/cover-cool.webp",
+      "width": 677,
+      "height": 614,
+      "bytes": 80516,
+      "sourcePage": 14,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Interior da Cool Barber Shop, com tijolos aparentes, mobiliário escuro e iluminação quente.",
+        "en": "Cool Barber Shop interior with exposed brick, dark furniture and warm lighting."
+      }
+    },
+    "cover-pastore": {
+      "src": "/assets/cover-pastore.webp",
+      "width": 1176,
+      "height": 1303,
+      "bytes": 71948,
+      "sourcePage": 17,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Renderização da recepção do Centro Médico Pastore.",
+        "en": "Rendering of the Centro Médico Pastore reception."
+      }
+    },
+    "cover-r2s": {
+      "src": "/assets/cover-r2s.webp",
+      "width": 896,
+      "height": 504,
+      "bytes": 50550,
+      "sourcePage": 23,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Renderização do mezanino e da circulação do escritório R2S Med.",
+        "en": "Rendering of the R2S Med office mezzanine and circulation area."
+      }
+    },
+    "cover-na-regua": {
+      "src": "/assets/cover-na-regua.webp",
+      "width": 1091,
+      "height": 1086,
+      "bytes": 77932,
+      "sourcePage": 27,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Prancha técnica com planta, cobertura e corte para o programa Na Régua.",
+        "en": "Technical board with floor plan, roof plan and section for the Na Régua programme."
+      }
+    },
+    "cover-krauzer": {
+      "src": "/assets/cover-krauzer.webp",
+      "width": 810,
+      "height": 574,
+      "bytes": 42902,
+      "sourcePage": 32,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Plantas da Residência Krauzer, em colaboração com Huber Architecture.",
+        "en": "Krauzer Residence plans, in collaboration with Huber Architecture."
+      }
+    },
+    "cover-stark": {
+      "src": "/assets/cover-stark.webp",
+      "width": 1207,
+      "height": 925,
+      "bytes": 50182,
+      "sourcePage": 34,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Estudo da Residência Stark com planta e vista 3D, em colaboração com Huber Architecture.",
+        "en": "Stark Residence study with floor plan and 3D view, in collaboration with Huber Architecture."
+      }
+    },
+    "cover-mag": {
+      "src": "/assets/cover-mag.webp",
+      "width": 746,
+      "height": 667,
+      "bytes": 96322,
+      "sourcePage": 36,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Renderização aérea do projeto acadêmico MAG — Museu Águas da Guanabara.",
+        "en": "Aerial rendering of the MAG — Guanabara Waters Museum academic project."
+      }
+    },
+    "cover-crea": {
+      "src": "/assets/cover-crea.webp",
+      "width": 1801,
+      "height": 833,
+      "bytes": 77636,
+      "sourcePage": 39,
+      "sourceKind": "rendered-crop",
+      "caption": {
+        "pt": "Renderização do ambiente de trabalho proposto para o Setor de Fiscalização do CREA-RJ, via Kingline Engenharia.",
+        "en": "Rendering of the proposed CREA-RJ Inspection Department workspace, via Kingline Engenharia."
+      },
+      "sourceCrop": [
+        535,
+        587,
+        851,
+        733
+      ]
+    },
+    "hero-crea": {
+      "src": "/assets/hero-crea.webp",
+      "width": 1801,
+      "height": 833,
+      "bytes": 77636,
+      "sourcePage": 39,
+      "sourceKind": "rendered-crop",
+      "caption": {
+        "pt": "Renderização do ambiente de trabalho proposto para o Setor de Fiscalização do CREA-RJ, via Kingline Engenharia.",
+        "en": "Rendering of the proposed CREA-RJ Inspection Department workspace, via Kingline Engenharia."
+      },
+      "sourceCrop": [
+        535,
+        587,
+        851,
+        733
+      ]
+    },
+    "portrait-renata": {
+      "src": "/assets/portrait-renata.webp",
+      "width": 282,
+      "height": 499,
+      "bytes": 12470,
+      "sourcePage": 2,
+      "sourceKind": "embedded-crop",
+      "caption": {
+        "pt": "Retrato de Renata Guimarães.",
+        "en": "Portrait of Renata Guimarães."
+      },
+      "sourceCrop": [
+        73,
+        110,
+        355,
+        609
+      ]
+    },
+    "hero-ambrosini": {
+      "src": "/assets/hero-ambrosini.webp",
+      "width": 966,
+      "height": 617,
+      "bytes": 55412,
+      "sourcePage": 10,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Renderização da sala de estar e jantar integradas da Residência Ambrosini.",
+        "en": "Rendering of the open-plan living and dining room in the Ambrosini Residence."
+      }
+    },
+    "ambrosini-kitchen": {
+      "src": "/assets/ambrosini-kitchen.webp",
+      "width": 581,
+      "height": 567,
+      "bytes": 37860,
+      "sourcePage": 10,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Imagem original do portfólio — página 10.",
+        "en": "Original portfolio image — page 10."
+      }
+    },
+    "ambrosini-gourmet": {
+      "src": "/assets/ambrosini-gourmet.webp",
+      "width": 582,
+      "height": 628,
+      "bytes": 60842,
+      "sourcePage": 10,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Imagem original do portfólio — página 10.",
+        "en": "Original portfolio image — page 10."
+      }
+    },
+    "ambrosini-patio": {
+      "src": "/assets/ambrosini-patio.webp",
+      "width": 563,
+      "height": 567,
+      "bytes": 48708,
+      "sourcePage": 10,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Imagem original do portfólio — página 10.",
+        "en": "Original portfolio image — page 10."
+      }
+    },
+    "r2s-meeting": {
+      "src": "/assets/r2s-meeting.webp",
+      "width": 768,
+      "height": 432,
+      "bytes": 40998,
+      "sourcePage": 23,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Imagem original do portfólio — página 23.",
+        "en": "Original portfolio image — page 23."
+      }
+    },
+    "r2s-circulation": {
+      "src": "/assets/r2s-circulation.webp",
+      "width": 768,
+      "height": 432,
+      "bytes": 31514,
+      "sourcePage": 23,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Imagem original do portfólio — página 23.",
+        "en": "Original portfolio image — page 23."
+      }
+    },
+    "mag-exterior": {
+      "src": "/assets/mag-exterior.webp",
+      "width": 1167,
+      "height": 657,
+      "bytes": 87728,
+      "sourcePage": 37,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Imagem original do portfólio — página 37.",
+        "en": "Original portfolio image — page 37."
+      }
+    },
+    "mag-interior": {
+      "src": "/assets/mag-interior.webp",
+      "width": 800,
+      "height": 528,
+      "bytes": 42170,
+      "sourcePage": 37,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Imagem original do portfólio — página 37.",
+        "en": "Original portfolio image — page 37."
+      }
+    },
+    "mag-hall": {
+      "src": "/assets/mag-hall.webp",
+      "width": 768,
+      "height": 576,
+      "bytes": 58966,
+      "sourcePage": 37,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Imagem original do portfólio — página 37.",
+        "en": "Original portfolio image — page 37."
+      }
+    }
+  }
+}

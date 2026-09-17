@@ -1,0 +1,19 @@
+{
+  "name": "renata-guimaraes-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "python3 -m http.server 4173 --directory dist",
+    "check": "node scripts/check.mjs",
+    "test:dom": "node scripts/test-dom.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.13",
+    "css-tree": "3.2.1"
+  }
+}

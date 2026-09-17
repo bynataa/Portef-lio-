@@ -1,0 +1,912 @@
+{
+  "source": "Renata_Guimaraes_Portfolio_MOYA_PAGINA4_NOVO_LAYOUT.pdf",
+  "page_count": 40,
+  "review": "All 40 pages rendered and visually reviewed; text extracted where present; pages 2, 3 and 40 read from raster images at enlarged size.",
+  "profile": {
+    "name": "Renata Guimarães",
+    "full_name": "Renata da Silva Fernandes Guimarães",
+    "title": {
+      "pt": "Arquiteta e urbanista",
+      "en": "Architect and urban planner"
+    },
+    "location": "Rio de Janeiro, Brasil",
+    "registration": {
+      "body": "CAU",
+      "id": "A162691-4",
+      "pages": [
+        19,
+        24,
+        26,
+        39
+      ],
+      "note": "Número extraído das pranchas; status cadastral não verificado externamente."
+    },
+    "pages": [
+      2,
+      3,
+      4
+    ],
+    "summary": {
+      "pt": "Arquiteta e urbanista com atuação em projetos residenciais, comerciais, institucionais e de habitação social no Brasil, além de colaboração remota com equipes nos Estados Unidos. Desenvolve projetos, documentação técnica e visualizações com Revit e AutoCAD, com atenção às pessoas, ao uso dos espaços e aos detalhes.",
+      "en": "Architect and urban planner with experience in residential, commercial, institutional and social-housing projects in Brazil, alongside remote collaboration with US-based teams. Her work spans design, technical documentation and visualization using Revit and AutoCAD, with attention to people, spatial use and detail."
+    },
+    "practice": {
+      "name": "Renarchi Arquitetura",
+      "founder_since": 2026,
+      "independent_work_since": 2019,
+      "page": 4
+    },
+    "education": [
+      {
+        "name_pt": "Pós-graduação em Engenharia Ambiental",
+        "name_en": "Postgraduate Programme in Environmental Engineering",
+        "institution": "Faculdade Focus",
+        "status_pt": "Em andamento",
+        "status_en": "In progress",
+        "year": 2026,
+        "hours": 420,
+        "page": 2
+      },
+      {
+        "name_pt": "Arquitetura e Urbanismo",
+        "name_en": "Bachelor of Architecture and Urbanism",
+        "institution": "Universidade Estácio de Sá",
+        "year": 2019,
+        "page": 2
+      },
+      {
+        "name_pt": "Marketing (tecnólogo)",
+        "name_en": "Marketing (Technologist)",
+        "institution": "Universidade Estácio de Sá",
+        "year": 2019,
+        "page": 2
+      }
+    ],
+    "courses": [
+      {
+        "name": "The Architectural Imagination",
+        "institution": "HarvardX",
+        "year": 2023,
+        "page": 2
+      },
+      {
+        "name": "Cambridge English",
+        "period": "2023–2024",
+        "page": 2
+      }
+    ],
+    "skills": [
+      "Revit",
+      "AutoCAD",
+      "SketchUp",
+      "Photoshop",
+      "Lumion",
+      "Office",
+      "Canva"
+    ],
+    "languages": [
+      {
+        "name": "Português",
+        "level": "Nativo"
+      },
+      {
+        "name": "English",
+        "level": "Upper-intermediate"
+      },
+      {
+        "name": "Español",
+        "level": "Intermediate"
+      },
+      {
+        "name": "Français",
+        "level": "Beginner"
+      }
+    ],
+    "experience": [
+      {
+        "organization": "CREA-RJ (via Kingline Engenharia)",
+        "role_pt": "Arquiteta · COFA / Fiscalização",
+        "role_en": "Architect · COFA / Inspection Department",
+        "period": "fev/2026–atual",
+        "page": 3,
+        "scope_pt": "Projetos institucionais, layouts, documentação técnica, modelagem em Revit e reformas. Setor de Fiscalização no 6º andar, sala de auditoria no 4º andar, sala de coleta de leite, coworkings de inspetorias em Niterói, Nova Iguaçu, Araruama, Petrópolis e Campo Grande, memoriais e melhorias internas. Planejamento do CREA AQUI 2027.",
+        "scope_en": "Institutional design, workplace layouts, technical documentation, Revit modeling and renovation proposals. Work includes Inspection Department and audit-room renovations, a milk collection room, regional inspectorate coworking spaces, specifications and internal improvements, and planning for CREA AQUI 2027."
+      },
+      {
+        "organization": "Huber Architecture",
+        "role_pt": "Architectural Designer · remoto",
+        "role_en": "Architectural Designer · remote",
+        "period": "mai/2024–jun/2026",
+        "page": 3,
+        "scope_pt": "Documentação de projetos residenciais e comerciais em AutoCAD: plantas, elevações, cortes e modelagem 3D selecionada.",
+        "scope_en": "AutoCAD drawing packages for residential and commercial projects: plans, elevations, sections and selected 3D modeling."
+      },
+      {
+        "organization": "Casa Carioca · Prefeitura do Rio / SEAC",
+        "role_pt": "Arquiteta · Programa de melhorias habitacionais",
+        "role_en": "Architect · Housing Improvement Programme",
+        "period": "2023–2024",
+        "page": 3,
+        "scope_pt": "Melhorias habitacionais no Complexo da Maré, em programa envolvendo aproximadamente 300 famílias; levantamentos, projetos e documentação.",
+        "scope_en": "Housing improvements in Complexo da Maré, within a programme involving around 300 families; field surveys, residential design and technical documentation."
+      },
+      {
+        "organization": "Projeto Na Régua · SEINFRA RJ / UERJ",
+        "role_pt": "Coordenadora de projetos",
+        "role_en": "Project Coordinator",
+        "period": "2022–2023",
+        "page": 3,
+        "scope_pt": "Coordenação de mais de 170 projetos de melhorias habitacionais, levantamentos, entrevistas e desenho orientado à acessibilidade.",
+        "scope_en": "Coordination of more than 170 housing-improvement projects, including site assessments, resident interviews and accessibility-focused design."
+      },
+      {
+        "organization": "Centro Médico Pastore",
+        "role_pt": "Arquiteta",
+        "role_en": "Architect",
+        "period": "jan/2024–abr/2024",
+        "page": 3,
+        "scope_pt": "Desenvolvimento de projetos arquitetônicos para clínicas médicas.",
+        "scope_en": "Architectural design for medical clinics."
+      }
+    ],
+    "contacts": [
+      {
+        "type": "email",
+        "value": "renarchi.urb@gmail.com",
+        "page": 40,
+        "priority": "business"
+      },
+      {
+        "type": "phone",
+        "value": "+55 21 99545-1620",
+        "page": 40
+      },
+      {
+        "type": "phone",
+        "value": "+1 332 330 8863",
+        "page": 40
+      },
+      {
+        "type": "instagram",
+        "value": "https://www.instagram.com/renarchi.urb/",
+        "page": 40
+      },
+      {
+        "type": "email",
+        "value": "renata.guimaraes.arq@gmail.com",
+        "page": 2,
+        "priority": "profile"
+      },
+      {
+        "type": "linkedin",
+        "value": "https://www.linkedin.com/in/renataguimaraes",
+        "page": 2
+      }
+    ],
+    "cautions": [
+      "Profissão confirmada como arquitetura; atuação no CREA-RJ não implica título de engenheira.",
+      "Não afirmar graduação em Harvard nem certificação Cambridge: são cursos conforme fonte.",
+      "Pós-graduação em Engenharia Ambiental está em andamento.",
+      "O número aproximado de 300 famílias refere-se ao programa Casa Carioca, não a 300 obras executadas individualmente."
+    ]
+  },
+  "projects": [
+    {
+      "id": "brito",
+      "title": {
+        "pt": "Residência Brito",
+        "en": "Brito Residence"
+      },
+      "category": "residential",
+      "year": 2024,
+      "location": {
+        "pt": "Ilha do Governador, Rio de Janeiro, Brasil",
+        "en": "Ilha do Governador, Rio de Janeiro, Brazil"
+      },
+      "pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "software": [
+        "Revit",
+        "Photoshop"
+      ],
+      "role": {
+        "pt": "Projeto arquitetônico independente, modelagem e visualização.",
+        "en": "Independent architectural design, modeling and visualization."
+      },
+      "summary": {
+        "pt": "Reforma de uma residência de dois pavimentos, com reorganização dos interiores e redesenho da fachada. A proposta integra estar e jantar, atualiza acabamentos e iluminação e valoriza a luz natural.",
+        "en": "A two-storey home renovation combining a new interior layout with a redesigned façade. The proposal connects the living and dining areas, updates finishes and lighting, and makes better use of natural light."
+      },
+      "assets": [
+        {
+          "page": 5,
+          "kind": "render",
+          "description": "Fachada noturna / Night façade"
+        },
+        {
+          "page": 6,
+          "kind": "renders",
+          "description": "Interiores, escada, fachada frontal e posterior"
+        },
+        {
+          "page": 7,
+          "kind": "drawing-moodboard",
+          "description": "Planta térrea e referências de materiais; o moodboard não é fotografia de obra"
+        },
+        {
+          "page": 8,
+          "kind": "drawings",
+          "description": "Plantas elétrica e paginação; detalhes de rodapé e acabamentos"
+        }
+      ],
+      "status": "design; construction completion not established",
+      "context": {
+        "pt": "A intervenção parte de uma casa de dois pavimentos e propõe uma nova relação entre os ambientes internos e a fachada. O material apresenta estudos de estar e jantar integrados, escada, área externa com piscina e definição de materiais.",
+        "en": "The intervention starts with an existing two-storey house and proposes a renewed relationship between its interior spaces and façade. The portfolio shows integrated living and dining studies, a staircase, an outdoor pool area and material choices."
+      },
+      "credits": {
+        "pt": "Renata Guimarães · projeto independente.",
+        "en": "Renata Guimarães · independent project."
+      },
+      "solutions": {
+        "pt": [
+          "Layout integrado para os ambientes sociais.",
+          "Fachada contemporânea com texturas e iluminação de destaque.",
+          "Plantas de layout, elétrica, paginação e detalhes de acabamentos."
+        ],
+        "en": [
+          "An integrated layout for the shared living spaces.",
+          "A contemporary façade with textured finishes and accent lighting.",
+          "Layout, electrical and floor-finish plans, with finish details."
+        ]
+      }
+    },
+    {
+      "id": "ambrosini",
+      "title": {
+        "pt": "Residência Ambrosini",
+        "en": "Ambrosini Residence"
+      },
+      "category": "residential",
+      "year": 2021,
+      "location": {
+        "pt": "Jardim Primavera, Duque de Caxias, Brasil",
+        "en": "Jardim Primavera, Duque de Caxias, Brazil"
+      },
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "software": [
+        "Revit",
+        "Photoshop"
+      ],
+      "role": {
+        "pt": "Projeto independente de interiores e fachada; visualização.",
+        "en": "Independent interior and façade design; visualization."
+      },
+      "summary": {
+        "pt": "Reforma de interiores e fachada de uma residência de dois pavimentos. O projeto reorganiza a área social, a cozinha e os espaços íntimos, com painéis amadeirados, brises e iluminação integrada.",
+        "en": "An interior and façade renovation for a two-storey residence. The design reorganizes shared living areas, the kitchen and private rooms, with wood-textured panels, sun screens and integrated lighting."
+      },
+      "assets": [
+        {
+          "page": 9,
+          "kind": "render",
+          "description": "Fachada noturna"
+        },
+        {
+          "page": 10,
+          "kind": "renders",
+          "description": "Fachada, lounge, cozinha, jantar e área gourmet"
+        },
+        {
+          "page": 11,
+          "kind": "renders",
+          "description": "Suíte e ambientes infantis"
+        },
+        {
+          "page": 12,
+          "kind": "drawings",
+          "description": "Elétrica e elevações"
+        },
+        {
+          "page": 13,
+          "kind": "drawings",
+          "description": "Hidrossanitária; plantas, seções e axonométricas"
+        }
+      ],
+      "status": "design; construction completion not established",
+      "context": {
+        "pt": "A reorganização do térreo reúne estar, jantar, cozinha e área gourmet, enquanto o pavimento superior concentra os ambientes íntimos. A fachada adota elementos verticais, painéis amadeirados e iluminação integrada, acompanhados de documentação técnica.",
+        "en": "The ground-floor reconfiguration connects living, dining, kitchen and outdoor dining areas, while the upper floor accommodates private rooms. The façade combines vertical elements, wood-textured panels and integrated lighting, supported by technical documentation."
+      },
+      "credits": {
+        "pt": "Renata Guimarães · projeto independente.",
+        "en": "Renata Guimarães · independent project."
+      },
+      "solutions": {
+        "pt": [
+          "Ambientes sociais, cozinha, área gourmet e lounge no térreo.",
+          "Suíte, quarto infantil e ambientes de apoio no pavimento superior.",
+          "Documentação elétrica e hidrossanitária, fachadas e seções."
+        ],
+        "en": [
+          "Shared living spaces, kitchen, outdoor dining and lounge on the ground floor.",
+          "A primary suite, child’s bedroom and supporting spaces upstairs.",
+          "Electrical and plumbing documentation, elevations and sections."
+        ]
+      }
+    },
+    {
+      "id": "cool-barber",
+      "title": {
+        "pt": "Cool Barber Shop",
+        "en": "Cool Barber Shop"
+      },
+      "category": "commercial",
+      "year": 2019,
+      "location": {
+        "pt": "Bonsucesso, Rio de Janeiro, Brasil",
+        "en": "Bonsucesso, Rio de Janeiro, Brazil"
+      },
+      "pages": [
+        14,
+        15,
+        16
+      ],
+      "software": [
+        "Revit",
+        "Photoshop"
+      ],
+      "role": {
+        "pt": "Projeto de interiores apresentado no portfólio da arquiteta.",
+        "en": "Interior design presented in the architect’s portfolio."
+      },
+      "summary": {
+        "pt": "Uma barbearia de inspiração retrô que reúne atendimento, bar, lounge, loja de roupas e estúdio de tatuagem. Tijolos aparentes, mobiliário personalizado e iluminação acolhedora constroem uma identidade contínua entre os ambientes.",
+        "en": "A retro-inspired barbershop bringing together grooming stations, a bar, lounge, menswear retail and a tattoo studio. Exposed brick, custom furnishings and warm lighting connect the spaces through a coherent identity."
+      },
+      "assets": [
+        {
+          "page": 14,
+          "kind": "photo",
+          "description": "Vista geral da barbearia com marcas fotográficas existentes"
+        },
+        {
+          "page": 15,
+          "kind": "photos",
+          "description": "Lounge, bar, espera e expositor de roupas"
+        },
+        {
+          "page": 16,
+          "kind": "drawings-renders",
+          "description": "Planta, cortes e vistas"
+        }
+      ],
+      "status": "photographs in source; exact photographer and construction responsibility not established",
+      "context": {
+        "pt": "O desafio é reunir atividades distintas em uma experiência de marca coesa. O projeto usa o tijolo original como base para uma linguagem industrial e retrô, com mobiliário personalizado e distribuição dos serviços que favorece a circulação.",
+        "en": "The brief brings several different activities together within a coherent brand experience. Original brickwork anchors an industrial, retro-inspired interior, with custom furnishings and service zones arranged to support comfortable circulation."
+      },
+      "credits": {
+        "pt": "Renata Guimarães · portfólio de interiores. Marcas existentes nas fotografias preservadas.",
+        "en": "Renata Guimarães · interior design portfolio. Existing photographic marks retained."
+      },
+      "solutions": {
+        "pt": [
+          "Preservação das paredes de tijolos aparentes.",
+          "Setorização de diferentes serviços e cuidado com os fluxos.",
+          "Plantas, cortes, fachada e vistas do estúdio de tatuagem."
+        ],
+        "en": [
+          "Preservation of the original exposed-brick walls.",
+          "Distinct service zones connected by carefully planned circulation.",
+          "Plans, sections, storefront documentation and tattoo-studio views."
+        ]
+      }
+    },
+    {
+      "id": "pastore",
+      "title": {
+        "pt": "Centro Médico Pastore",
+        "en": "Centro Médico Pastore"
+      },
+      "category": "healthcare",
+      "year": 2024,
+      "location": {
+        "pt": "Bangu, Rio de Janeiro, Brasil",
+        "en": "Bangu, Rio de Janeiro, Brazil"
+      },
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "software": [
+        "AutoCAD",
+        "Revit",
+        "Photoshop"
+      ],
+      "role": {
+        "pt": "Projeto independente de reforma, interiores e documentação técnica.",
+        "en": "Independent renovation design, interiors and technical documentation."
+      },
+      "summary": {
+        "pt": "Projeto de reforma e interiores para uma clínica em shopping, com recepção, consultórios, diagnóstico e áreas de apoio. A organização prioriza circulação, acessibilidade e integração das necessidades de atendimento em uma área compacta.",
+        "en": "A clinic renovation and interior fit-out within a shopping centre, bringing together reception, consultation rooms, diagnostics and support areas. The layout prioritizes circulation, accessibility and clinical functions within a compact footprint."
+      },
+      "assets": [
+        {
+          "page": 17,
+          "kind": "render",
+          "description": "Recepção e fachada interna da clínica"
+        },
+        {
+          "page": 18,
+          "kind": "drawings-renders",
+          "description": "Legalização de letreiro e fachada; contém dados de terceiros na prancha original"
+        },
+        {
+          "page": 19,
+          "kind": "drawings",
+          "description": "Layout, cotas e cortes"
+        },
+        {
+          "page": 20,
+          "kind": "drawings",
+          "description": "Demolir/construir, hidráulica e elétrica"
+        },
+        {
+          "page": 21,
+          "kind": "drawings",
+          "description": "Forro, iluminação e paginação"
+        }
+      ],
+      "status": "design; source describes regulatory intent but do not claim independently verified approvals",
+      "context": {
+        "pt": "A clínica combina atendimento ambulatorial e diagnóstico em uma área compacta dentro de um shopping. O conjunto de desenhos contempla consultórios, áreas de exame, circulação, recepção e apoio, além de sinalização, materiais e interfaces com instalações.",
+        "en": "The clinic combines consultations and diagnostics within a compact shopping-centre unit. The drawing package covers consultation and examination rooms, circulation, reception and support spaces, alongside signage, materials and building-services interfaces."
+      },
+      "credits": {
+        "pt": "Renata Guimarães · projeto independente para Centro Médico Pastore.",
+        "en": "Renata Guimarães · independent project for Centro Médico Pastore."
+      },
+      "solutions": {
+        "pt": [
+          "Sete consultórios, ultrassonografia, radiologia, audiometria e coleta.",
+          "Banheiro acessível e previsão de proteção radiológica descrita nas pranchas.",
+          "Documentação de layout, letreiro, demolição e construção, pontos hidráulicos e elétricos, iluminação, forro e paginação."
+        ],
+        "en": [
+          "Seven consultation rooms, ultrasound, radiology, audiometry and sample collection.",
+          "An accessible restroom and radiological shielding provisions shown in the drawings.",
+          "Layout and signage documentation, demolition and construction plans, plumbing and electrical points, lighting, ceilings and floor finishes."
+        ]
+      }
+    },
+    {
+      "id": "r2s-med",
+      "title": {
+        "pt": "R2S Med",
+        "en": "R2S Med"
+      },
+      "category": "workplace",
+      "year": 2025,
+      "location": {
+        "pt": "Taquara, Rio de Janeiro, Brasil",
+        "en": "Taquara, Rio de Janeiro, Brazil"
+      },
+      "pages": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "software": [
+        "Revit",
+        "Lumion"
+      ],
+      "role": {
+        "pt": "Projeto independente de interiores, documentação e visualização.",
+        "en": "Independent interior design, documentation and visualization."
+      },
+      "summary": {
+        "pt": "Reforma dos ambientes corporativos no pavimento superior de uma empresa de vendas farmacêuticas. O mezanino organiza espaços de direção, vendas, logística e apoio, conciliando privacidade, colaboração e circulação.",
+        "en": "An upper-floor workplace renovation for a pharmaceutical sales company. The mezzanine organizes executive, sales, logistics and support spaces, balancing privacy, collaboration and circulation."
+      },
+      "assets": [
+        {
+          "page": 22,
+          "kind": "render",
+          "description": "Vista do mezanino sobre o armazenamento; ignorar legenda colada da barbearia"
+        },
+        {
+          "page": 23,
+          "kind": "renders",
+          "description": "Circulação, espera e salas de trabalho; não reproduzir Lorem ipsum"
+        },
+        {
+          "page": 24,
+          "kind": "drawing",
+          "description": "Planta do pavimento superior"
+        },
+        {
+          "page": 25,
+          "kind": "drawing",
+          "description": "Pontos hidráulicos"
+        },
+        {
+          "page": 26,
+          "kind": "drawing",
+          "description": "Iluminação"
+        }
+      ],
+      "status": "design; construction completion not established",
+      "context": {
+        "pt": "O pavimento administrativo em mezanino estabelece uma relação visual com a área de armazenamento. O projeto diferencia atividades operacionais e administrativas, acomoda salas privadas e trabalho compartilhado e inclui áreas de descompressão na circulação.",
+        "en": "The administrative mezzanine maintains a visual relationship with the storage area below. The design distinguishes operational and administrative activities, accommodates both private offices and shared workspaces, and integrates breakout seating into circulation areas."
+      },
+      "credits": {
+        "pt": "Renata Guimarães · projeto independente para R2S Med.",
+        "en": "Renata Guimarães · independent project for R2S Med."
+      },
+      "solutions": {
+        "pt": [
+          "Integração visual entre o mezanino administrativo e o armazenamento.",
+          "Ambientes de descompressão e identidade visual aplicada aos interiores.",
+          "Plantas de layout, pontos hidráulicos e iluminação com perfis de LED e spots."
+        ],
+        "en": [
+          "Visual connections between the administrative mezzanine and storage below.",
+          "Breakout spaces and brand identity integrated into the interiors.",
+          "Layout, plumbing-point and lighting plans using LED profiles and directional spotlights."
+        ]
+      }
+    },
+    {
+      "id": "na-regua",
+      "title": {
+        "pt": "Na Régua · Habitação social",
+        "en": "Na Régua · Social housing"
+      },
+      "category": "social",
+      "year": 2022,
+      "location": {
+        "pt": "Vila Kennedy, Rio de Janeiro, Brasil",
+        "en": "Vila Kennedy, Rio de Janeiro, Brazil"
+      },
+      "pages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "software": [
+        "AutoCAD"
+      ],
+      "role": {
+        "pt": "Assistência técnica e desenvolvimento de projetos habitacionais.",
+        "en": "Technical assistance and housing-design development."
+      },
+      "summary": {
+        "pt": "Assistência técnica em habitação de interesse social, com levantamentos, propostas arquitetônicas e relatórios de materiais. O estudo apresentado desenvolve alternativas de reorganização de uma moradia, com banheiro independente, quartos e circulação mais segura.",
+        "en": "Architectural technical assistance for social housing, including surveys, design proposals and material reports. The featured case explores a reorganized home with a separate bathroom, bedrooms and safer circulation."
+      },
+      "assets": [
+        {
+          "page": 27,
+          "kind": "drawings",
+          "description": "Introdução ATHIS e planta; legenda de fachada copiada está errada"
+        },
+        {
+          "page": 28,
+          "kind": "drawings-field-photo",
+          "description": "Estudo D001 e visita domiciliar com família"
+        },
+        {
+          "page": 29,
+          "kind": "drawings",
+          "description": "Demolir/construir, cobertura, corte, hidráulica e iluminação"
+        },
+        {
+          "page": 30,
+          "kind": "drawings",
+          "description": "Instalações, cobertura, estrutura e detalhe da calha"
+        },
+        {
+          "page": 31,
+          "kind": "field-photos",
+          "description": "Condições prévias e relato da própria arquiteta, não depoimento de cliente"
+        }
+      ],
+      "status": "technical assistance and design, explicitly NOT construction execution",
+      "cautions": [
+        "Não transformar 170 projetos em 170 obras executadas.",
+        "Não transformar fala em primeira pessoa da p31 em depoimento de cliente.",
+        "Fotos de família e vulnerabilidade não são necessárias no destaque; preferir desenhos.",
+        "P31 diz Honorable Mention Rio State Government, mas não identifica prêmio oficial; não ampliar afirmação."
+      ],
+      "context": {
+        "pt": "O programa oferece assistência técnica gratuita a famílias em situação de vulnerabilidade habitacional. No estudo D001, duas alternativas de projeto reorganizam uma residência para separar o banheiro, criar quartos e melhorar circulação e condições sanitárias. A atuação reúne assistência técnica, projeto e orientação para melhorias habitacionais.",
+        "en": "The programme provides free architectural technical assistance to households facing vulnerable housing conditions. In case study D001, two proposals reorganize a home to provide a separate bathroom, new bedrooms, improved circulation and better sanitary conditions. The scope brings together technical assistance, design and guidance for housing improvements."
+      },
+      "credits": {
+        "pt": "Programa Na Régua · Governo do Estado do Rio de Janeiro / SEINFRA RJ / UERJ. Assistência técnica e projeto: Renata Guimarães.",
+        "en": "Na Régua programme · Rio de Janeiro State Government / SEINFRA RJ / UERJ. Technical assistance and design: Renata Guimarães."
+      },
+      "solutions": {
+        "pt": [
+          "O portfólio registra participação em mais de 170 projetos de moradias.",
+          "Duas alternativas para o estudo de caso Residência Letícia (D001).",
+          "Plantas, cobertura, instalações, seções e relatório de materiais para orientar uma possível execução."
+        ],
+        "en": [
+          "The portfolio records involvement in more than 170 household projects.",
+          "Two design alternatives for the featured Letícia Residence case study (D001).",
+          "Plans, roofing, services, sections and material reports to guide potential implementation."
+        ]
+      }
+    },
+    {
+      "id": "krauzer",
+      "title": {
+        "pt": "Residência Krauzer",
+        "en": "Krauzer Residence"
+      },
+      "category": "residential",
+      "year": 2024,
+      "location": {
+        "pt": "Seattle, Washington, Estados Unidos",
+        "en": "Seattle, Washington, United States"
+      },
+      "pages": [
+        32,
+        33
+      ],
+      "software": [
+        "AutoCAD"
+      ],
+      "role": {
+        "pt": "Colaboração nos estudos de layout e desenhos de projeto.",
+        "en": "Collaboration on layout studies and project drawings."
+      },
+      "summary": {
+        "pt": "Estudo de reforma e ampliação vertical de uma residência unifamiliar em Seattle. O novo pavimento acomoda uma suíte com quarto, banheiro e closet, articulada à estrutura e ao térreo existentes.",
+        "en": "A renovation and upper-floor addition for a single-family home in Seattle. The new level accommodates a primary suite with a bedroom, bathroom and walk-in closet, integrated with the existing structure and ground floor."
+      },
+      "assets": [
+        {
+          "page": 32,
+          "kind": "drawings",
+          "description": "Plantas de reforma, crédito Huber Architecture"
+        },
+        {
+          "page": 33,
+          "kind": "drawings",
+          "description": "Elevações, cortes e detalhes construtivos, crédito Huber Architecture"
+        }
+      ],
+      "status": "collaborative design; preserve Huber attribution and do not imply US licensure or sole authorship",
+      "context": {
+        "pt": "O acréscimo de um pavimento busca acomodar uma suíte completa e melhorar a privacidade sem perder a integração com a casa existente. Renata colaborou com o arquiteto responsável nos estudos iniciais e na elaboração de desenhos de projeto.",
+        "en": "The additional storey accommodates a complete primary suite and improves privacy while remaining connected to the existing house. Renata collaborated with the lead architect on early design studies and the production of project drawings."
+      },
+      "credits": {
+        "pt": "Huber Architecture, Seattle · colaboração de projeto: Renata Guimarães.",
+        "en": "Huber Architecture, Seattle · design collaboration: Renata Guimarães."
+      },
+      "solutions": {
+        "pt": [
+          "Participação na fase inicial de projeto, estudos de layout e desenhos técnicos.",
+          "Desenvolvimento remoto em colaboração com o escritório Huber Architecture.",
+          "Plantas, elevações, cortes e detalhes de parede."
+        ],
+        "en": [
+          "Contributions to early design, layout studies and detailed drawings.",
+          "Remote collaboration with Huber Architecture.",
+          "Plans, elevations, sections and wall details."
+        ]
+      }
+    },
+    {
+      "id": "stark",
+      "title": {
+        "pt": "Residência Stark",
+        "en": "Stark Residence"
+      },
+      "category": "residential",
+      "year": 2024,
+      "location": {
+        "pt": "Seattle, Washington, Estados Unidos",
+        "en": "Seattle, Washington, United States"
+      },
+      "pages": [
+        34,
+        35
+      ],
+      "software": [
+        "Revit"
+      ],
+      "role": {
+        "pt": "Alternativas de layout, modelagem 3D e desenhos para o cliente.",
+        "en": "Layout alternatives, 3D modeling and client-review drawings."
+      },
+      "summary": {
+        "pt": "Proposta de conversão de uma garagem em um estúdio residencial compacto. Estudos de layout integram dormitório, banheiro e área de estar, explorando flexibilidade, privacidade e aproveitamento do espaço existente.",
+        "en": "A proposal to convert an existing garage into a compact residential studio. Layout studies bring together sleeping, bathing and living spaces, exploring flexibility, privacy and efficient use of the existing footprint."
+      },
+      "assets": [
+        {
+          "page": 34,
+          "kind": "drawing-render",
+          "description": "Planta e planta 3D da opção 4, crédito Huber Architecture"
+        },
+        {
+          "page": 35,
+          "kind": "drawings",
+          "description": "Seção, detalhe de parede e quatro elevações"
+        }
+      ],
+      "status": "collaborative design; preserve Huber attribution and do not imply US licensure or sole authorship",
+      "context": {
+        "pt": "Uma garagem existente é estudada como unidade compacta, com possibilidades de uso como acomodação para hóspedes, locação ou retiro pessoal. A participação de Renata inclui alternativas de configuração, modelagem em Revit e desenhos para avaliação do cliente.",
+        "en": "An existing garage is explored as a compact unit with potential uses as guest accommodation, a rental unit or a personal retreat. Renata’s contribution includes layout alternatives, Revit modeling and drawings for client review."
+      },
+      "credits": {
+        "pt": "Huber Architecture, Seattle · colaboração de projeto: Renata Guimarães.",
+        "en": "Huber Architecture, Seattle · design collaboration: Renata Guimarães."
+      },
+      "solutions": {
+        "pt": [
+          "Desenvolvimento de alternativas de layout e planejamento dos interiores.",
+          "Modelagem e visualização 3D em Revit.",
+          "Desenhos para análise do cliente, elevações e detalhes construtivos."
+        ],
+        "en": [
+          "Layout alternatives and interior spatial planning.",
+          "Revit modeling and 3D visualization.",
+          "Client-review drawings, elevations and construction details."
+        ]
+      }
+    },
+    {
+      "id": "mag",
+      "title": {
+        "pt": "MAG · Museu Águas da Guanabara",
+        "en": "MAG · Guanabara Waters Museum"
+      },
+      "category": "academic",
+      "year": 2017,
+      "location": {
+        "pt": "Rio de Janeiro, Brasil",
+        "en": "Rio de Janeiro, Brazil"
+      },
+      "pages": [
+        36,
+        37,
+        38
+      ],
+      "software": [
+        "Revit",
+        "Lumion",
+        "Photoshop"
+      ],
+      "role": {
+        "pt": "Projeto acadêmico; modelagem e representação gráfica individuais.",
+        "en": "Academic project; individual modeling and graphic representation."
+      },
+      "summary": {
+        "pt": "Estudo acadêmico de um museu voltado à educação ambiental junto à Baía de Guanabara. A cobertura ondulada dialoga com o mar, enquanto o programa reúne aquário, exposições, auditório, biblioteca e espaços educativos.",
+        "en": "An academic museum proposal focused on environmental education along Guanabara Bay. Its wave-like roof responds to the waterfront, while the programme brings together an aquarium, exhibitions, an auditorium, a library and learning spaces."
+      },
+      "assets": [
+        {
+          "page": 36,
+          "kind": "render",
+          "description": "Vista aérea de maquete digital da proposta acadêmica"
+        },
+        {
+          "page": 37,
+          "kind": "renders",
+          "description": "Perspectivas da fachada e dos interiores"
+        },
+        {
+          "page": 38,
+          "kind": "drawings-renders",
+          "description": "Prancha conceitual, plantas, cortes e perspectivas"
+        }
+      ],
+      "status": "academic unbuilt concept",
+      "cautions": [
+        "O portfólio diz indicado ao Ibero-American Architecture Award na Espanha; não confundir indicação com vitória e evitar destaque de prêmio sem denominação oficial precisa."
+      ],
+      "context": {
+        "pt": "Desenvolvido no quinto período da graduação, o estudo relaciona arquitetura, paisagem e consciência ambiental. A implantação junto à Baía de Guanabara e as formas curvas de inspiração modernista orientam a experiência de visita e as vistas para o mar e o Pão de Açúcar.",
+        "en": "Developed during the fifth semester of architecture school, the proposal connects architecture, landscape and environmental awareness. Its setting along Guanabara Bay and modernist-inspired curved forms shape the visitor experience and views toward the sea and Sugarloaf Mountain."
+      },
+      "credits": {
+        "pt": "Renata Guimarães · projeto acadêmico, 2017.",
+        "en": "Renata Guimarães · academic project, 2017."
+      },
+      "solutions": {
+        "pt": [
+          "Desenvolvido no quinto período da graduação.",
+          "Formas curvas inspiradas na arquitetura de Oscar Niemeyer.",
+          "Modelagem em Revit, imagens em Lumion e Photoshop, estudos conceituais e desenhos técnicos."
+        ],
+        "en": [
+          "Developed during the fifth semester of architecture school.",
+          "Curved forms inspired by Oscar Niemeyer’s architecture.",
+          "Revit modeling, Lumion and Photoshop visualization, conceptual studies and technical drawings."
+        ]
+      }
+    },
+    {
+      "id": "crea-rj",
+      "title": {
+        "pt": "CREA-RJ · Setor de Fiscalização",
+        "en": "CREA-RJ · Inspection Department"
+      },
+      "category": "institutional",
+      "year": 2026,
+      "location": {
+        "pt": "Rio de Janeiro, Brasil",
+        "en": "Rio de Janeiro, Brazil"
+      },
+      "pages": [
+        39
+      ],
+      "software": [
+        "Revit"
+      ],
+      "role": {
+        "pt": "Projeto de reforma e documentação arquitetônica, via Kingline Engenharia.",
+        "en": "Renovation design and architectural documentation, via Kingline Engenharia."
+      },
+      "summary": {
+        "pt": "Proposta de reforma para o Setor de Fiscalização, no sexto andar da sede do CREA-RJ. O projeto reorganiza os postos de trabalho, divisórias e áreas de reunião, com atualização de pontos elétricos, acabamentos e sinalização institucional.",
+        "en": "A renovation proposal for the Inspection Department on the sixth floor of CREA-RJ headquarters. The design reorganizes workstations, partitions and meeting areas, with updated electrical points, finishes and institutional signage."
+      },
+      "assets": [
+        {
+          "page": 39,
+          "kind": "drawings-renders",
+          "description": "Prancha de reforma, cortes, axonométrica e duas perspectivas; crédito Renata G. e Rodolfo Ribeiro"
+        }
+      ],
+      "status": "renovation proposal, dated 10/07/2026 in drawing",
+      "context": {
+        "pt": "O estudo para o sexto andar da sede do CREA-RJ parte das necessidades operacionais da Fiscalização. A documentação articula postos de trabalho, gerências, reunião e circulação, com novas divisórias, vidros e organização das instalações.",
+        "en": "The proposal for the sixth floor of CREA-RJ headquarters responds to the Inspection Department’s operational needs. Its documentation coordinates workstations, management offices, meeting rooms and circulation through new partitions, glazing and building-services arrangements."
+      },
+      "credits": {
+        "pt": "Renata Guimarães, via Kingline Engenharia. A prancha também credita o engenheiro Rodolfo Ribeiro.",
+        "en": "Renata Guimarães, via Kingline Engenharia. The drawing sheet also credits engineer Rodolfo Ribeiro."
+      },
+      "solutions": {
+        "pt": [
+          "Layout funcional orientado às necessidades de operação do departamento.",
+          "Divisórias baixas, drywall e painéis de vidro fixo.",
+          "Plantas de reforma, elétrica e paginação, cortes e visualizações 3D."
+        ],
+        "en": [
+          "A functional layout responding to the department’s operational needs.",
+          "Low partitions, drywall and fixed glass panels.",
+          "Renovation, electrical and floor-finish plans, sections and 3D visualizations."
+        ]
+      }
+    }
+  ]
+}
