@@ -27,18 +27,62 @@
   }
   filters.forEach(b=>b.addEventListener('click',()=>filter(b.dataset.filter,true)));
   if(filters.length)filter(new URL(location.href).searchParams.get('category')||'all',false);
-  const gallery=[...document.querySelectorAll('.gallery-item')],dialog=document.querySelector('.lightbox');
+  const galleryItems=[...document.querySelectorAll('.gallery-item')],dialog=document.querySelector('.lightbox');
   if(dialog){
     const photo=document.getElementById('lightbox-image'),caption=document.getElementById('gallery-caption'),position=document.getElementById('gallery-count');
-    let active=0,trigger=null;
-    function display(index){active=(index+gallery.length)%gallery.length;const item=gallery[active];photo.src=item.dataset.full;photo.alt=item.dataset.caption;caption.textContent=item.dataset.caption;position.textContent=`${active+1} ${document.body.dataset.of} ${gallery.length}`;}
+    const viewport=dialog.querySelector('.lightbox-viewport'),zoom=dialog.querySelector('.lightbox-zoom'),original=dialog.querySelector('.lightbox-original');
+    let gallery=[],active=0,trigger=null,zoomed=false;
+    function setZoom(enabled){
+      zoomed=Boolean(enabled&&viewport&&photo.naturalWidth);
+      viewport?.classList.toggle('is-zoomed',zoomed);
+      if(zoomed)photo.style.setProperty('--zoom-width',`${photo.naturalWidth}px`);
+      else photo.style.removeProperty('--zoom-width');
+      if(zoom){zoom.setAttribute('aria-pressed',String(zoomed));zoom.textContent=zoomed?zoom.dataset.zoomOut:zoom.dataset.zoomIn;}
+      if(viewport){viewport.scrollLeft=0;viewport.scrollTop=0;if(zoomed)viewport.focus();}
+    }
+    function updateZoom(){
+      if(!zoom)return;
+      // Display original pixels; low-resolution photographs are never enlarged artificially.
+      zoom.disabled=!photo.naturalWidth||(!zoomed&&photo.clientWidth>0&&photo.naturalWidth<=photo.clientWidth+1&&photo.naturalHeight<=photo.clientHeight+1);
+    }
+    function display(index){
+      if(!gallery.length)return;
+      active=(index+gallery.length)%gallery.length;
+      const item=gallery[active];
+      setZoom(false);
+      if(zoom)zoom.disabled=true;
+      photo.src=item.dataset.full;
+      photo.alt=item.dataset.caption;
+      caption.textContent=item.dataset.caption;
+      position.textContent=`${active+1} ${document.body.dataset.of} ${gallery.length}`;
+      if(original)original.href=item.dataset.full;
+      if(photo.complete)updateZoom();
+    }
     function close(){dialog.close()}
-    gallery.forEach((item,i)=>item.addEventListener('click',()=>{trigger=item;display(i);dialog.showModal();document.body.classList.add('gallery-open');dialog.querySelector('.close').focus()}));
+    galleryItems.forEach(item=>item.addEventListener('click',()=>{
+      trigger=item;
+      const group=item.closest('.gallery-grid');
+      gallery=group?[...group.querySelectorAll('.gallery-item')]:[item];
+      display(gallery.indexOf(item));
+      dialog.showModal();
+      document.body.classList.add('gallery-open');
+      dialog.querySelector('.close').focus();
+      if(photo.complete)updateZoom();
+    }));
+    photo.addEventListener('load',updateZoom);
+    photo.addEventListener('error',()=>{setZoom(false);if(zoom)zoom.disabled=true;});
+    zoom?.addEventListener('click',()=>{setZoom(!zoomed);updateZoom();});
     dialog.querySelector('.close').addEventListener('click',close);
     dialog.querySelector('.prev').addEventListener('click',()=>display(active-1));
     dialog.querySelector('.next').addEventListener('click',()=>display(active+1));
-    dialog.addEventListener('close',()=>{document.body.classList.remove('gallery-open');trigger?.focus()});
+    dialog.addEventListener('close',()=>{setZoom(false);document.body.classList.remove('gallery-open');trigger?.focus()});
     dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close()}});
-    dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();display(active-1)}if(e.key==='ArrowRight'){e.preventDefault();display(active+1)}});
+    dialog.addEventListener('keydown',e=>{
+      if(e.key==='Escape'){e.preventDefault();close();return;}
+      // Arrow keys pan a zoomed image using the viewport's native scrolling.
+      if(zoomed&&viewport?.contains(e.target))return;
+      if(e.key==='ArrowLeft'){e.preventDefault();display(active-1)}
+      if(e.key==='ArrowRight'){e.preventDefault();display(active+1)}
+    });
   }
 })();

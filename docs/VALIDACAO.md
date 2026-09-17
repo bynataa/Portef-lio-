@@ -1,17 +1,6 @@
 # Validação técnica
 
-## Verificações executadas
-
-- Geração de 30 páginas de conteúdo em português e inglês e duas páginas de erro traduzidas.
-- Verificação de 1.026 referências locais e externas, com existência de arquivos e âncoras nas referências locais.
-- Verificação de texto alternativo e dimensões em 148 ocorrências de imagens.
-- Equivalência das chaves de tradução PT/EN, dez projetos e cobertura das páginas de projetos do portfólio.
-- 66 verificações de DOM e lógica em 30 páginas: filtros, contagens, parâmetros de URL, troca de idioma, persistência e indisponibilidade de armazenamento local, menu, rótulos, fechamento por Escape e navegação das galerias.
-- Análise da sintaxe CSS e das regras aplicáveis a 360, 390, 768 e 1440 px, incluindo foco visível e movimento reduzido.
-- Abertura e verificação de 91 imagens WebP.
-- Recomposição do PDF com tamanho e SHA-256 correspondentes ao documento original: `ad13461630be2bb801314cf1666805d4ac81ece781f493647cc12631f7789d6b`.
-
-As verificações podem ser reproduzidas com:
+## Verificações reproduzíveis
 
 ```bash
 npm ci
@@ -20,18 +9,29 @@ npm run check
 npm run test:dom
 ```
 
-## Alcance e limitações
+O build gera as páginas em português e inglês, duas páginas de erro, sitemap e arquivos estáticos. Também reconstitui o PDF e confere sua integridade contra o manifesto de origem.
 
-Os testes de DOM utilizam `linkedom` e Node VM. Navegação, armazenamento, foco e diálogo são simulados. Esses resultados não representam renderização nem comportamento nativo de um navegador.
+`check` verifica referências locais, imagens, metadados, paridade das traduções, seleção das galerias e cobertura das 35 páginas de projetos do portfólio. As dez galerias principais possuem legendas em português e inglês; as pranchas completas permanecem na seção expansível.
 
-A abertura da prévia local foi bloqueada pelo navegador disponível. Não foram medidas rolagem horizontal, cortes de texto, desempenho real, Lighthouse ou Core Web Vitals. O foco nativo do diálogo e a apresentação em diferentes tamanhos de tela precisam ser verificados no endereço público.
+`test:dom` executa o JavaScript de produção em uma simulação com `linkedom` e Node VM. A verificação abrange filtros, navegação PT/EN, persistência de idioma, menu, grupos independentes de imagens e pranchas, zoom, abertura do arquivo original, fechamento e retorno de foco. Também confere o número e a mensagem preparada nos links de WhatsApp de cada projeto, sem enviar mensagens.
 
-As URLs de contato foram conferidas nos materiais da profissional. Nenhuma mensagem foi enviada, e o recebimento pelos canais não foi testado. A interface abre os canais diretamente e não exibe confirmação de envio.
+Os resultados detalhados ficam em `analysis/qa-report.json` e `analysis/qa-report.md`. Defina `QA_REPORT_DIR` para usar outro diretório.
 
-## Verificações em navegador
+## Limites das verificações automáticas
 
-1. Abrir as páginas em 360, 390, 768 e 1440 px e conferir a composição, as imagens e a ausência de rolagem horizontal.
-2. Navegar por Tab e Shift+Tab, abrir o menu e conferir os estados de foco.
-3. Abrir uma galeria, avançar e voltar por botões e setas, fechar com Escape e conferir o retorno do foco.
-4. Alternar PT/EN em cada página, aplicar filtros e verificar a preferência de idioma ao retornar.
-5. Conferir textos, contatos e créditos com a profissional.
+A simulação não possui mecanismo de renderização, rolagem, foco nativo ou carregamento real de imagens. As regras CSS são analisadas para 360, 390, 768 e 1440 px, mas isso não substitui testes visuais em navegadores e aparelhos.
+
+Os canais de contato foram conferidos nos materiais da profissional. A interface prepara mensagens no aplicativo escolhido; o visitante revisa e envia. O recebimento não faz parte dos testes.
+
+## Conferência em navegador após a publicação
+
+- Verificar a abertura, o menu, o enquadramento das imagens e a legibilidade em computador e celular.
+- Alternar PT/EN na mesma página, filtrar projetos e verificar a preferência ao retornar.
+- Abrir uma imagem, avançar e voltar por botões e teclado, ampliar, rolar os detalhes, ajustar à tela e fechar com Escape.
+- Abrir as pranchas completas e confirmar que sua navegação permanece separada da galeria principal.
+- Conferir a abertura do arquivo original e o retorno do foco ao item que abriu a galeria.
+- Conferir os links e o texto preparado para contato, sem enviar mensagens de teste à profissional.
+
+## Imagens de origem
+
+O zoom usa os pixels disponíveis no arquivo. O retrato de Renata continua limitado a 282 × 499 px; o layout evita ampliá-lo além dessa largura. Fotografias e renders originais em resolução superior podem substituir as imagens extraídas do PDF, preservando os créditos e as legendas.

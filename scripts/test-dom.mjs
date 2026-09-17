@@ -16,13 +16,15 @@ const dist = path.join(root, 'dist');
 const source = fs.readFileSync(path.join(root, 'public/app.js'), 'utf8');
 const reportDir = process.env.QA_REPORT_DIR || path.join(root, 'analysis');
 const site = JSON.parse(fs.readFileSync(path.join(root, 'src/site.json'), 'utf8'));
+const ui = JSON.parse(fs.readFileSync(path.join(root, 'src/ui.json'), 'utf8'));
+const projects = JSON.parse(fs.readFileSync(path.join(root, 'src/projects.json'), 'utf8')).projects;
 const base = site.url.replace(/\/+$/, '') + '/';
 const basePath = new URL(base).pathname;
 const report = {
   generatedAt: new Date().toISOString(),
   methodology: 'DOM event simulation using linkedom + node:vm, and CSS AST inspection using css-tree. No browser, layout engine or screen rendering was used.',
-  stubs: ['URL-resolved anchor href', 'location.assign/replace and history.replaceState', 'localStorage', 'focus tracking', 'dialog.showModal/close and fixed dialog hit-test rectangle'],
-  notValidated: ['Actual visual appearance, overflow or text clipping at any viewport', 'Native dialog focus trap and Escape behavior', 'Real browser keyboard/focus behavior', 'Real contact delivery, remote service responses or production deployment'],
+  stubs: ['URL-resolved anchor href', 'location.assign/replace and history.replaceState', 'localStorage', 'focus tracking', 'dialog.showModal/close and fixed dialog hit-test rectangle', 'image load events, intrinsic pixel dimensions and displayed dimensions'],
+  notValidated: ['Actual visual appearance, overflow or text clipping at any viewport', 'Native dialog focus trap, image loading and zoom/panning layout', 'Real browser keyboard/focus behavior', 'Real contact delivery, remote service responses or production deployment'],
   tests: [],
   css: {}
 };
@@ -57,6 +59,21 @@ function environment(file, {query='', hash='', storage=new Map(), brokenStorage=
     dialog.close=()=>{dialog.removeAttribute('open');dialog.dispatchEvent(new window.Event('close'));};
     dialog.getBoundingClientRect=()=>({left:20,right:980,top:20,bottom:780});
   }
+  const photo=document.querySelector('#lightbox-image');
+  const imageState={width:0,height:0,displayWidth:0,displayHeight:0,complete:false};
+  if(photo) {
+    Object.defineProperties(photo,{
+      naturalWidth:{get:()=>imageState.width},naturalHeight:{get:()=>imageState.height},
+      clientWidth:{get:()=>imageState.displayWidth},clientHeight:{get:()=>imageState.displayHeight},
+      complete:{get:()=>imageState.complete},
+      src:{get:()=>photo.getAttribute('src'),set(value){photo.setAttribute('src',value);Object.assign(imageState,{width:0,height:0,complete:false});}}
+    });
+  }
+  const loadImage=({width=1800,height=1200,displayWidth=720,displayHeight=480}={})=>{
+    assert.ok(photo,'Image loading requires a project lightbox');
+    Object.assign(imageState,{width,height,displayWidth,displayHeight,complete:true});
+    photo.dispatchEvent(new window.Event('load'));
+  };
   const localStorage={
     getItem(key){if(brokenStorage)throw new Error('Storage unavailable');return storage.get(key)??null;},
     setItem(key,value){if(brokenStorage)throw new Error('Storage unavailable');storage.set(key,String(value));}
@@ -75,7 +92,7 @@ function environment(file, {query='', hash='', storage=new Map(), brokenStorage=
     const event=new window.Event('keydown',{bubbles:true,cancelable:true});
     Object.defineProperty(event,'key',{value:key});element.dispatchEvent(event);return event;
   };
-  return {document,window,location,storage,navigation,click,key,get focused(){return focused;}};
+  return {document,window,location,storage,navigation,click,key,loadImage,get focused(){return focused;}};
 }
 const visibleCards = env=>[...env.document.querySelectorAll('[data-category]')].filter(card=>!card.hidden);
 
@@ -152,36 +169,125 @@ for(const file of pages) {
     assert.equal(next.document.documentElement.lang,opposite==='pt'?'pt-BR':'en');
     if(rel.includes('/projects/')) assert.equal(expected.pathname.split('/').at(-2),rel.split('/').at(-2));
   });
-  if(rel.includes('projects/')) test(`${rel}: gallery opens, cycles both ways, updates alt/caption/count and closes`,()=>{
-    const env=environment(rel),items=[...env.document.querySelectorAll('.gallery-item')];
-    const dialog=env.document.querySelector('.lightbox');
-    assert.ok(items.length>0);
-    env.click(items[0]);
-    assert.ok(dialog.hasAttribute('open'));
-    assert.ok(env.document.body.classList.contains('gallery-open'));
-    assert.equal(env.focused,dialog.querySelector('.close'));
-    const check=index=>{
-      assert.equal(env.document.querySelector('#lightbox-image').getAttribute('src'),items[index].dataset.full);
-      assert.equal(env.document.querySelector('#lightbox-image').alt,items[index].dataset.caption);
-      assert.equal(env.document.querySelector('#gallery-caption').textContent,items[index].dataset.caption);
-      assert.equal(env.document.querySelector('#gallery-count').textContent,`${index+1} ${env.document.body.dataset.of} ${items.length}`);
-    };
-    check(0);env.click(dialog.querySelector('.prev'));check(items.length-1);
-    env.click(dialog.querySelector('.next'));check(0);
-    env.key(dialog,'ArrowLeft');check(items.length-1);
-    env.key(dialog,'ArrowRight');check(0);
-    for(let index=1;index<items.length;index++){env.click(dialog.querySelector('.next'));check(index);}
-    env.click(dialog.querySelector('.next'));check(0);
-    env.click(dialog.querySelector('.close'));
-    assert.ok(!dialog.hasAttribute('open'));
-    assert.ok(!env.document.body.classList.contains('gallery-open'));
-    assert.equal(env.focused,items[0]);
-    env.click(items[items.length-1]);check(items.length-1);
-    env.click(dialog,{x:0,y:0});
-    assert.ok(!dialog.hasAttribute('open'));
-    assert.equal(env.focused,items[items.length-1]);
-  });
+  if(rel.includes('projects/')) {
+    test(`${rel}: image and document galleries navigate independently and return focus`,()=>{
+      const env=environment(rel),dialog=env.document.querySelector('.lightbox');
+      const groups=[...env.document.querySelectorAll('.gallery-grid')];
+      assert.equal(groups.length,2,'Separate image and source-document galleries');
+      assert.ok(groups[1].closest('details.project-documents'));
+      assert.equal(groups[1].closest('details').hasAttribute('open'),false,'Source documents begin collapsed');
+      const sets=groups.map(group=>[...group.querySelectorAll('.gallery-item')]);
+      const allSources=sets.flatMap(items=>items.map(item=>item.dataset.full));
+      assert.equal(new Set(allSources).size,allSources.length,'Groups contain different images');
+      for(const items of sets) {
+        assert.ok(items.length>0);
+        env.click(items[0]);
+        assert.ok(dialog.hasAttribute('open'));
+        assert.ok(env.document.body.classList.contains('gallery-open'));
+        assert.equal(env.focused,dialog.querySelector('.close'));
+        const check=index=>{
+          assert.equal(env.document.querySelector('#lightbox-image').getAttribute('src'),items[index].dataset.full);
+          assert.equal(env.document.querySelector('#lightbox-image').alt,items[index].dataset.caption);
+          assert.equal(env.document.querySelector('#gallery-caption').textContent,items[index].dataset.caption);
+          assert.equal(env.document.querySelector('#gallery-count').textContent,`${index+1} ${env.document.body.dataset.of} ${items.length}`);
+          const original=dialog.querySelector('.lightbox-original');
+          assert.equal(original.href,new URL(items[index].dataset.full,env.location.href).href);
+          assert.equal(original.getAttribute('target'),'_blank');
+          assert.ok(original.rel.split(/\s+/).includes('noopener'));
+        };
+        check(0);env.click(dialog.querySelector('.prev'));check(items.length-1);
+        env.click(dialog.querySelector('.next'));check(0);
+        env.key(dialog,'ArrowLeft');check(items.length-1);
+        env.key(dialog,'ArrowRight');check(0);
+        for(let index=1;index<items.length;index++){env.click(dialog.querySelector('.next'));check(index);}
+        env.click(dialog.querySelector('.next'));check(0);
+        env.click(dialog.querySelector('.close'));
+        assert.ok(!dialog.hasAttribute('open'));
+        assert.ok(!env.document.body.classList.contains('gallery-open'));
+        assert.equal(env.focused,items[0]);
+        env.click(items[items.length-1]);check(items.length-1);
+        env.click(dialog,{x:0,y:0});
+        assert.ok(!dialog.hasAttribute('open'));
+        assert.equal(env.focused,items[items.length-1]);
+      }
+    });
+    test(`${rel}: loaded image zoom, keyboard panning, image changes and close state`,()=>{
+      const env=environment(rel),dialog=env.document.querySelector('.lightbox');
+      const photo=dialog.querySelector('#lightbox-image'),viewport=dialog.querySelector('.lightbox-viewport');
+      const zoom=dialog.querySelector('.lightbox-zoom'),opener=env.document.querySelector('.gallery-item');
+      const t=ui[env.document.body.dataset.lang];
+      assert.equal(viewport.getAttribute('tabindex'),'0');
+      assert.equal(viewport.getAttribute('aria-label'),t.imageViewport);
+      env.click(opener);
+      assert.equal(zoom.disabled,true,'Zoom waits until the source image loads');
+      env.loadImage();
+      assert.equal(zoom.disabled,false);
+      assert.equal(zoom.getAttribute('aria-pressed'),'false');
+      assert.equal(zoom.textContent,t.zoomIn);
+      env.click(zoom);
+      assert.equal(zoom.getAttribute('aria-pressed'),'true');
+      assert.equal(zoom.textContent,t.zoomOut);
+      assert.ok(viewport.classList.contains('is-zoomed'));
+      assert.equal(photo.style.getPropertyValue('--zoom-width'),'1800px','Zoom uses original pixels');
+      assert.equal(env.focused,viewport);
+      const current=photo.getAttribute('src');
+      for(const arrow of ['ArrowLeft','ArrowRight']) {
+        assert.equal(env.key(viewport,arrow).defaultPrevented,false,'Native arrow scrolling remains available');
+        assert.equal(photo.getAttribute('src'),current,'Panning must not change the image');
+      }
+      viewport.scrollLeft=100;viewport.scrollTop=80;
+      env.click(zoom);
+      assert.equal(zoom.getAttribute('aria-pressed'),'false');
+      assert.equal(viewport.scrollLeft,0);assert.equal(viewport.scrollTop,0);
+      assert.ok(!viewport.classList.contains('is-zoomed'));
+      assert.ok(!photo.style.getPropertyValue('--zoom-width'));
+      env.click(zoom);env.click(dialog.querySelector('.next'));
+      assert.equal(zoom.getAttribute('aria-pressed'),'false','Changing images resets zoom');
+      assert.equal(zoom.disabled,true);
+      assert.ok(!photo.style.getPropertyValue('--zoom-width'));
+      env.loadImage({width:282,height:499,displayWidth:282,displayHeight:499});
+      assert.equal(zoom.disabled,true,'Small images are not artificially enlarged');
+      env.loadImage();env.click(zoom);
+      env.key(viewport,'Escape');
+      assert.ok(!dialog.hasAttribute('open'));
+      assert.equal(zoom.getAttribute('aria-pressed'),'false');
+      assert.equal(env.focused,opener);
+      env.click(opener);env.loadImage();env.click(zoom);
+      photo.dispatchEvent(new env.window.Event('error'));
+      assert.equal(zoom.disabled,true);
+      assert.equal(zoom.getAttribute('aria-pressed'),'false');
+    });
+    test(`${rel}: inquiry uses the confirmed WhatsApp number and localized project`,()=>{
+      const env=environment(rel),lang=env.document.body.dataset.lang;
+      const id=rel.split('/').at(-2),project=projects.find(p=>p.id===id);
+      const cta=env.document.querySelector('a.project-inquiry');
+      assert.ok(cta);assert.ok(project);
+      assert.ok(cta.textContent.includes(ui[lang].projectInquiry));
+      const actual=new URL(cta.href),confirmed=new URL(site.whatsapp);
+      assert.equal(actual.origin,confirmed.origin);assert.equal(actual.pathname,confirmed.pathname);
+      assert.equal(actual.searchParams.get('text'),ui[lang].projectMessage.replace('{project}',project.title[lang]));
+      assert.ok(actual.searchParams.get('text').includes(project.title[lang]));
+      assert.equal(cta.getAttribute('target'),'_blank');
+      assert.ok(cta.rel.split(/\s+/).includes('noopener'));
+      assert.equal(env.document.querySelector('form'),null,'Contact stays in the selected messaging service');
+    });
+  }
+
 }
+
+for(const lang of ['pt','en']) test(`${lang}: contact guidance and prepared message are localized`,()=>{
+  const env=environment((lang==='en'?'en/':'')+'contact/index.html'),t=ui[lang];
+  const brief=env.document.querySelector('.contact-brief');
+  assert.ok(brief);
+  assert.equal(brief.querySelector('h2').textContent,t.contactBriefTitle);
+  assert.ok(brief.textContent.includes(t.contactBriefText));
+  assert.deepEqual([...brief.querySelectorAll('li')].map(li=>li.textContent),t.contactBriefItems);
+  const whatsapp=[...env.document.querySelectorAll('a[href]')].find(a=>new URL(a.href).origin===new URL(site.whatsapp).origin);
+  assert.ok(whatsapp);
+  assert.equal(new URL(whatsapp.href).pathname,new URL(site.whatsapp).pathname);
+  assert.equal(new URL(whatsapp.href).searchParams.get('text'),t.contactMessage);
+  assert.equal(env.document.querySelector('form'),null);
+});
 
 test('A returning visitor’s English preference redirects Portuguese home and preserves URL state',()=>{
   const storage=new Map([['renarchi-language','en']]);

@@ -6,10 +6,10 @@ Portfólio de arquitetura e urbanismo de Renata Guimarães, em português e ingl
 
 - Navegação PT/EN com preferência de idioma e páginas equivalentes.
 - Projetos organizados por categoria, com fotografias, renders, desenhos e créditos.
-- Galerias ampliáveis com navegação por teclado.
+- Galerias de imagens e pranchas com navegação por teclado, zoom na resolução original e abertura individual.
 - Layout responsivo, foco visível e suporte a movimento reduzido.
 - Títulos, descrições, prévias de compartilhamento e metadados por idioma.
-- Contato direto por e-mail, WhatsApp, Instagram e telefone.
+- Contato direto por e-mail, WhatsApp, Instagram e telefone, com mensagens preparadas por projeto e idioma.
 - PDF do portfólio disponível para consulta.
 
 ## Executar
@@ -42,6 +42,7 @@ As verificações cobrem arquivos, links internos, imagens, traduções, metadad
 | Perfil, formação, experiência e projetos PT/EN | `src/projects.json` |
 | Imagens e pranchas | `public/assets/` |
 | Legendas e referências das imagens | `public/assets/assets-manifest.json` |
+| Seleção e ordem das imagens de cada projeto | `src/galleries.json` |
 | Estilos | `public/styles.css` |
 | Idioma, menu, filtros e galeria | `public/app.js` |
 | Templates e geração das páginas | `scripts/build.mjs` |
@@ -57,7 +58,9 @@ npm run build
 
 O manifesto `source-assets/portfolio.json` registra o tamanho e a integridade do documento. A substituição do PDF não altera automaticamente as imagens nem os textos dos projetos; esses conteúdos devem ser atualizados nos arquivos indicados acima.
 
-Para adicionar um projeto, use um objeto de `src/projects.json` como referência, defina um `id` único e preencha os campos nos dois idiomas. Adicione as imagens e as legendas ao manifesto e ajuste os mapeamentos de imagens em `scripts/build.mjs`.
+Para adicionar um projeto, use um objeto de `src/projects.json` como referência, defina um `id` único e preencha os campos nos dois idiomas. Adicione as imagens e as legendas ao manifesto e indique seus identificadores, na ordem desejada, em `src/galleries.json`. As páginas indicadas em `pages` permanecem disponíveis na seção expansível de pranchas.
+
+Prefira fotografias e renders originais à extração do PDF. Aumentar o tamanho de uma imagem pequena não recupera detalhes. O zoom da galeria usa a resolução disponível em cada arquivo.
 
 ## Publicação
 

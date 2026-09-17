@@ -1,0 +1,57 @@
+{
+  "brito": [
+    "cover-brito",
+    "brito-living",
+    "brito-staircase",
+    "brito-facade"
+  ],
+  "ambrosini": [
+    "hero-ambrosini",
+    "ambrosini-kitchen",
+    "ambrosini-gourmet",
+    "ambrosini-patio"
+  ],
+  "cool-barber": [
+    "cover-cool",
+    "cool-lounge",
+    "cool-bar",
+    "cool-retail"
+  ],
+  "pastore": [
+    "cover-pastore",
+    "pastore-entrance",
+    "pastore-signage"
+  ],
+  "r2s-med": [
+    "cover-r2s",
+    "r2s-meeting",
+    "r2s-circulation"
+  ],
+  "na-regua": [
+    "cover-na-regua",
+    "na-regua-layout",
+    "na-regua-installations"
+  ],
+  "krauzer": [
+    "cover-krauzer",
+    "krauzer-elevations",
+    "krauzer-sections"
+  ],
+  "stark": [
+    "cover-stark",
+    "stark-layout",
+    "stark-model"
+  ],
+  "mag": [
+    "cover-mag",
+    "mag-exterior",
+    "mag-interior",
+    "mag-hall"
+  ],
+  "crea-rj": [
+    "cover-crea",
+    "crea-workspace",
+    "crea-model",
+    "crea-layout"
+  ]
+}

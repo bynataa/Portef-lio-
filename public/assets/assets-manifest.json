@@ -53,8 +53,8 @@
       },
       "cover": "/assets/cover-cool.webp",
       "coverCaption": {
-        "pt": "Interior da Cool Barber Shop, com tijolos aparentes, mobiliário escuro e iluminação quente.",
-        "en": "Cool Barber Shop interior with exposed brick, dark furniture and warm lighting."
+        "pt": "Fotografia do interior da Cool Barber Shop, com tijolos aparentes, mobiliário escuro e iluminação quente.",
+        "en": "Photograph of the Cool Barber Shop interior with exposed brick, dark furniture and warm lighting."
       }
     },
     "pastore": {
@@ -1515,7 +1515,8 @@
       "caption": {
         "pt": "Renderização noturna da fachada da Residência Brito.",
         "en": "Night rendering of the Brito Residence façade."
-      }
+      },
+      "mediaType": "render"
     },
     "cover-ambrosini": {
       "src": "/assets/cover-ambrosini.webp",
@@ -1527,7 +1528,8 @@
       "caption": {
         "pt": "Renderização noturna da fachada da Residência Ambrosini.",
         "en": "Night rendering of the Ambrosini Residence façade."
-      }
+      },
+      "mediaType": "render"
     },
     "cover-cool": {
       "src": "/assets/cover-cool.webp",
@@ -1537,9 +1539,10 @@
       "sourcePage": 14,
       "sourceKind": "embedded",
       "caption": {
-        "pt": "Interior da Cool Barber Shop, com tijolos aparentes, mobiliário escuro e iluminação quente.",
-        "en": "Cool Barber Shop interior with exposed brick, dark furniture and warm lighting."
-      }
+        "pt": "Fotografia do interior da Cool Barber Shop, com tijolos aparentes, mobiliário escuro e iluminação quente.",
+        "en": "Photograph of the Cool Barber Shop interior with exposed brick, dark furniture and warm lighting."
+      },
+      "mediaType": "photo"
     },
     "cover-pastore": {
       "src": "/assets/cover-pastore.webp",
@@ -1551,7 +1554,8 @@
       "caption": {
         "pt": "Renderização da recepção do Centro Médico Pastore.",
         "en": "Rendering of the Centro Médico Pastore reception."
-      }
+      },
+      "mediaType": "render"
     },
     "cover-r2s": {
       "src": "/assets/cover-r2s.webp",
@@ -1563,7 +1567,8 @@
       "caption": {
         "pt": "Renderização do mezanino e da circulação do escritório R2S Med.",
         "en": "Rendering of the R2S Med office mezzanine and circulation area."
-      }
+      },
+      "mediaType": "render"
     },
     "cover-na-regua": {
       "src": "/assets/cover-na-regua.webp",
@@ -1575,7 +1580,8 @@
       "caption": {
         "pt": "Prancha técnica com planta, cobertura e corte para o programa Na Régua.",
         "en": "Technical board with floor plan, roof plan and section for the Na Régua programme."
-      }
+      },
+      "mediaType": "drawing"
     },
     "cover-krauzer": {
       "src": "/assets/cover-krauzer.webp",
@@ -1587,7 +1593,9 @@
       "caption": {
         "pt": "Plantas da Residência Krauzer, em colaboração com Huber Architecture.",
         "en": "Krauzer Residence plans, in collaboration with Huber Architecture."
-      }
+      },
+      "mediaType": "drawing",
+      "credit": "Huber Architecture"
     },
     "cover-stark": {
       "src": "/assets/cover-stark.webp",
@@ -1599,7 +1607,9 @@
       "caption": {
         "pt": "Estudo da Residência Stark com planta e vista 3D, em colaboração com Huber Architecture.",
         "en": "Stark Residence study with floor plan and 3D view, in collaboration with Huber Architecture."
-      }
+      },
+      "mediaType": "drawing",
+      "credit": "Huber Architecture"
     },
     "cover-mag": {
       "src": "/assets/cover-mag.webp",
@@ -1611,7 +1621,8 @@
       "caption": {
         "pt": "Renderização aérea do projeto acadêmico MAG — Museu Águas da Guanabara.",
         "en": "Aerial rendering of the MAG — Guanabara Waters Museum academic project."
-      }
+      },
+      "mediaType": "render"
     },
     "cover-crea": {
       "src": "/assets/cover-crea.webp",
@@ -1629,7 +1640,8 @@
         587,
         851,
         733
-      ]
+      ],
+      "mediaType": "render"
     },
     "hero-crea": {
       "src": "/assets/hero-crea.webp",
@@ -1647,7 +1659,8 @@
         587,
         851,
         733
-      ]
+      ],
+      "mediaType": "render"
     },
     "portrait-renata": {
       "src": "/assets/portrait-renata.webp",
@@ -1677,7 +1690,232 @@
       "caption": {
         "pt": "Renderização da sala de estar e jantar integradas da Residência Ambrosini.",
         "en": "Rendering of the open-plan living and dining room in the Ambrosini Residence."
-      }
+      },
+      "mediaType": "render"
+    },
+    "brito-living": {
+      "src": "/assets/brito-living.webp",
+      "width": 884,
+      "height": 578,
+      "bytes": 48588,
+      "sourcePage": 6,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Estar e jantar integrados, com mobiliário claro e iluminação no forro — renderização.",
+        "en": "Open-plan living and dining area with light furniture and ceiling lighting — rendering."
+      },
+      "sourceXref": 99,
+      "mediaType": "render"
+    },
+    "brito-staircase": {
+      "src": "/assets/brito-staircase.webp",
+      "width": 884,
+      "height": 604,
+      "bytes": 43874,
+      "sourcePage": 6,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Sala de estar e escada com degraus em balanço — renderização.",
+        "en": "Living room and cantilevered staircase — rendering."
+      },
+      "sourceXref": 101,
+      "mediaType": "render"
+    },
+    "brito-facade": {
+      "src": "/assets/brito-facade.webp",
+      "width": 846,
+      "height": 584,
+      "bytes": 57848,
+      "sourcePage": 6,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Fachada com varanda envidraçada e revestimento geométrico — renderização.",
+        "en": "Façade with a glazed balcony and geometric wall cladding — rendering."
+      },
+      "sourceXref": 102,
+      "mediaType": "render"
+    },
+    "cool-lounge": {
+      "src": "/assets/cool-lounge.webp",
+      "width": 768,
+      "height": 529,
+      "bytes": 62836,
+      "sourcePage": 15,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Fotografia do salão, com estações de atendimento, mesa de sinuca e tijolos aparentes.",
+        "en": "Photograph of the interior, with barber stations, a pool table and exposed brickwork."
+      },
+      "sourceXref": 267,
+      "mediaType": "photo"
+    },
+    "cool-bar": {
+      "src": "/assets/cool-bar.webp",
+      "width": 768,
+      "height": 522,
+      "bytes": 82160,
+      "sourcePage": 15,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Fotografia da área de convivência, com mesa de sinuca e balcão de bar.",
+        "en": "Photograph of the lounge area with a pool table and bar counter."
+      },
+      "sourceXref": 268,
+      "mediaType": "photo"
+    },
+    "cool-retail": {
+      "src": "/assets/cool-retail.webp",
+      "width": 768,
+      "height": 548,
+      "bytes": 63612,
+      "sourcePage": 15,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Fotografia da área de exposição de roupas integrada à barbearia.",
+        "en": "Photograph of the clothing display integrated into the barbershop."
+      },
+      "sourceXref": 270,
+      "mediaType": "photo"
+    },
+    "pastore-entrance": {
+      "src": "/assets/pastore-entrance.webp",
+      "width": 681,
+      "height": 226,
+      "bytes": 18400,
+      "sourcePage": 18,
+      "sourceKind": "embedded-crop",
+      "caption": {
+        "pt": "Vista frontal do acesso à clínica e do balcão de recepção — renderização.",
+        "en": "Front view of the clinic entrance and reception desk — rendering."
+      },
+      "sourceXref": 336,
+      "mediaType": "render",
+      "sourceCropPixels": [
+        194,
+        938,
+        875,
+        1164
+      ]
+    },
+    "pastore-signage": {
+      "src": "/assets/pastore-signage.webp",
+      "width": 455,
+      "height": 392,
+      "bytes": 17976,
+      "sourcePage": 18,
+      "sourceKind": "embedded-crop",
+      "caption": {
+        "pt": "Perspectiva da entrada com a identificação do Centro Médico Pastore — renderização.",
+        "en": "Entrance perspective with Centro Médico Pastore signage — rendering."
+      },
+      "sourceXref": 336,
+      "mediaType": "render",
+      "sourceCropPixels": [
+        919,
+        773,
+        1374,
+        1165
+      ]
+    },
+    "na-regua-layout": {
+      "src": "/assets/na-regua-layout.webp",
+      "width": 1002,
+      "height": 889,
+      "bytes": 53662,
+      "sourcePage": 29,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Planta de layout, corte e detalhes de instalações da proposta habitacional — Na Régua.",
+        "en": "Layout plan, section and building-services details for the housing proposal — Na Régua."
+      },
+      "sourceXref": 905,
+      "mediaType": "drawing"
+    },
+    "na-regua-installations": {
+      "src": "/assets/na-regua-installations.webp",
+      "width": 1075,
+      "height": 901,
+      "bytes": 48354,
+      "sourcePage": 30,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Plantas de instalações elétricas e hidrossanitárias da residência — Na Régua.",
+        "en": "Electrical and plumbing plans for the home — Na Régua."
+      },
+      "sourceXref": 915,
+      "mediaType": "drawing"
+    },
+    "krauzer-elevations": {
+      "src": "/assets/krauzer-elevations.webp",
+      "width": 843,
+      "height": 573,
+      "bytes": 29770,
+      "sourcePage": 33,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Elevações das quatro fachadas da Residência Krauzer — Huber Architecture.",
+        "en": "Elevations of the four façades of the Krauzer Residence — Huber Architecture."
+      },
+      "sourceXref": 985,
+      "mediaType": "drawing",
+      "credit": "Huber Architecture"
+    },
+    "krauzer-sections": {
+      "src": "/assets/krauzer-sections.webp",
+      "width": 866,
+      "height": 576,
+      "bytes": 35110,
+      "sourcePage": 33,
+      "sourceKind": "embedded",
+      "caption": {
+        "pt": "Cortes da residência e detalhe de parede — Huber Architecture.",
+        "en": "Building sections and wall detail — Huber Architecture."
+      },
+      "sourceXref": 984,
+      "mediaType": "drawing",
+      "credit": "Huber Architecture"
+    },
+    "stark-layout": {
+      "src": "/assets/stark-layout.webp",
+      "width": 360,
+      "height": 465,
+      "bytes": 20284,
+      "sourcePage": 34,
+      "sourceKind": "embedded-crop",
+      "caption": {
+        "pt": "Planta da opção 4: integração de estar, cozinha e área de dormir — Huber Architecture.",
+        "en": "Option 4 floor plan: combined living, kitchen and sleeping areas — Huber Architecture."
+      },
+      "sourceXref": 1009,
+      "mediaType": "drawing",
+      "sourceCropPixels": [
+        90,
+        215,
+        450,
+        680
+      ],
+      "credit": "Huber Architecture"
+    },
+    "stark-model": {
+      "src": "/assets/stark-model.webp",
+      "width": 345,
+      "height": 485,
+      "bytes": 10396,
+      "sourcePage": 34,
+      "sourceKind": "embedded-crop",
+      "caption": {
+        "pt": "Vista superior do modelo 3D da opção 4 — Huber Architecture.",
+        "en": "Top view of the option 4 model — Huber Architecture."
+      },
+      "sourceXref": 1009,
+      "mediaType": "render",
+      "sourceCropPixels": [
+        530,
+        210,
+        875,
+        695
+      ],
+      "credit": "Huber Architecture"
     },
     "ambrosini-kitchen": {
       "src": "/assets/ambrosini-kitchen.webp",
@@ -1687,9 +1925,11 @@
       "sourcePage": 10,
       "sourceKind": "embedded",
       "caption": {
-        "pt": "Imagem original do portfólio — página 10.",
-        "en": "Original portfolio image — page 10."
-      }
+        "pt": "Cozinha com ilha, marcenaria azul e revestimento geométrico — renderização.",
+        "en": "Kitchen with an island, blue cabinetry and geometric wall tiles — rendering."
+      },
+      "sourceXref": 184,
+      "mediaType": "render"
     },
     "ambrosini-gourmet": {
       "src": "/assets/ambrosini-gourmet.webp",
@@ -1699,9 +1939,11 @@
       "sourcePage": 10,
       "sourceKind": "embedded",
       "caption": {
-        "pt": "Imagem original do portfólio — página 10.",
-        "en": "Original portfolio image — page 10."
-      }
+        "pt": "Área gourmet com bancada, churrasqueira e cobertura de madeira — renderização.",
+        "en": "Outdoor entertaining area with a counter, barbecue and timber ceiling — rendering."
+      },
+      "sourceXref": 185,
+      "mediaType": "render"
     },
     "ambrosini-patio": {
       "src": "/assets/ambrosini-patio.webp",
@@ -1711,9 +1953,11 @@
       "sourcePage": 10,
       "sourceKind": "embedded",
       "caption": {
-        "pt": "Imagem original do portfólio — página 10.",
-        "en": "Original portfolio image — page 10."
-      }
+        "pt": "Pátio com assentos suspensos, madeira e vegetação — renderização.",
+        "en": "Patio with hanging seats, timber finishes and planting — rendering."
+      },
+      "sourceXref": 186,
+      "mediaType": "render"
     },
     "r2s-meeting": {
       "src": "/assets/r2s-meeting.webp",
@@ -1723,9 +1967,11 @@
       "sourcePage": 23,
       "sourceKind": "embedded",
       "caption": {
-        "pt": "Imagem original do portfólio — página 23.",
-        "en": "Original portfolio image — page 23."
-      }
+        "pt": "Estações de trabalho em ambiente compartilhado, com divisórias de vidro — renderização.",
+        "en": "Shared workspace with workstations and glazed partitions — rendering."
+      },
+      "sourceXref": 766,
+      "mediaType": "render"
     },
     "r2s-circulation": {
       "src": "/assets/r2s-circulation.webp",
@@ -1735,9 +1981,11 @@
       "sourcePage": 23,
       "sourceKind": "embedded",
       "caption": {
-        "pt": "Imagem original do portfólio — página 23.",
-        "en": "Original portfolio image — page 23."
-      }
+        "pt": "Circulação do mezanino com área de espera e vista para o pavimento inferior — renderização.",
+        "en": "Mezzanine circulation and seating overlooking the floor below — rendering."
+      },
+      "sourceXref": 767,
+      "mediaType": "render"
     },
     "mag-exterior": {
       "src": "/assets/mag-exterior.webp",
@@ -1747,9 +1995,11 @@
       "sourcePage": 37,
       "sourceKind": "embedded",
       "caption": {
-        "pt": "Imagem original do portfólio — página 37.",
-        "en": "Original portfolio image — page 37."
-      }
+        "pt": "Vista externa do museu com cobertura ondulada e acesso envidraçado — renderização.",
+        "en": "Exterior view of the museum with its undulating roof and glazed entrance — rendering."
+      },
+      "sourceXref": 1064,
+      "mediaType": "render"
     },
     "mag-interior": {
       "src": "/assets/mag-interior.webp",
@@ -1759,9 +2009,11 @@
       "sourcePage": 37,
       "sourceKind": "embedded",
       "caption": {
-        "pt": "Imagem original do portfólio — página 37.",
-        "en": "Original portfolio image — page 37."
-      }
+        "pt": "Circulação interna junto à fachada envidraçada, com vista para a água — renderização.",
+        "en": "Interior circulation beside the glazed façade overlooking the water — rendering."
+      },
+      "sourceXref": 1065,
+      "mediaType": "render"
     },
     "mag-hall": {
       "src": "/assets/mag-hall.webp",
@@ -1771,9 +2023,71 @@
       "sourcePage": 37,
       "sourceKind": "embedded",
       "caption": {
-        "pt": "Imagem original do portfólio — página 37.",
-        "en": "Original portfolio image — page 37."
-      }
+        "pt": "Espaço interno de convivência sob a estrutura curva da cobertura — renderização.",
+        "en": "Indoor gathering space beneath the curved roof structure — rendering."
+      },
+      "sourceXref": 1066,
+      "mediaType": "render"
+    },
+    "crea-workspace": {
+      "src": "/assets/crea-workspace.webp",
+      "width": 1101,
+      "height": 900,
+      "bytes": 79050,
+      "sourcePage": 39,
+      "sourceKind": "rendered-crop",
+      "caption": {
+        "pt": "Estações de trabalho junto às janelas do Setor de Fiscalização — renderização, via Kingline Engenharia.",
+        "en": "Workstations beside the Inspection Department windows — rendering, via Kingline Engenharia."
+      },
+      "sourceCrop": [
+        886,
+        587,
+        1072,
+        739
+      ],
+      "mediaType": "render",
+      "credit": "Renata Guimarães · Kingline Engenharia"
+    },
+    "crea-model": {
+      "src": "/assets/crea-model.webp",
+      "width": 1501,
+      "height": 1292,
+      "bytes": 100718,
+      "sourcePage": 39,
+      "sourceKind": "rendered-crop",
+      "caption": {
+        "pt": "Vista 3D da distribuição das salas e estações de trabalho — via Kingline Engenharia.",
+        "en": "3D view of the room layout and workstations — via Kingline Engenharia."
+      },
+      "sourceCrop": [
+        925,
+        374,
+        1155,
+        572
+      ],
+      "mediaType": "render",
+      "credit": "Renata Guimarães · Kingline Engenharia"
+    },
+    "crea-layout": {
+      "src": "/assets/crea-layout.webp",
+      "width": 1601,
+      "height": 1718,
+      "bytes": 168354,
+      "sourcePage": 39,
+      "sourceKind": "rendered-crop",
+      "caption": {
+        "pt": "Planta de layout com setores de trabalho, salas de reunião e circulação — via Kingline Engenharia.",
+        "en": "Layout plan showing work areas, meeting rooms and circulation — via Kingline Engenharia."
+      },
+      "sourceCrop": [
+        466,
+        81,
+        713,
+        346
+      ],
+      "mediaType": "drawing",
+      "credit": "Renata Guimarães · Kingline Engenharia"
     }
   }
 }
