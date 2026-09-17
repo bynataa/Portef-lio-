@@ -15,7 +15,9 @@ const root = path.resolve(import.meta.dirname, '..');
 const dist = path.join(root, 'dist');
 const source = fs.readFileSync(path.join(root, 'public/app.js'), 'utf8');
 const reportDir = process.env.QA_REPORT_DIR || path.join(root, 'analysis');
-const base = 'https://renata-architecture.netlify.app/';
+const site = JSON.parse(fs.readFileSync(path.join(root, 'src/site.json'), 'utf8'));
+const base = site.url.replace(/\/+$/, '') + '/';
+const basePath = new URL(base).pathname;
 const report = {
   generatedAt: new Date().toISOString(),
   methodology: 'DOM event simulation using linkedom + node:vm, and CSS AST inspection using css-tree. No browser, layout engine or screen rendering was used.',
@@ -141,7 +143,8 @@ for(const file of pages) {
     env.click(link,{navigate:true});
     assert.equal(env.location.href,expected.href);
     assert.equal(env.storage.get('renarchi-language'),opposite);
-    const target=path.join(dist,decodeURIComponent(expected.pathname));
+    assert.ok(expected.pathname.startsWith(basePath));
+    const target=path.join(dist,decodeURIComponent(expected.pathname.slice(basePath.length)));
     assert.ok(fs.existsSync(target));
     const next=environment(path.relative(dist,target),{storage:env.storage,query:expected.search,hash:expected.hash});
     assert.equal(next.document.body.dataset.lang,opposite);
@@ -190,7 +193,7 @@ test('Language preference survives navigation and switching back to Portuguese',
   const pt=environment('index.html',{storage});pt.click(pt.document.querySelector('[data-set-lang="en"]'),{navigate:true});
   assert.equal(storage.get('renarchi-language'),'en');
   const en=environment('en/index.html',{storage});
-  assert.ok([...en.document.querySelectorAll('#main-nav a')].every(a=>new URL(a.href).pathname.startsWith('/en/')));
+  assert.ok([...en.document.querySelectorAll('#main-nav a')].every(a=>new URL(a.href).pathname.startsWith(new URL('en/',base).pathname)));
   en.click(en.document.querySelector('[data-set-lang="pt"]'),{navigate:true});
   assert.equal(storage.get('renarchi-language'),'pt');
   const again=environment('index.html',{storage});assert.equal(again.navigation.length,0);

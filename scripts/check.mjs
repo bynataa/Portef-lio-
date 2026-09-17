@@ -3,6 +3,8 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 const root=path.resolve(import.meta.dirname,'..'),dist=path.join(root,'dist');
 const data=JSON.parse(fs.readFileSync(path.join(root,'src/projects.json'))),ui=JSON.parse(fs.readFileSync(path.join(root,'src/ui.json')));
+const site=JSON.parse(fs.readFileSync(path.join(root,'src/site.json')));
+const basePath=new URL(site.url).pathname.replace(/\/$/,'');
 const files=[];function walk(p){for(const d of fs.readdirSync(p,{withFileTypes:true})){let f=path.join(p,d.name);d.isDirectory()?walk(f):files.push(f)}}walk(dist);
 const htmls=files.filter(f=>f.endsWith('.html')),errors=[];let links=0,images=0;
 const check=(v,m)=>{if(!v)errors.push(m)};
@@ -23,7 +25,7 @@ for(const f of htmls){
   const ref=m[1].replace(/&amp;/g,'&');links++;
   if(/^(?:https?:|mailto:|tel:|data:)/.test(ref))continue;
   const [target,hash]=ref.split('#'),clean=target.split('?')[0];
-  let local=clean?(clean.startsWith('/')?path.join(dist,clean):path.resolve(path.dirname(f),clean)):f;
+  let local=clean?(clean.startsWith('/')?path.join(dist,basePath&&clean.startsWith(basePath+'/')?clean.slice(basePath.length):clean):path.resolve(path.dirname(f),clean)):f;
   if(fs.existsSync(local)&&fs.statSync(local).isDirectory())local=path.join(local,'index.html');
   check(fs.existsSync(local),`${label}: broken local URL ${ref}`);
   if(hash&&local.endsWith('.html')&&fs.existsSync(local))check(fs.readFileSync(local,'utf8').includes(`id="${hash}"`),`${label}: missing anchor ${ref}`);

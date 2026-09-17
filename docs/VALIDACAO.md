@@ -1,34 +1,37 @@
-# Validação — 17 de setembro de 2026
+# Validação técnica
 
-## Executado
+## Verificações executadas
 
-- Leitura das 40 páginas do PDF anexado, extração de texto e revisão visual das páginas renderizadas.
-- Leitura do HTML, CSS e JavaScript do site anterior, inspeção de sua página no navegador e clique no seletor PT. Confirmada exibição simultânea dos dois idiomas.
-- Preservação de 39 recursos do site anterior, com respostas HTTP bem-sucedidas; ZIP de origem verificado.
-- `npm run build`: 30 páginas de conteúdo + 2 páginas 404, metadados e assets.
-- `npm run check`: **1.026 referências locais/externas examinadas**, com existência e âncoras verificadas nas referências locais; **148 ocorrências de imagens** com texto alternativo e dimensões; 10 projetos; cobertura exata das 35 páginas de projetos (5–39); chaves PT/EN equivalentes. URLs externas foram conferidas contra as fontes, não houve submissão ou comprovação de entrega.
-- `npm run test:dom`: **66/66 verificações passaram**, em 30 páginas. Testes reproduzíveis com linkedom e Node VM. Filtros/contagens/query, rotas equivalentes, preferência e falha de localStorage, menus/rótulos/Escape e lógica de navegação de 20 galerias.
-- Parser CSS e avaliação estática das regras para 360, 390, 768 e 1440 px; estados de foco e movimento reduzido presentes.
-- Todos os 91 WebP abertos e validados; capas e heroes inspecionados. Recursos derivados do PDF, sem fotos de banco ou geração artificial.
-- PDF recomposto com tamanho e SHA-256 iguais ao original: `ad13461630be2bb801314cf1666805d4ac81ece781f493647cc12631f7789d6b`.
+- Geração de 30 páginas de conteúdo em português e inglês e duas páginas de erro traduzidas.
+- Verificação de 1.026 referências locais e externas, com existência de arquivos e âncoras nas referências locais.
+- Verificação de texto alternativo e dimensões em 148 ocorrências de imagens.
+- Equivalência das chaves de tradução PT/EN, dez projetos e cobertura das páginas de projetos do portfólio.
+- 66 verificações de DOM e lógica em 30 páginas: filtros, contagens, parâmetros de URL, troca de idioma, persistência e indisponibilidade de armazenamento local, menu, rótulos, fechamento por Escape e navegação das galerias.
+- Análise da sintaxe CSS e das regras aplicáveis a 360, 390, 768 e 1440 px, incluindo foco visível e movimento reduzido.
+- Abertura e verificação de 91 imagens WebP.
+- Recomposição do PDF com tamanho e SHA-256 correspondentes ao documento original: `ad13461630be2bb801314cf1666805d4ac81ece781f493647cc12631f7789d6b`.
 
-## Limites importantes
+As verificações podem ser reproduzidas com:
 
-A prévia da implementação local foi bloqueada pelo navegador disponível. Portanto, **não foi executada validação visual da nova interface em um navegador real**, nem medição real de overflow, viewport, Lighthouse/Core Web Vitals ou teste do comportamento nativo de foco do `dialog`. Os testes de DOM usam simulação, inclusive do diálogo; não devem ser apresentados como testes de navegador.
+```bash
+npm ci
+npm run build
+npm run check
+npm run test:dom
+```
 
-O site anterior foi visualmente inspecionado no navegador. Isso não valida a aparência da versão nova.
+## Alcance e limitações
 
-Nenhuma mensagem de contato foi enviada. O novo site abre canais diretos e não simula envio. A existência dos contatos está documentada nas fontes; disponibilidade dos canais e recebimento não foram testados.
+Os testes de DOM utilizam `linkedom` e Node VM. Navegação, armazenamento, foco e diálogo são simulados. Esses resultados não representam renderização nem comportamento nativo de um navegador.
 
-Nenhuma integração Netlify, publicação em produção ou alteração no domínio foi feita. O repositório estava vazio; a branch principal recebeu somente README inicial, e a implementação está na branch de revisão.
+A abertura da prévia local foi bloqueada pelo navegador disponível. Não foram medidas rolagem horizontal, cortes de texto, desempenho real, Lighthouse ou Core Web Vitals. O foco nativo do diálogo e a apresentação em diferentes tamanhos de tela precisam ser verificados no endereço público.
 
-## Antes de produção
+As URLs de contato foram conferidas nos materiais da profissional. Nenhuma mensagem foi enviada, e o recebimento pelos canais não foi testado. A interface abre os canais diretamente e não exibe confirmação de envio.
 
-1. Abrir um Deploy Preview do Netlify e revisar a composição em 360, 390, 768 e 1440 px.
-2. Verificar rolagem horizontal, nitidez das imagens, menu e foco por Tab/Shift+Tab.
-3. Abrir uma galeria, navegar por setas, fechar com Escape e conferir retorno do foco.
-4. Alternar PT/EN nos projetos, aplicar filtros e retornar à página inicial após selecionar EN.
-5. Conferir textos e créditos com Renata; confirmar o e-mail empresarial e qual LinkedIn usar. O LinkedIn permanece omitido por divergência entre fontes.
-6. Obter aprovação explícita antes do merge/publicação.
+## Verificações em navegador
 
-O PDF original mantém suas páginas, idiomas, marcas e eventuais inconsistências editoriais. Os textos web foram reescritos com base nos fatos verificados; fotografias e renders preservam seus limites de resolução.
+1. Abrir as páginas em 360, 390, 768 e 1440 px e conferir a composição, as imagens e a ausência de rolagem horizontal.
+2. Navegar por Tab e Shift+Tab, abrir o menu e conferir os estados de foco.
+3. Abrir uma galeria, avançar e voltar por botões e setas, fechar com Escape e conferir o retorno do foco.
+4. Alternar PT/EN em cada página, aplicar filtros e verificar a preferência de idioma ao retornar.
+5. Conferir textos, contatos e créditos com a profissional.
