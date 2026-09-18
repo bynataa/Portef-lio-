@@ -68,6 +68,21 @@ await test('Activation and network errors preserve the review and allow retry in
  e.click('.quote-send');await e.tick();assert.equal(e.requests.length,2);
  }
 });
+await test('Conversation nodes stay in place and drafts survive going back or changing contact mode',async()=>{
+ const e=setup();const log=e.root.querySelector('.quote-conversation');
+ e.click('[data-answer="renovation"]');
+ const firstTurn=e.root.querySelector('[data-step="service"]');
+ e.click('[data-answer="house"]');
+ assert.equal(e.root.querySelector('.quote-conversation'),log);
+ assert.equal(e.root.querySelector('[data-step="service"]'),firstTurn);
+ const draft=e.root.querySelector('.quote-answer');draft.value='Resposta ainda não enviada';
+ e.click('.quote-back');e.click('[data-answer="house"]');
+ assert.equal(e.root.querySelector('.quote-answer').value,'Resposta ainda não enviada');
+ e.click('[data-contact-mode="message"]');e.click('[data-contact-mode="quote"]');
+ assert.equal(e.root.querySelector('.quote-answer').value,'Resposta ainda não enviada');
+ assert.ok(e.root.querySelector('.quote-compose-dock .quote-composer'));
+ assert.equal(e.requests.length,0);
+});
 await test('Without delivery APIs, the ordinary HTML form stays available',async()=>{
  const e=setup({noFetch:true});assert.equal(e.root.hidden,true);assert.equal(e.document.querySelector('.quick-message').hidden,false);assert.equal(e.document.querySelector('.contact-modes').hidden,true);
 });

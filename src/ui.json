@@ -177,7 +177,7 @@
     "quoteAssistant": {
       "tab": "Assistente de orçamento",
       "messageTab": "Mensagem direta",
-      "intro": "Vou fazer algumas perguntas para a Renata entender seu projeto. No final, você revisa o pedido antes de enviar. O valor da proposta será definido após a análise.",
+      "intro": "Olá! Sou o assistente da Renarchi. Vamos conversar sobre o seu espaço? Vou organizar suas ideias em um pedido para a Renata.",
       "badge": "Assistente automático",
       "you": "Você",
       "progress": "Pergunta {n} de {total}",
@@ -212,7 +212,7 @@
         {
           "id": "service",
           "label": "Serviço desejado",
-          "question": "Olá! Que tipo de ajuda você procura?",
+          "question": "Para começar, o que você tem em mente?",
           "type": "choice",
           "options": [
             [
@@ -244,7 +244,7 @@
         {
           "id": "property",
           "label": "Tipo de imóvel",
-          "question": "Em que tipo de espaço será o projeto?",
+          "question": "E qual espaço você quer transformar?",
           "type": "choice",
           "options": [
             [
@@ -358,7 +358,27 @@
           "max": 40,
           "optional": true
         }
-      ]
+      ],
+      "headerTitle": "Vamos conversar?",
+      "headerSubtitle": "Assistente virtual · Projetos e orçamentos",
+      "stages": [
+        "Seu espaço",
+        "Sua ideia",
+        "Seu contato"
+      ],
+      "pickHint": "Toque em uma opção para responder",
+      "inputHint": "Escreva sua resposta…",
+      "sendAnswer": "Enviar resposta",
+      "reviewDetails": "Ver e editar as respostas",
+      "reviewReady": "Seu projeto começa aqui.",
+      "reviewNote": "Confira os detalhes. Quando estiver tudo certo, envio seu pedido para a Renata.",
+      "revisit": "Alterar resposta",
+      "editHint": "Ajustando sua resposta",
+      "cancelEdit": "Voltar ao resumo",
+      "conversation": "Conversa com o assistente da Renarchi",
+      "sendNote": "Seu pedido vai direto para a Renarchi.",
+      "sentBadge": "Tudo pronto",
+      "summaryLabel": "Resumo do projeto"
     }
   },
   "en": {
@@ -539,7 +559,7 @@
     "quoteAssistant": {
       "tab": "Quote assistant",
       "messageTab": "Direct message",
-      "intro": "I will ask a few questions to help Renata understand your project. You can review your request before sending it. A proposal and price will be prepared after the review.",
+      "intro": "Hello! I’m the Renarchi assistant. Shall we talk about your space? I’ll put your ideas together in a request for Renata.",
       "badge": "Automated assistant",
       "you": "You",
       "progress": "Question {n} of {total}",
@@ -574,7 +594,7 @@
         {
           "id": "service",
           "label": "Requested service",
-          "question": "Hello! What kind of help are you looking for?",
+          "question": "To start, what do you have in mind?",
           "type": "choice",
           "options": [
             [
@@ -606,7 +626,7 @@
         {
           "id": "property",
           "label": "Property type",
-          "question": "What type of space is the project for?",
+          "question": "And what kind of space would you like to transform?",
           "type": "choice",
           "options": [
             [
@@ -720,7 +740,27 @@
           "max": 40,
           "optional": true
         }
-      ]
+      ],
+      "headerTitle": "Let’s talk.",
+      "headerSubtitle": "Virtual assistant · Projects and quotes",
+      "stages": [
+        "Your space",
+        "Your ideas",
+        "Your details"
+      ],
+      "pickHint": "Tap an option to reply",
+      "inputHint": "Type your reply…",
+      "sendAnswer": "Send reply",
+      "reviewDetails": "View and edit your answers",
+      "reviewReady": "Your project starts here.",
+      "reviewNote": "Check the details. When everything looks right, I will send your request to Renata.",
+      "revisit": "Change answer",
+      "editHint": "Updating your answer",
+      "cancelEdit": "Back to summary",
+      "conversation": "Conversation with the Renarchi assistant",
+      "sendNote": "Your request goes directly to Renarchi.",
+      "sentBadge": "All set",
+      "summaryLabel": "Project summary"
     }
   }
 }

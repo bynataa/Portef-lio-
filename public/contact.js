@@ -14,7 +14,10 @@
         document.body.classList.add('modal-open');
         const assistant = document.querySelector('.budget-assistant');
         const target = assistant && !assistant.hidden ? assistant.querySelector('[data-current-focus]') : form.querySelector('[name="name"]');
-        target?.focus();
+        target?.focus({ preventScroll: true });
+        const opened = document.createEvent('Event');
+        opened.initEvent('contact:open', false, false);
+        form.dispatchEvent(opened);
       });
     });
     dialog.querySelector('.contact-close').addEventListener('click', () => dialog.close());
