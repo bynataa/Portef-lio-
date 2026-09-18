@@ -11,7 +11,8 @@
     "test:contact": "node scripts/test-contact.mjs",
     "test:quote": "node scripts/test-quote.mjs",
     "test:motion": "node scripts/test-motion.mjs",
-    "test:carousel": "node scripts/test-carousel.mjs"
+    "test:carousel": "node scripts/test-carousel.mjs",
+    "test:smooth-scroll": "node scripts/test-smooth-scroll.mjs"
   },
   "engines": {
     "node": ">=20"

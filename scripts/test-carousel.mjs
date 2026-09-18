@@ -10,9 +10,9 @@ function setup({width=620,cardWidth=300,gap=20,inset=0,count=4,lang='pt',reduced
   const copy=lang==='pt'?['Projeto','de','Ir para o projeto']:['Project','of','Go to project'];
   const {document,window}=parseHTML(`<!doctype html><html><body>
     <section class="featured" data-carousel data-carousel-item-label="${copy[0]}" data-carousel-of="${copy[1]}" data-carousel-go-label="${copy[2]}">
-    <div class="project-grid" data-carousel-track id="featured-projects" tabindex="0" role="group">
+    <div class="carousel-stage"><div class="project-grid" data-carousel-track id="featured-projects" tabindex="0" role="group">
     ${Array.from({length:count},(_,i)=>`<article class="project-card"><a href="/projects/${i+1}/">Project ${i+1}</a></article>`).join('')}</div>
-    <div data-carousel-controls hidden><button data-carousel-prev>Previous</button><div data-carousel-dots></div><span data-carousel-status aria-live="polite" aria-atomic="true"></span>${incomplete?'':'<button data-carousel-next>Next</button>'}</div>
+    <div data-carousel-controls hidden><div class="carousel-side-controls"><button data-carousel-prev>Previous</button>${incomplete?'':'<button data-carousel-next>Next</button>'}</div><div class="carousel-progress"><div data-carousel-dots></div><span data-carousel-status aria-live="polite" aria-atomic="true"></span></div></div></div>
     </section></body></html>`);
   const section=document.querySelector('[data-carousel]'),track=section.querySelector('[data-carousel-track]'),cards=[...track.children];
   const dimensions={width,cardWidth,gap};let scrollLeft=0,id=0,activeElement=document.body;

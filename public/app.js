@@ -141,7 +141,8 @@
   }
   const header=document.querySelector('.site-header');
   const depthTargets=[...document.querySelectorAll('[data-depth] > img')].map(image=>({
-    image,host:image.parentElement,limit:image.parentElement.dataset.depth==='hero'?32:24,visible:true,shift:null
+    image,host:image.parentElement,limit:image.parentElement.dataset.depth==='hero'?100:60,
+    maxFraction:image.parentElement.dataset.depth==='hero'?.13:.09,visible:true,shift:null
   }));
   const depthByHost=new Map(depthTargets.map(target=>[target.host,target]));
   let scrollFrame=null,depthObserver=null;
@@ -179,8 +180,8 @@
       if(!target.visible||typeof target.host.getBoundingClientRect!=='function')return;
       const rect=target.host.getBoundingClientRect();
       if(!rect||![rect.top,rect.bottom,rect.height].every(Number.isFinite)||rect.height<=0||rect.bottom<=0||rect.top>=viewport)return;
-      // The 1.12 CSS scale provides 6% overscan on each edge; leave a 1% margin.
-      const limit=Math.min(target.limit,rect.height*.05);
+      // Hero/cover scales provide 14%/10% overscan per edge; keep a 1% margin.
+      const limit=Math.min(target.limit,rect.height*target.maxFraction);
       const progress=(viewport-rect.top)/(viewport+rect.height);
       const shift=Math.round(Math.max(-limit,Math.min(limit,(progress*2-1)*limit))*100)/100;
       if(shift!==target.shift)updates.push({target,shift});

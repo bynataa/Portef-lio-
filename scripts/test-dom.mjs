@@ -131,6 +131,25 @@ test('The built JavaScript matches the tested source',()=>assert.equal(fs.readFi
 
 for(const lang of ['pt','en']) {
   const prefix=lang==='en'?'en/':'';
+  test(`${lang}: featured navigation is beside the images, with progress below and a no-script fallback`,()=>{
+    const {document}=parseHTML(fs.readFileSync(path.join(dist,prefix+'index.html'),'utf8'));
+    const section=document.querySelector('[data-carousel]'),track=section.querySelector('[data-carousel-track]');
+    const stage=track.closest('.carousel-stage'),controls=section.querySelector('[data-carousel-controls]');
+    assert.ok(stage,'The image rail needs a positioning context independent of the section heading');
+    assert.ok(stage.contains(controls));
+    assert.equal(controls.hidden,true,'Inert navigation remains hidden until enhancement');
+    const side=controls.querySelector('.carousel-side-controls'),progress=controls.querySelector('.carousel-progress');
+    assert.ok(side&&progress,'Separate side navigation from the progress information');
+    for(const hook of ['prev','next']){
+      const arrow=side.querySelector(`[data-carousel-${hook}]`);
+      assert.ok(arrow);assert.equal(arrow.getAttribute('aria-controls'),track.id);
+      assert.equal(arrow.getAttribute('aria-label'),ui[lang].carousel[hook==='prev'?'previous':'next']);
+    }
+    assert.ok(progress.querySelector('[data-carousel-dots]'));
+    assert.equal(progress.querySelector('[data-carousel-status]').getAttribute('aria-live'),'polite');
+    assert.equal(track.querySelectorAll('.project-card').length,4);
+    assert.equal(track.querySelectorAll('.project-card-main[href]').length,4);
+  });
   test(`${lang}: all ten projects and every category filter, counts, URL and reset`,()=>{
     const env=environment(prefix+'work/index.html',{query:'?ref=qa',hash:'#main'});
     assert.equal(visibleCards(env).length,10);
@@ -509,10 +528,30 @@ test('Static CSS declares reduced-motion alternatives and keyboard focus indicat
 });
 
 test('Depth and glass alternatives respect combined viewport and accessibility preferences',()=>{
-  assert.match(declarations('[data-depth]>img',1440).transform,/scale\(1\.12\)/);
+  assert.match(declarations('[data-depth="hero"]>img',1440).transform,/scale\(1\.28\)/);
+  assert.match(declarations('[data-depth="cover"]>img',1440).transform,/scale\(1\.20?\)/);
   assert.equal(declarations('[data-depth]>img',390).transform,undefined);
   assert.equal(declarations('[data-depth]>img',1440,{reduced:true}).transform,'none');
   assert.equal(declarations('.site-header',1440,{reducedTransparency:true})['backdrop-filter'],'none');
+});
+
+test('Featured arrows align with the image rail and stay reachable at desktop and mobile sizes',()=>{
+  for(const width of [320,390,640,768,1440]){
+    const stage=declarations('.carousel-stage',width),rail=declarations('.carousel-side-controls',width);
+    const arrow=declarations('.carousel-arrow',width),previous=declarations('.carousel-prev',width),next=declarations('.carousel-next',width);
+    assert.equal(stage.position,'relative');assert.equal(rail.position,'absolute');assert.equal(rail.top,'8px');
+    assert.equal(rail['pointer-events'],'none','Navigation rail cannot block project links or swipes');
+    assert.equal(arrow['pointer-events'],'auto');assert.equal(arrow.position,'absolute');
+    assert.equal(arrow.top,'50%');assert.equal(arrow.transform,'translateY(-50%)');
+    assert.ok(parseInt(arrow.width)>=44&&parseInt(arrow.height)>=44);
+    if(width<=640){
+      assert.equal(previous.left,'8px');assert.equal(next.right,'8px');
+      assert.equal(rail['padding-top'],'calc(88%/1.12)');
+    } else {
+      assert.match(previous.left,/gutter/);assert.equal(next.right,previous.left);
+      assert.equal(rail['padding-top'],'calc((100% - 32px)/2.8)');
+    }
+  }
 });
 
 report.summary={total:report.tests.length,passed:report.tests.filter(t=>t.status==='passed').length,failed:report.tests.filter(t=>t.status==='failed').length,pages:pages.length};

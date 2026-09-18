@@ -99,9 +99,18 @@ test('Desktop depth uses each image viewport position instead of global scroll',
   assert.equal(e.document.querySelector('.drawing-cover img').getAttribute('style'),null,'Technical drawings remain static');
 });
 
-test('Hero and cover stay within their individual 32px and 24px limits at viewport edges',()=>{
+test('Desktop hero movement remains perceptible through a normal scroll gesture',()=>{
+  const e=setup({height:1000,heroTop:100});
+  e.setRect(e.hero,100,779);e.scrollTo(0);e.flush();
+  const before=parseFloat(e.image.style.getPropertyValue('--depth-shift'));
+  e.setRect(e.hero,-350,779);e.scrollTo(450);e.flush();
+  const movement=parseFloat(e.image.style.getPropertyValue('--depth-shift'))-before;
+  assert.ok(movement>=45,`A 450px scroll should move the photograph at least 45px, received ${movement}px`);
+});
+
+test('Hero and cover stay within their individual 100px and 60px limits at viewport edges',()=>{
   const e=setup();
-  for(const [host,image,limit] of [[e.hero,e.image,32],[e.cover,e.coverImage,24]]){
+  for(const [host,image,limit] of [[e.hero,e.image,100],[e.cover,e.coverImage,60]]){
     e.setRect(host,799.99,800);e.scrollTo(0);e.flush();
     const entering=parseFloat(image.style.getPropertyValue('--depth-shift'));
     assert.ok(entering>=-limit&&entering<-limit+.1,`Entering offset should approach -${limit}px`);
@@ -113,9 +122,14 @@ test('Hero and cover stay within their individual 32px and 24px limits at viewpo
 
 test('Short images retain enough overscan to avoid exposing their edges',()=>{
   const e=setup();
-  e.setRect(e.cover,-199.99,200);e.scrollTo(200);e.flush();
-  const shift=parseFloat(e.coverImage.style.getPropertyValue('--depth-shift'));
-  assert.ok(shift>9.9&&shift<=10,'A 200px photograph uses at most 10px of translation');
+  for(const [host,image,limit,overscan] of [[e.hero,e.image,26,28],[e.cover,e.coverImage,18,20]]){
+    for(const top of [799.99,-199.99]){
+      e.setRect(host,top,200);e.scrollTo(200);e.flush();
+      const shift=Math.abs(parseFloat(image.style.getPropertyValue('--depth-shift')));
+      assert.ok(shift>limit-.1&&shift<=limit,`A 200px ${host.dataset.depth} uses at most ${limit}px of translation`);
+      assert.ok(overscan-shift>=2,'At least 1% of the frame height remains beyond both edges');
+    }
+  }
 });
 
 test('Offscreen images receive no offsets and observed offscreen hosts skip layout reads',()=>{

@@ -33,6 +33,7 @@ npm run test:contact
 npm run test:quote
 npm run test:motion
 npm run test:carousel
+npm run test:smooth-scroll
 ```
 
 As verificações cobrem arquivos, links internos, imagens, traduções, metadados e lógica de navegação. O teste de DOM utiliza simulação; detalhes e limitações estão em [docs/VALIDACAO.md](docs/VALIDACAO.md).
@@ -43,7 +44,7 @@ A identidade usa creme, areia e café, títulos em Cormorant Garamond (WOFF2 loc
 
 As assinaturas vetoriais claras/escuras e PT/EN ficam em `public/assets/brand`. O favicon usa a imagem completa fornecida pela cliente, preservada em `public/assets/brand/renarchi-seal.png`. As referências aos ícones incluem uma versão calculada pelo conteúdo para renovar o cache. Os arquivos SVG, ICO, PNG e Apple Touch são versionados; `scripts/generate-brand.mjs` é uma ferramenta opcional de autoria que requer Sharp e não faz parte do build.
 
-O cabeçalho acompanha a rolagem natural, e a profundidade da imagem é limitada a 12px em desktop. Entradas não ocultam conteúdo antes da inicialização; a preferência por movimento reduzido é respeitada, inclusive quando alterada durante a visita. Os testes de movimento simulam as APIs do navegador. O domínio público é `https://renarchi.com.br`, usado também em canonical, hreflang, sitemap e metadados.
+O cabeçalho acompanha a rolagem natural, e a profundidade é limitada a 100px na abertura e 60px nas capas em desktop, com margem de imagem suficiente para não expor bordas. Entradas não ocultam conteúdo antes da inicialização; a preferência por movimento reduzido é respeitada, inclusive quando alterada durante a visita. Os testes de movimento simulam as APIs do navegador. O domínio público é `https://renarchi.com.br`, usado também em canonical, hreflang, sitemap e metadados.
 
 ## Atualizar conteúdo
 
@@ -108,4 +109,6 @@ Conteúdo, imagens e informações profissionais de Renata Guimarães. As págin
 
 O cabeçalho usa vidro fosco em tons creme, com fundo opaco como alternativa em navegadores sem `backdrop-filter`. A página inicial apresenta os quatro projetos em destaque em um carrossel nativo, com setas, indicadores, teclado e gesto de deslizar. Sem JavaScript, a seleção continua disponível em grade. O carrossel não avança sozinho.
 
-O efeito de profundidade acompanha a rolagem na fachada de abertura e nas capas fotográficas dos projetos, com deslocamentos limitados. Desenhos técnicos mantêm a exibição integral. A rolagem vertical continua nativa; em telas pequenas ou com preferência por movimento reduzido, o parallax é desativado. `public/carousel.js` contém o carrossel; `public/app.js` controla os movimentos progressivos.
+O efeito de profundidade acompanha a rolagem na fachada de abertura e nas capas fotográficas dos projetos, com deslocamentos limitados. Desenhos técnicos mantêm a exibição integral. A roda do mouse recebe suavização breve por Lenis, com toque e áreas internas roláveis preservados. O teclado interrompe a inércia e as galerias e o atendimento pausam a rolagem de fundo. Em telas pequenas o parallax é desativado; a preferência por movimento reduzido também desativa a suavização. `public/carousel.js` contém o carrossel; `public/app.js` controla os movimentos progressivos; `public/smooth-scroll.js` integra a suavização. As setas ficam nas laterais das fotos, e os indicadores permanecem abaixo.
+
+Lenis 1.3.26 é distribuído localmente em `public/vendor`, sob licença MIT (incluída), a partir do pacote oficial https://www.npmjs.com/package/lenis/v/1.3.26. Não há dependência de CDN na visita ao site.
