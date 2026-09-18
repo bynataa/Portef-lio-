@@ -23,7 +23,7 @@ const basePath = new URL(base).pathname;
 const report = {
   generatedAt: new Date().toISOString(),
   methodology: 'DOM event simulation using linkedom + node:vm, and CSS AST inspection using css-tree. No browser, layout engine or screen rendering was used.',
-  stubs: ['URL-resolved anchor href', 'location.assign/replace and history.replaceState', 'localStorage', 'focus tracking', 'dialog.showModal/close and fixed dialog hit-test rectangle', 'image load events, intrinsic pixel dimensions and displayed dimensions'],
+  stubs: ['URL-resolved anchor href', 'location.assign/replace and history.replaceState', 'localStorage', 'focus tracking and focusin/focusout events', 'matchMedia, pointer events, deterministic timers and IntersectionObserver', 'dialog.showModal/close and fixed dialog hit-test rectangle', 'image load events, intrinsic pixel dimensions and displayed dimensions'],
   notValidated: ['Actual visual appearance, overflow or text clipping at any viewport', 'Native dialog focus trap, image loading and zoom/panning layout', 'Real browser keyboard/focus behavior', 'Real contact delivery, remote service responses or production deployment'],
   tests: [],
   css: {}
@@ -38,7 +38,7 @@ function htmlFiles(dir=dist) {
     ? htmlFiles(path.join(dir,entry.name))
     : entry.name.endsWith('.html') ? [path.join(dir,entry.name)] : []);
 }
-function environment(file, {query='', hash='', storage=new Map(), brokenStorage=false}={}) {
+function environment(file, {query='', hash='', storage=new Map(), brokenStorage=false, width=1440, pointer='fine', reduced=false, observe=false}={}) {
   const relative = path.relative(dist,path.resolve(dist,file)).split(path.sep).join('/');
   const {document,window} = parseHTML(fs.readFileSync(path.join(dist,relative),'utf8'));
   let currentURL = new URL(relative+query+hash,base), focused=null;
@@ -53,7 +53,36 @@ function environment(file, {query='', hash='', storage=new Map(), brokenStorage=
     get(){return new URL(a.getAttribute('href'),currentURL).href;},
     set(value){a.setAttribute('href',value);}, configurable:true
   });
-  for(const element of document.querySelectorAll('*')) element.focus=()=>{focused=element;};
+  Object.defineProperty(document,'activeElement',{get:()=>focused||document.body});
+  const dispatch=(element,type,properties={})=>{
+    const event=new window.Event(type,{bubbles:true,cancelable:true});
+    Object.assign(event,properties);element.dispatchEvent(event);return event;
+  };
+  for(const element of document.querySelectorAll('*')) element.focus=()=>{
+    if(focused===element)return;
+    const previous=focused;focused=element;
+    if(previous)dispatch(previous,'focusout',{relatedTarget:element});
+    dispatch(element,'focusin',{relatedTarget:previous});
+  };
+  const media=new Map(),windowListeners=new Map(),timers=new Map(),observations=[];
+  let timerID=0;
+  const matchMedia=query=>{
+    if(!media.has(query)){
+      const listeners=[];
+      media.set(query,{matches:query.includes('min-width')?width>=801:query.includes('prefers-reduced-motion')?reduced:pointer==='fine',
+        addEventListener(type,listener){if(type==='change')listeners.push(listener);},
+        update(matches){this.matches=matches;listeners.forEach(listener=>listener({matches}));}});
+    }
+    return media.get(query);
+  };
+  const browser={matchMedia,addEventListener(type,listener){windowListeners.set(type,[...(windowListeners.get(type)||[]),listener]);}};
+  if(observe)browser.IntersectionObserver=class {
+    constructor(callback){this.callback=callback;this.elements=new Set();observations.push(this);}
+    observe(element){this.elements.add(element);}
+    unobserve(element){this.elements.delete(element);}
+  };
+  const changeHash=hash=>{currentURL.hash=hash;for(const listener of windowListeners.get('hashchange')||[])listener();};
+  const flushTimers=()=>{const pending=[...timers.values()];timers.clear();pending.forEach(fn=>fn());};
   for(const dialog of document.querySelectorAll('dialog')) {
     dialog.showModal=()=>dialog.setAttribute('open','');
     dialog.close=()=>{dialog.removeAttribute('open');dialog.dispatchEvent(new window.Event('close'));};
@@ -79,7 +108,9 @@ function environment(file, {query='', hash='', storage=new Map(), brokenStorage=
     setItem(key,value){if(brokenStorage)throw new Error('Storage unavailable');storage.set(key,String(value));}
   };
   const history={replaceState(_state,_title,value){currentURL=new URL(value,currentURL);}};
-  vm.runInNewContext(source,{document,localStorage,location,history,URL,console},{filename:'app.js'});
+  vm.runInNewContext(source,{document,window:browser,localStorage,location,history,URL,console,
+    setTimeout(callback){const id=++timerID;timers.set(id,callback);return id;},clearTimeout(id){timers.delete(id);}
+  },{filename:'app.js'});
   const click=(element,{navigate=false,x=100,y=100}={})=>{
     assert.ok(element,'Click target must exist');
     const event=new window.Event('click',{bubbles:true,cancelable:true});
@@ -92,7 +123,7 @@ function environment(file, {query='', hash='', storage=new Map(), brokenStorage=
     const event=new window.Event('keydown',{bubbles:true,cancelable:true});
     Object.defineProperty(event,'key',{value:key});element.dispatchEvent(event);return event;
   };
-  return {document,window,location,storage,navigation,click,key,loadImage,get focused(){return focused;}};
+  return {document,window,location,storage,navigation,click,key,loadImage,dispatch,matchMedia,flushTimers,observations,changeHash,get focused(){return focused;}};
 }
 const visibleCards = env=>[...env.document.querySelectorAll('[data-category]')].filter(card=>!card.hidden);
 
@@ -147,6 +178,92 @@ for(const lang of ['pt','en']) {
     assert.equal(menu.getAttribute('aria-expanded'),'false');
     assert.ok(!nav.classList.contains('is-open'));
   });
+  test(`${lang}: contextual disclosures preserve page links, translate state and close outside`,()=>{
+    const env=environment(prefix+'index.html');
+    const groups=[...env.document.querySelectorAll('[data-nav-group]')];
+    assert.equal(groups.length,2);
+    assert.ok(env.document.body.classList.contains('nav-ready'));
+    assert.equal(env.document.querySelector('.menu-toggle').hidden,false);
+    for(const group of groups){
+      const button=group.querySelector('.nav-disclosure'),panel=group.querySelector('.nav-panel');
+      assert.ok(group.querySelector('.nav-topline > a.nav-link[href]'),'The page destination remains a separate link');
+      assert.equal(button.hidden,false);assert.equal(panel.hidden,true);
+      assert.equal(button.getAttribute('aria-controls'),panel.id);
+      env.click(button);
+      assert.equal(panel.hidden,false);assert.equal(button.getAttribute('aria-expanded'),'true');
+      assert.equal(button.getAttribute('aria-label'),button.dataset.closeLabel);
+      assert.equal(env.document.querySelectorAll('.nav-panel:not([hidden])').length,1);
+    }
+    env.click(env.document.querySelector('main'));
+    assert.ok(groups.every(group=>group.querySelector('.nav-panel').hidden));
+    for(const group of groups){
+      const button=group.querySelector('.nav-disclosure');
+      assert.equal(button.getAttribute('aria-expanded'),'false');
+      assert.equal(button.getAttribute('aria-label'),button.dataset.openLabel);
+    }
+  });
+  test(`${lang}: keyboard discovery, focus retention, ArrowDown and Escape are predictable`,()=>{
+    const env=environment(prefix+'index.html');
+    const group=env.document.querySelector('[data-nav-group]'),link=group.querySelector('.nav-link');
+    const button=group.querySelector('.nav-disclosure'),panel=group.querySelector('.nav-panel'),first=panel.querySelector('a');
+    link.focus();assert.equal(panel.hidden,false,'Focusing the desktop page link reveals related destinations');
+    first.focus();env.dispatch(group,'pointerleave',{pointerType:'mouse'});env.flushTimers();
+    assert.equal(panel.hidden,false,'Keyboard focus inside the submenu holds it open');
+    env.key(first,'Escape');
+    assert.equal(panel.hidden,true);assert.equal(env.focused,button);
+    env.flushTimers();assert.equal(panel.hidden,true,'Returning focus after Escape must not reopen the panel');
+    env.key(button,'ArrowDown');assert.equal(panel.hidden,false);assert.equal(env.focused,first);
+    env.document.querySelector('[data-set-lang="en"]').focus();
+    assert.equal(panel.hidden,true,'Tabbing out closes contextual content');
+  });
+  test(`${lang}: hover supports cursor travel while touch uses explicit disclosure`,()=>{
+    const env=environment(prefix+'index.html');
+    const group=env.document.querySelector('[data-nav-group]'),panel=group.querySelector('.nav-panel');
+    env.dispatch(group,'pointerenter',{pointerType:'mouse'});assert.equal(panel.hidden,false);
+    env.dispatch(group,'pointerleave',{pointerType:'mouse'});assert.equal(panel.hidden,false,'No immediate disappearance across the gap');
+    env.dispatch(group,'pointerenter',{pointerType:'mouse'});env.flushTimers();assert.equal(panel.hidden,false);
+    env.dispatch(group,'pointerleave',{pointerType:'mouse'});env.flushTimers();assert.equal(panel.hidden,true);
+    env.dispatch(group,'pointerenter',{pointerType:'touch'});assert.equal(panel.hidden,true);
+    env.dispatch(group,'pointerenter',{pointerType:'mouse'});env.click(group.querySelector('.nav-disclosure'));
+    assert.equal(panel.hidden,false,'Clicking a hover-open disclosure keeps it open');
+    env.dispatch(group,'pointerleave',{pointerType:'mouse'});env.flushTimers();
+    assert.equal(panel.hidden,false,'A clicked disclosure remains open until explicitly dismissed');
+    env.click(group.querySelector('.nav-disclosure'));assert.equal(panel.hidden,true,'A second disclosure click closes it');
+    const mobile=environment(prefix+'index.html',{width:390,pointer:'coarse'});
+    const mobileGroup=mobile.document.querySelector('[data-nav-group]'),mobilePanel=mobileGroup.querySelector('.nav-panel');
+    mobile.click(mobile.document.querySelector('.menu-toggle'));
+    assert.equal(mobile.focused,mobile.document.querySelector('#main-nav .nav-link'),'Opening the mobile menu starts keyboard navigation at its first destination');
+    mobile.dispatch(mobileGroup,'pointerenter',{pointerType:'mouse'});assert.equal(mobilePanel.hidden,true);
+    mobileGroup.querySelector('.nav-link').focus();assert.equal(mobilePanel.hidden,true,'Touch page links do not toggle disclosure');
+    mobile.click(mobileGroup.querySelector('.nav-disclosure'));assert.equal(mobilePanel.hidden,false);
+    mobile.key(mobileGroup.querySelector('.nav-disclosure'),'Escape');
+    assert.equal(mobilePanel.hidden,true);assert.equal(mobile.document.querySelector('.menu-toggle').getAttribute('aria-expanded'),'true');
+    mobile.key(mobile.document,'Escape');
+    assert.equal(mobile.document.querySelector('.menu-toggle').getAttribute('aria-expanded'),'false');
+    assert.equal(mobile.focused,mobile.document.querySelector('.menu-toggle'));
+    env.dispatch(group,'pointerenter',{pointerType:'mouse'});
+    panel.querySelector('a').focus();env.matchMedia('(min-width: 801px)').update(false);
+    assert.equal(panel.hidden,true);assert.equal(env.focused,env.document.querySelector('.menu-toggle'),'Resizing does not leave focus hidden in a closed menu');
+  });
+  test(`${lang}: navigation keeps no-JavaScript destinations and contextual links match real content`,()=>{
+    const {document}=parseHTML(fs.readFileSync(path.join(dist,prefix+'index.html'),'utf8'));
+    assert.equal(document.body.classList.contains('nav-ready'),false);
+    assert.equal(document.querySelector('.menu-toggle').hidden,true);
+    assert.ok([...document.querySelectorAll('.nav-disclosure')].every(button=>button.hidden));
+    const primary=[...document.querySelectorAll('.nav-topline > a, #main-nav > a')];
+    assert.equal(primary.length,4);
+    assert.ok(primary.every(link=>link.getAttribute('href')&&!link.hidden),'All four page links remain accessible before scripts run');
+    const work=[...document.querySelectorAll('#nav-work-panel a')];
+    const categories=work.map(a=>new URL(a.getAttribute('href'),base+prefix+'index.html').searchParams.get('category')).filter(Boolean);
+    assert.deepEqual(categories.sort(),[...new Set(projects.map(project=>project.category))].sort());
+    const serviceDocument=parseHTML(fs.readFileSync(path.join(dist,prefix+'services/index.html'),'utf8')).document;
+    const serviceLinks=[...document.querySelectorAll('#nav-services-panel a')].filter(link=>new URL(link.getAttribute('href'),base+prefix+'index.html').hash);
+    assert.equal(serviceLinks.length,ui[lang].services.length);
+    for(const link of serviceLinks){
+      const target=new URL(link.getAttribute('href'),base+prefix+'index.html');
+      assert.ok(serviceDocument.getElementById(target.hash.slice(1)),'Every service shortcut has a real destination');
+    }
+  });
 }
 
 const pages=htmlFiles().filter(file=>!file.endsWith('/404.html'));
@@ -170,6 +287,17 @@ for(const file of pages) {
     if(rel.includes('/projects/')) assert.equal(expected.pathname.split('/').at(-2),rel.split('/').at(-2));
   });
   if(rel.includes('projects/')) {
+    test(`${rel}: project shortcuts reach real sections and document deep-links expand source sheets`,()=>{
+      const env=environment(rel);
+      for(const id of ['overview','gallery','documents'])assert.ok(env.document.getElementById(id));
+      const documents=env.document.querySelector('details.project-documents');
+      assert.equal(documents.hasAttribute('open'),false);
+      env.changeHash('#documents');assert.equal(documents.hasAttribute('open'),true);
+      documents.removeAttribute('open');
+      const shortcut=[...env.document.querySelectorAll('a[href]')].find(link=>new URL(link.href).hash==='#documents');
+      assert.ok(shortcut);env.click(shortcut);assert.equal(documents.hasAttribute('open'),true);
+      const deep=environment(rel,{hash:'#documents'});assert.equal(deep.document.querySelector('details.project-documents').hasAttribute('open'),true);
+    });
     test(`${rel}: image and document galleries navigate independently and return focus`,()=>{
       const env=environment(rel),dialog=env.document.querySelector('.lightbox');
       const groups=[...env.document.querySelectorAll('.gallery-grid')];
@@ -310,6 +438,21 @@ test('Unavailable localStorage does not break language controls, menus or filter
     env.click(env.document.querySelector('[data-set-lang="en"]'),{navigate:true});
   }
 });
+test('Entry motion is optional, begins only on intersection and respects reduced motion',()=>{
+  const plain=environment('work/index.html');
+  assert.equal(plain.document.querySelectorAll('.reveal-enter').length,0);
+  assert.equal(visibleCards(plain).length,10,'Content remains visible when IntersectionObserver is unavailable');
+  const animated=environment('work/index.html',{observe:true});
+  assert.equal(animated.observations.length,1);
+  const observer=animated.observations[0],card=animated.document.querySelector('.project-card');
+  assert.ok(observer.elements.has(card));assert.equal(card.hidden,false);
+  assert.equal(animated.document.querySelectorAll('.reveal-enter').length,0,'Offscreen content is never pre-hidden for an animation');
+  observer.callback([{target:card,isIntersecting:false}]);assert.equal(card.classList.contains('reveal-enter'),false);
+  observer.callback([{target:card,isIntersecting:true}]);assert.equal(card.classList.contains('reveal-enter'),true);
+  assert.equal(observer.elements.has(card),false,'Content enters once without repeated scroll effects');
+  const reduced=environment('work/index.html',{observe:true,reduced:true});
+  assert.equal(reduced.observations.length,0);assert.equal(visibleCards(reduced).length,10);
+});
 
 const css=fs.readFileSync(path.join(root,'public/styles.css'),'utf8'),parseErrors=[];
 const ast=cssTree.parse(css,{positions:true,onParseError:error=>parseErrors.push(error.message)});
@@ -322,12 +465,14 @@ function collect(nodes,media=[]){
   }
 }
 collect(ast.children);
-function matchesMedia(condition,width,{reduced=false}={}){
+function matchesMedia(condition,width,{reduced=false,pointer=width>800?'fine':'coarse'}={}){
   if(condition==='print')return false;
-  if(condition.includes('prefers-reduced-motion'))return reduced;
+  if(condition.includes('prefers-reduced-motion'))return condition.includes('no-preference')?!reduced:reduced;
   const matches=[...condition.matchAll(/\((min|max)-width:\s*([\d.]+)px\)/g)];
-  if(!matches.length)throw new Error('Unsupported static query: '+condition);
-  return matches.every(([,type,limit])=>type==='max'?width<=Number(limit):width>=Number(limit));
+  const inputs=[...condition.matchAll(/\((?:any-)?(hover|pointer):\s*(hover|none|fine|coarse)\)/g)];
+  if(!matches.length&&!inputs.length)throw new Error('Unsupported static query: '+condition);
+  return matches.every(([,type,limit])=>type==='max'?width<=Number(limit):width>=Number(limit))
+    && inputs.every(([,type,value])=>type==='pointer'?pointer===value:(pointer==='fine'?'hover':'none')===value);
 }
 function declarations(selector,width,options={}){
   const result={};
@@ -358,6 +503,7 @@ test('Static CSS declares reduced-motion alternatives and keyboard focus indicat
   assert.ok(declarations(':focus-visible',390).outline);
   assert.equal(declarations('[hidden]',390).display,'none');
   assert.equal(declarations('img',390)['max-width'],'100%');
+  assert.equal(declarations('body:not(.nav-ready) .main-nav',390).display,'flex','Mobile page destinations stay available without JavaScript');
 });
 
 report.summary={total:report.tests.length,passed:report.tests.filter(t=>t.status==='passed').length,failed:report.tests.filter(t=>t.status==='failed').length,pages:pages.length};

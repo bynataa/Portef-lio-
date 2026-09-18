@@ -379,6 +379,23 @@
       "sendNote": "Seu pedido vai direto para a Renarchi.",
       "sentBadge": "Tudo pronto",
       "summaryLabel": "Resumo do projeto"
+    },
+    "navigationUX": {
+      "browseProjects": "Explore por categoria",
+      "browseServices": "Como posso ajudar",
+      "allServices": "Conheça todas as áreas",
+      "openProjects": "Abrir categorias de projetos",
+      "closeProjects": "Fechar categorias de projetos",
+      "openServices": "Abrir áreas de atuação",
+      "closeServices": "Fechar áreas de atuação",
+      "exploreGallery": "Explorar galeria",
+      "viewFeatured": "Conhecer esta residência",
+      "projectSections": "Navegar neste projeto",
+      "overview": "O projeto",
+      "gallery": "Galeria",
+      "documents": "Pranchas",
+      "images": "imagens",
+      "image": "imagem"
     }
   },
   "en": {
@@ -761,6 +778,23 @@
       "sendNote": "Your request goes directly to Renarchi.",
       "sentBadge": "All set",
       "summaryLabel": "Project summary"
+    },
+    "navigationUX": {
+      "browseProjects": "Explore by category",
+      "browseServices": "How I can help",
+      "allServices": "Explore all services",
+      "openProjects": "Open project categories",
+      "closeProjects": "Close project categories",
+      "openServices": "Open areas of expertise",
+      "closeServices": "Close areas of expertise",
+      "exploreGallery": "Explore gallery",
+      "viewFeatured": "Explore this residence",
+      "projectSections": "Explore this project",
+      "overview": "Overview",
+      "gallery": "Gallery",
+      "documents": "Drawings",
+      "images": "images",
+      "image": "image"
     }
   }
 }
