@@ -1,1 +1,2 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#1e332d"/><text x="15" y="47" fill="#f5f3ed" font-size="55" font-family="Georgia,serif">r</text><circle cx="48" cy="47" r="3" fill="#c4d1b8"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><style>.surface{fill:#F3E5D4}.mark{fill:#4B3428}@media(prefers-color-scheme:dark){.surface{fill:#4B3428}.mark{fill:#F3E5D4}}</style><rect class="surface" width="64" height="64" rx="8"/><g class="mark" transform="translate(-31.29 -21.06) scale(.1057)"><path d="M357 702H382L469 554H444Z M445 627H455L629 333L817 702H842L638 302Z M579 409L738 702H762L585 390Z"/></g></svg>

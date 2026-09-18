@@ -112,16 +112,59 @@
     const destination=new URL(link.href,location.href),current=new URL(location.href);
     if(destination.pathname===current.pathname&&destination.hash==='#documents')document.querySelector('details.project-documents')?.setAttribute('open','');
   });
-  if(browser?.IntersectionObserver&&!reducedMotion?.matches){
-    const observer=new browser.IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(!entry.isIntersecting)return;
-        if(!reducedMotion?.matches)entry.target.classList.add('reveal-enter');
-        observer.unobserve(entry.target);
+  // Every element starts visible. IntersectionObserver only adds a brief entry effect.
+  const revealTargets=[...document.querySelectorAll('.home-hero h1, .hero-heading h1, .hero-copy > p, .page-intro h1, .page-intro > p, .project-title, .section-head, .project-card, .about-teaser, .service-row, .timeline article, .project-story > div > p, .contact-brief')];
+  const revealed=new WeakSet();
+  let revealObserver=null;
+  function configureReveal(){
+    if(reducedMotion?.matches){
+      revealObserver?.disconnect?.();
+      revealTargets.forEach(element=>{
+        element.classList.remove('reveal-enter');
+        element.style.removeProperty('--reveal-delay');
+      });
+      return;
+    }
+    if(!browser?.IntersectionObserver)return;
+    if(!revealObserver)revealObserver=new browser.IntersectionObserver(entries=>{
+      let cardIndex=0;
+      entries.forEach(({target,isIntersecting})=>{
+        // A filter can hide a card after the browser queued its intersection.
+        if(!isIntersecting||reducedMotion?.matches||target.closest('[hidden]')||revealed.has(target))return;
+        if(target.classList.contains('project-card'))target.style.setProperty('--reveal-delay',`${(cardIndex++%3)*70}ms`);
+        target.classList.add('reveal-enter');
+        revealed.add(target);
+        revealObserver.unobserve(target);
       });
     },{threshold:.12});
-    document.querySelectorAll('.section-head, .project-card, .about-teaser, .service-row, .timeline article').forEach(element=>observer.observe(element));
+    revealTargets.forEach(element=>{if(!revealed.has(element))revealObserver.observe(element);});
   }
+  const header=document.querySelector('.site-header'),heroImage=document.querySelector('.hero-image-link img');
+  let scrollFrame=null,lastHeroShift=null;
+  function updateScrollEffects(){
+    if(scrollFrame!==null)browser?.cancelAnimationFrame?.(scrollFrame);
+    scrollFrame=null;
+    const scroll=browser?.scrollY??document.documentElement.scrollTop??0;
+    header?.classList.toggle('is-scrolled',scroll>16);
+    const canMove=heroImage&&desktop?.matches&&!reducedMotion?.matches&&browser?.requestAnimationFrame;
+    if(!canMove){
+      if(lastHeroShift!==null){heroImage?.style.removeProperty('--hero-shift');lastHeroShift=null;}
+      return;
+    }
+    const shift=Math.max(-12,Math.min(12,scroll*.025));
+    // Once the small range is reached, scrolling does not keep writing styles.
+    if(shift!==lastHeroShift){heroImage.style.setProperty('--hero-shift',`${shift}px`);lastHeroShift=shift;}
+  }
+  function scheduleScrollEffects(){
+    if(scrollFrame!==null)return;
+    if(browser?.requestAnimationFrame)scrollFrame=browser.requestAnimationFrame(updateScrollEffects);
+    else updateScrollEffects();
+  }
+  configureReveal();
+  updateScrollEffects();
+  if(header||heroImage)browser?.addEventListener?.('scroll',scheduleScrollEffects,{passive:true});
+  desktop?.addEventListener?.('change',updateScrollEffects);
+  reducedMotion?.addEventListener?.('change',()=>{configureReveal();updateScrollEffects();});
   const filters=[...document.querySelectorAll('[data-filter]')],cards=[...document.querySelectorAll('[data-category]')],count=document.querySelector('.results-count');
   function filter(category,updateURL){
     if(!filters.some(b=>b.dataset.filter===category))category='all';

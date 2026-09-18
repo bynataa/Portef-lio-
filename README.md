@@ -31,9 +31,18 @@ npm run check
 npm run test:dom
 npm run test:contact
 npm run test:quote
+npm run test:motion
 ```
 
 As verificações cobrem arquivos, links internos, imagens, traduções, metadados e lógica de navegação. O teste de DOM utiliza simulação; detalhes e limitações estão em [docs/VALIDACAO.md](docs/VALIDACAO.md).
+
+## Identidade visual
+
+A identidade usa creme, areia e café, títulos em Cormorant Garamond (WOFF2 local, licença OFL em `public/assets/fonts`) e imagens originais do portfólio. A abertura usa `cover-ambrosini.webp`, a fachada noturna da Residência Ambrosini; `hero-ambrosini.webp` é a imagem do interior.
+
+As assinaturas vetoriais claras/escuras e PT/EN ficam em `public/assets/brand`. O favicon contém somente o símbolo geométrico. Os arquivos SVG, ICO, PNG e Apple Touch são versionados; `scripts/generate-brand.mjs` é uma ferramenta opcional de autoria que requer Sharp e não faz parte do build.
+
+O cabeçalho acompanha a rolagem natural, e a profundidade da imagem é limitada a 12px em desktop. Entradas não ocultam conteúdo antes da inicialização; a preferência por movimento reduzido é respeitada, inclusive quando alterada durante a visita. Os testes de movimento simulam as APIs do navegador. O domínio público é `https://renarchi.com.br`, usado também em canonical, hreflang, sitemap e metadados.
 
 ## Atualizar conteúdo
 

@@ -9,7 +9,8 @@
     "check": "node scripts/check.mjs",
     "test:dom": "node scripts/test-dom.mjs",
     "test:contact": "node scripts/test-contact.mjs",
-    "test:quote": "node scripts/test-quote.mjs"
+    "test:quote": "node scripts/test-quote.mjs",
+    "test:motion": "node scripts/test-motion.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -15,7 +15,7 @@
     "language": "Selecionar idioma",
     "homeLabel": "Página inicial de Renata Guimarães",
     "heroEyebrow": "RENATA GUIMARÃES · RENARCHI ARQUITETURA",
-    "heroTitle": "Espaços pensados<br>para <em>viver melhor.</em>",
+    "heroTitle": "Projetos que<br>conectam <em>pessoas e lugares.</em>",
     "heroText": "Arquitetura, interiores e documentação técnica. Do desenho à transformação dos espaços, com atenção às pessoas e a cada detalhe.",
     "viewWork": "Explorar projetos",
     "getInTouch": "Vamos conversar",
@@ -396,7 +396,8 @@
       "documents": "Pranchas",
       "images": "imagens",
       "image": "imagem"
-    }
+    },
+    "brandLine": "Arquitetura · Interiores · Cidades"
   },
   "en": {
     "locale": "en",
@@ -414,7 +415,7 @@
     "language": "Select language",
     "homeLabel": "Renata Guimarães home page",
     "heroEyebrow": "RENATA GUIMARÃES · RENARCHI ARQUITETURA",
-    "heroTitle": "Spaces designed<br>for <em>better living.</em>",
+    "heroTitle": "Projects that<br>connect <em>people and places.</em>",
     "heroText": "Architecture, interiors and technical documentation. Thoughtful design that transforms spaces, with people and detail at its heart.",
     "viewWork": "Explore projects",
     "getInTouch": "Let’s talk",
@@ -795,6 +796,7 @@
       "documents": "Drawings",
       "images": "images",
       "image": "image"
-    }
+    },
+    "brandLine": "Architecture · Interiors · Cities"
   }
 }
