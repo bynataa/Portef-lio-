@@ -71,7 +71,7 @@
     const current = review || sent ? log.querySelector('.quote-final-turn') : turns.get(index);
     // Scroll only the transcript; the composer and header stay in place.
     if (current && log.clientHeight > 0) {
-      const top = current.offsetTop - log.offsetTop;
+      const top = current.offsetTop;
       log.scrollTop = Math.max(0, top - (review || sent ? 14 : 72));
     } else log.scrollTop = log.scrollHeight;
   }
