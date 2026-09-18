@@ -40,7 +40,7 @@ As verificações cobrem arquivos, links internos, imagens, traduções, metadad
 
 A identidade usa creme, areia e café, títulos em Cormorant Garamond (WOFF2 local, licença OFL em `public/assets/fonts`) e imagens originais do portfólio. A abertura usa `cover-ambrosini.webp`, a fachada noturna da Residência Ambrosini; `hero-ambrosini.webp` é a imagem do interior.
 
-As assinaturas vetoriais claras/escuras e PT/EN ficam em `public/assets/brand`. O favicon contém somente o símbolo geométrico. Os arquivos SVG, ICO, PNG e Apple Touch são versionados; `scripts/generate-brand.mjs` é uma ferramenta opcional de autoria que requer Sharp e não faz parte do build.
+As assinaturas vetoriais claras/escuras e PT/EN ficam em `public/assets/brand`. O favicon usa a imagem completa fornecida pela cliente, preservada em `public/assets/brand/renarchi-seal.png`. As referências aos ícones incluem uma versão calculada pelo conteúdo para renovar o cache. Os arquivos SVG, ICO, PNG e Apple Touch são versionados; `scripts/generate-brand.mjs` é uma ferramenta opcional de autoria que requer Sharp e não faz parte do build.
 
 O cabeçalho acompanha a rolagem natural, e a profundidade da imagem é limitada a 12px em desktop. Entradas não ocultam conteúdo antes da inicialização; a preferência por movimento reduzido é respeitada, inclusive quando alterada durante a visita. Os testes de movimento simulam as APIs do navegador. O domínio público é `https://renarchi.com.br`, usado também em canonical, hreflang, sitemap e metadados.
 

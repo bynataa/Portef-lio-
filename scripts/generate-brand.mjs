@@ -6,6 +6,7 @@
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
@@ -57,11 +58,14 @@ for (const [variant, color] of Object.entries(palette)) {
   await sharp(Buffer.from(stacked)).resize(1024).png().toFile(path.join(brandDir,`renarchi-logo-${variant}.png`));
 }
 
-const icon = (size,adaptive=false) => `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 64 64"><style>.surface{fill:${palette.light}}.mark{fill:${palette.dark}}${adaptive?`@media(prefers-color-scheme:dark){.surface{fill:${palette.dark}}.mark{fill:${palette.light}}}`:''}</style><rect class="surface" width="64" height="64" rx="8"/><g class="mark" transform="translate(-31.29 -21.06) scale(.1057)">${symbol}</g></svg>\n`;
-await fs.writeFile(path.join(publicDir,'favicon.svg'),icon(64,true));
+// The browser icon uses the complete client-supplied seal, without redrawing it.
+const seal = await fs.readFile(path.join(brandDir, 'renarchi-seal.png'));
+const iconImage = await sharp(seal).resize(256, 256, { fit: 'contain' }).png().toBuffer();
+const iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 256"><image width="256" height="256" xlink:href="data:image/png;base64,' + iconImage.toString('base64') + '"/></svg>\n';
+await fs.writeFile(path.join(publicDir, 'favicon.svg'), iconSvg);
 const pngs = new Map();
 for (const size of [16,32,48,180,192,512]) {
-  const buffer = await sharp(Buffer.from(icon(size))).resize(size,size).png().toBuffer();
+  const buffer = await sharp(seal).resize(size,size,{fit:'contain'}).png().toBuffer();
   pngs.set(size,buffer);
   const filename = size===180?'apple-touch-icon.png':size>=192?`icon-${size}.png`:`favicon-${size}x${size}.png`;
   await fs.writeFile(path.join(publicDir,filename),buffer);
@@ -80,6 +84,6 @@ await fs.writeFile(path.join(publicDir,'favicon.ico'),Buffer.concat([header,...i
 await fs.writeFile(path.join(publicDir,'site.webmanifest'),JSON.stringify({
   name:'Renarchi — Arquitetura, Interiores, Cidades',short_name:'Renarchi',id:'/',start_url:'/',scope:'/',
   display:'browser',lang:'pt-BR',background_color:'#F5F0E8',theme_color:palette.dark,
-  icons:[{src:'icon-192.png',sizes:'192x192',type:'image/png',purpose:'any'},{src:'icon-512.png',sizes:'512x512',type:'image/png',purpose:'any'}]
+  icons:[{src:'icon-192.png?v='+crypto.createHash('sha256').update(pngs.get(192)).digest('hex').slice(0,10),sizes:'192x192',type:'image/png',purpose:'any'},{src:'icon-512.png?v='+crypto.createHash('sha256').update(pngs.get(512)).digest('hex').slice(0,10),sizes:'512x512',type:'image/png',purpose:'any'}]
 },null,2)+'\n');
-console.log('Brand SVGs, logo PNGs, theme-aware favicon, ICO and install icons generated.');
+console.log('Brand SVGs, logo PNGs, client-supplied seal favicon, ICO and install icons generated.');
