@@ -12,7 +12,9 @@
         opener = link;
         dialog.showModal();
         document.body.classList.add('modal-open');
-        form.querySelector('[name="name"]').focus();
+        const assistant = document.querySelector('.budget-assistant');
+        const target = assistant && !assistant.hidden ? assistant.querySelector('[data-current-focus]') : form.querySelector('[name="name"]');
+        target?.focus();
       });
     });
     dialog.querySelector('.contact-close').addEventListener('click', () => dialog.close());
@@ -36,6 +38,9 @@
     status.textContent = message;
     status.dataset.state = state;
     status.focus();
+    const event = document.createEvent('Event');
+    event.initEvent('contact:status', false, false);
+    form.dispatchEvent(event);
   }
   form.addEventListener('submit', async event => {
     event.preventDefault();

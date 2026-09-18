@@ -510,3 +510,42 @@ dialog.lightbox::backdrop { background: rgb(10 19 15 / 92%); }
 @media print {
   .contact-launcher, .contact-dialog, .contact-panel { display: none !important; }
 }
+
+/* Conversational project intake. */
+.contact-modes { display: flex; gap: 4px; padding: 4px; margin: 0 0 20px; border: 1px solid var(--line); border-radius: 8px; background: var(--soft); }
+.contact-modes button { flex: 1; min-height: 44px; padding: 8px 12px; font-size: 13px; line-height: 1.4; border: 0; border-radius: 5px; background: transparent; }
+.contact-modes button[aria-pressed="true"] { background: var(--white); box-shadow: 0 1px 4px rgb(30 51 45 / 8%); font-weight: 600; }
+.quote-badge { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+.quote-progress { font-size: 12px; color: var(--muted); margin: 0 0 14px; }
+.quote-conversation { display: flex; flex-direction: column; gap: 12px; max-height: 210px; overflow-y: auto; overscroll-behavior: contain; padding: 6px 8px 12px 0; margin-bottom: 18px; scrollbar-width: thin; }
+.quote-bubble { max-width: 90%; padding: 12px 15px; border-radius: 12px; font-size: 13px; line-height: 1.6; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.quote-bot { align-self: start; background: var(--soft); border-bottom-left-radius: 3px; }
+.quote-user { align-self: end; color: var(--white); background: var(--ink); border-bottom-right-radius: 3px; }
+.quote-question { display: block; font-family: var(--sans); font-size: 17px; line-height: 1.5; font-weight: 500; margin-bottom: 14px; }
+.quote-choices { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; }
+.quote-choice { min-height: 47px; padding: 12px; border: 1px solid #9ba999; border-radius: 7px; color: var(--ink); background: var(--white); font-size: 13px; line-height: 1.5; text-align: left; }
+.quote-choice:hover, .quote-choice[aria-pressed="true"] { border-color: var(--ink); background: var(--soft); }
+.quote-answer { width: 100%; display: block; padding: 12px; min-height: 48px; border: 1px solid #9ba999; border-radius: 5px; background: var(--white); color: var(--ink); font-size: 16px; line-height: 1.5; resize: vertical; }
+.quote-answer::placeholder { color: var(--muted); opacity: 1; }
+.quote-next, .quote-send { width: 100%; margin-top: 12px; border-radius: 5px; }
+.quote-navigation { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; }
+.quote-back, .quote-skip { min-height: 44px; padding: 8px 0; border: 0; background: transparent; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; }
+.quote-skip { margin-left: auto; }
+.quote-validation { font-size: 13px; color: #713a19; margin: 12px 0 0; }
+.quote-validation:empty { display: none; }
+.quote-heading { font-family: var(--serif); font-size: 29px; line-height: 1.2; margin: 14px 0; }
+.quote-intro, .quote-success { font-size: 14px; line-height: 1.6; }
+.quote-summary { margin: 0; }
+.quote-summary-row { display: grid; grid-template-columns: minmax(0,1fr) auto; column-gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.quote-summary dt { grid-column: 1; color: var(--muted); font-size: 12px; }
+.quote-summary dd { grid-column: 1; font-size: 14px; margin: 4px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.quote-edit { grid-column: 2; grid-row: 1 / 3; align-self: start; min-height: 44px; padding: 6px; border: 0; background: transparent; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+.quote-alternative { font-size: 12px; margin: 14px 0 0; overflow-wrap: anywhere; text-align: center; }
+.quote-alternative a { text-decoration: underline; text-underline-offset: 3px; }
+.quote-reply-email { font-size: 15px; font-weight: 600; overflow-wrap: anywhere; }
+@media (max-width: 560px) {
+  .quote-choices { grid-template-columns: 1fr; }
+  .quote-conversation { max-height: 160px; }
+  .quote-question { font-size: 16px; }
+  .contact-modes button { padding-inline: 6px; font-size: 12px; }
+}

@@ -30,6 +30,7 @@ Abra `http://localhost:4173`. Os arquivos do site são gerados em `dist/`. Encer
 npm run check
 npm run test:dom
 npm run test:contact
+npm run test:quote
 ```
 
 As verificações cobrem arquivos, links internos, imagens, traduções, metadados e lógica de navegação. O teste de DOM utiliza simulação; detalhes e limitações estão em [docs/VALIDACAO.md](docs/VALIDACAO.md).
@@ -71,13 +72,23 @@ Os arquivos publicados são gerados em `dist/`. O campo `url` de `src/site.json`
 
 ## Formulário de contato
 
-O botão flutuante “Mensagem / orçamento” abre um formulário PT/EN; a página de contato também oferece o formulário diretamente. Os pedidos seguem para `renarchi.urb@gmail.com`, definido em `src/site.json`, por meio do FormSubmit. O e-mail do visitante configura o Reply-To para responder pelo Gmail. Em páginas de projeto, a referência acompanha o pedido.
+O botão flutuante “Assistente de orçamento” abre um atendimento guiado PT/EN, com opção de mensagem direta; a página de contato também oferece o formulário diretamente. Os pedidos seguem para `renarchi.urb@gmail.com`, definido em `src/site.json`, por meio do FormSubmit. O e-mail do visitante configura o Reply-To para responder pelo Gmail. Em páginas de projeto, a referência acompanha o pedido.
 
 **Ativação única:** após o primeiro envio, abra a mensagem do FormSubmit no e-mail destinatário (verifique também o spam) e confirme a ativação. Até essa confirmação, o recebimento não está habilitado. Faça um envio de teste depois de ativar para conferir a entrega. Não é necessário colocar a senha do Gmail no site.
 
 O formulário informa sucesso apenas após uma resposta positiva do serviço; erros preservam os dados e permitem nova tentativa. O envio depende da disponibilidade do FormSubmit e da ativação do destinatário. O campo `_honey` reduz envios automatizados. Sem JavaScript, a página de contato usa POST nativo, com a confirmação do próprio serviço.
 
 Interface e mensagens: `src/ui.json`. Comportamento: `public/contact.js`. Os testes simulam as respostas do serviço e não comprovam entrega à caixa de entrada.
+
+## Assistente de orçamento
+
+O atendimento usa perguntas guiadas e adapta a pergunta de escopo ao serviço escolhido. Coleta serviço, tipo de imóvel, localização, ideias, área aproximada, prazo, investimento opcional na obra e contatos. O visitante revisa e pode editar as respostas antes de acionar **Enviar pedido por e-mail**. Só essa ação final envia os dados.
+
+As respostas formam um pedido de orçamento completo, enviado pelo mesmo FormSubmit para `src/site.json > email`, com Reply-To do visitante e referência ao projeto quando disponível. O assistente não calcula preços nem promete disponibilidade. Valores e proposta dependem da análise da Renata.
+
+Esta versão é um assistente determinístico, não uma IA generativa. Não usa uma API de modelos nem armazena a conversa no navegador: as respostas permanecem apenas na memória da página e são perdidas ao recarregar ou navegar. Para conversação livre por IA, seria necessário um backend com credenciais protegidas, uma API de modelo e contexto comercial aprovado.
+
+Perguntas, opções e mensagens: `src/ui.json > quoteAssistant`. Fluxo e resumo: `public/quote.js`. A entrega e sua ativação continuam sob as regras do FormSubmit descritas acima. Sem suporte aos recursos necessários, o formulário HTML permanece disponível.
 
 ## Créditos
 

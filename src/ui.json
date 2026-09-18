@@ -151,10 +151,10 @@
     "imageViewport": "Imagem ampliada. Use a rolagem, o toque ou as setas para explorar os detalhes.",
     "documentSingular": "prancha",
     "contactForm": {
-      "launcher": "Mensagem / orçamento",
+      "launcher": "Assistente de orçamento",
       "eyebrow": "VAMOS CONVERSAR",
       "title": "Conte a sua ideia.",
-      "intro": "Envie uma mensagem ou peça um orçamento. A Renarchi responde pelo e-mail informado.",
+      "intro": "Responda às perguntas para pedir um orçamento ou envie uma mensagem direta. A Renarchi responde pelo e-mail informado.",
       "close": "Fechar formulário",
       "name": "Nome",
       "email": "E-mail",
@@ -173,6 +173,192 @@
       "privacy": "Seus dados serão usados para responder a este contato. O envio é processado pelo FormSubmit.",
       "alternative": "Prefere escrever por e-mail?",
       "required": "Nome, e-mail e mensagem são obrigatórios."
+    },
+    "quoteAssistant": {
+      "tab": "Assistente de orçamento",
+      "messageTab": "Mensagem direta",
+      "intro": "Vou fazer algumas perguntas para a Renata entender seu projeto. No final, você revisa o pedido antes de enviar. O valor da proposta será definido após a análise.",
+      "badge": "Assistente automático",
+      "you": "Você",
+      "progress": "Pergunta {n} de {total}",
+      "next": "Continuar",
+      "back": "Voltar",
+      "skip": "Ainda não sei / pular",
+      "review": "Confira seu pedido",
+      "reviewIntro": "Está tudo certo? Você pode editar qualquer resposta antes de enviar para a Renarchi.",
+      "edit": "Editar",
+      "send": "Enviar pedido por e-mail",
+      "sending": "Enviando pedido…",
+      "sent": "Pedido enviado!",
+      "sentText": "As informações foram encaminhadas à Renarchi. A resposta será enviada para o e-mail que você informou.",
+      "notProvided": "Não informado",
+      "privacy": "Ao enviar, você autoriza o uso dessas informações para responder ao seu pedido. O envio é processado pelo FormSubmit.",
+      "emailTitle": "SOLICITAÇÃO DE ORÇAMENTO — RENARCHI",
+      "emailIntro": "Olá, Renata! Gostaria de receber uma proposta para o projeto descrito abaixo.",
+      "emailClosing": "Aguardo seu retorno para conversarmos sobre o escopo e o orçamento.",
+      "choose": "Escolha uma opção para continuar.",
+      "required": "Preencha sua resposta para continuar.",
+      "emailError": "Informe um e-mail válido para receber a resposta.",
+      "tooLong": "Sua resposta ultrapassou o limite de caracteres.",
+      "detailsFor": {
+        "interiors": "Quais ambientes você quer transformar? Conte suas ideias, necessidades e o que gostaria de manter.",
+        "renovation": "O que você pretende reformar? Conte quais ambientes serão alterados e o que espera melhorar.",
+        "new": "O que você pretende construir? Conte o uso do imóvel, os ambientes desejados e o que já existe no terreno.",
+        "documents": "Que documentação você precisa? Conte o objetivo e se já possui plantas ou levantamento do imóvel.",
+        "visualization": "O que precisa visualizar em 3D? Conte quais ambientes ou fachadas e se já possui plantas ou um modelo.",
+        "guidance": "Conte o que deseja fazer no espaço. Quais dúvidas e necessidades você gostaria de conversar com a Renata?"
+      },
+      "steps": [
+        {
+          "id": "service",
+          "label": "Serviço desejado",
+          "question": "Olá! Que tipo de ajuda você procura?",
+          "type": "choice",
+          "options": [
+            [
+              "interiors",
+              "Arquitetura e interiores"
+            ],
+            [
+              "renovation",
+              "Reforma"
+            ],
+            [
+              "new",
+              "Construção nova"
+            ],
+            [
+              "documents",
+              "Projeto executivo / documentação"
+            ],
+            [
+              "visualization",
+              "Modelagem e visualização 3D"
+            ],
+            [
+              "guidance",
+              "Preciso de orientação"
+            ]
+          ]
+        },
+        {
+          "id": "property",
+          "label": "Tipo de imóvel",
+          "question": "Em que tipo de espaço será o projeto?",
+          "type": "choice",
+          "options": [
+            [
+              "house",
+              "Casa"
+            ],
+            [
+              "apartment",
+              "Apartamento"
+            ],
+            [
+              "shop",
+              "Loja / espaço comercial"
+            ],
+            [
+              "office",
+              "Escritório"
+            ],
+            [
+              "clinic",
+              "Clínica / consultório"
+            ],
+            [
+              "other",
+              "Outro espaço"
+            ]
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Localização",
+          "question": "Em qual cidade e bairro fica o imóvel? Se for fora do Brasil, inclua o país.",
+          "type": "text",
+          "placeholder": "Ex.: Jardim Primavera, Duque de Caxias, Brasil",
+          "max": 180
+        },
+        {
+          "id": "details",
+          "label": "Ideias e necessidades",
+          "question": "Conte um pouco sobre sua ideia para o projeto.",
+          "type": "textarea",
+          "placeholder": "Descreva os ambientes, necessidades e ideias que tem em mente.",
+          "max": 2500
+        },
+        {
+          "id": "area",
+          "label": "Área aproximada",
+          "question": "Qual é a área aproximada do espaço? Pode informar em m² ou pés quadrados.",
+          "type": "text",
+          "placeholder": "Ex.: 80 m²; ou sala e cozinha, sem metragem definida",
+          "max": 180,
+          "optional": true
+        },
+        {
+          "id": "timeline",
+          "label": "Prazo desejado",
+          "question": "Quando você gostaria de começar? A disponibilidade será confirmada pela Renata.",
+          "type": "choice",
+          "options": [
+            [
+              "soon",
+              "O quanto antes"
+            ],
+            [
+              "three",
+              "Nos próximos 3 meses"
+            ],
+            [
+              "six",
+              "Em 3 a 6 meses"
+            ],
+            [
+              "planning",
+              "Estou apenas planejando"
+            ]
+          ]
+        },
+        {
+          "id": "budget",
+          "label": "Investimento previsto na obra / intervenção",
+          "question": "Já tem uma faixa de investimento para a obra ou intervenção? É opcional e não representa o preço do projeto de arquitetura.",
+          "type": "text",
+          "placeholder": "Informe uma faixa e a moeda, se já tiver definido.",
+          "max": 180,
+          "optional": true
+        },
+        {
+          "id": "name",
+          "label": "Nome",
+          "question": "Como você se chama?",
+          "type": "text",
+          "autocomplete": "name",
+          "max": 100
+        },
+        {
+          "id": "email",
+          "label": "E-mail",
+          "question": "Qual é seu e-mail para receber o retorno da Renarchi?",
+          "type": "email",
+          "autocomplete": "email",
+          "placeholder": "voce@exemplo.com",
+          "max": 254
+        },
+        {
+          "id": "phone",
+          "label": "WhatsApp",
+          "question": "Quer deixar também um WhatsApp com DDD? Esse campo é opcional.",
+          "type": "tel",
+          "autocomplete": "tel",
+          "placeholder": "+55 (21) 99999-9999",
+          "max": 40,
+          "optional": true
+        }
+      ]
     }
   },
   "en": {
@@ -327,10 +513,10 @@
     "imageViewport": "Enlarged image. Scroll, swipe or use the arrow keys to explore the details.",
     "documentSingular": "sheet",
     "contactForm": {
-      "launcher": "Message / quote",
+      "launcher": "Quote assistant",
       "eyebrow": "LET’S TALK",
       "title": "Tell us your idea.",
-      "intro": "Send a message or request a quote. Renarchi will reply to the email address you provide.",
+      "intro": "Answer a few questions to request a quote, or send a direct message. Renarchi will reply by email.",
       "close": "Close contact form",
       "name": "Name",
       "email": "Email",
@@ -349,6 +535,192 @@
       "privacy": "Your details will be used to respond to this enquiry. Submissions are processed by FormSubmit.",
       "alternative": "Prefer to email us?",
       "required": "Name, email and message are required."
+    },
+    "quoteAssistant": {
+      "tab": "Quote assistant",
+      "messageTab": "Direct message",
+      "intro": "I will ask a few questions to help Renata understand your project. You can review your request before sending it. A proposal and price will be prepared after the review.",
+      "badge": "Automated assistant",
+      "you": "You",
+      "progress": "Question {n} of {total}",
+      "next": "Continue",
+      "back": "Back",
+      "skip": "Not sure yet / skip",
+      "review": "Review your request",
+      "reviewIntro": "Does everything look right? You can edit any answer before sending your request to Renarchi.",
+      "edit": "Edit",
+      "send": "Email my request",
+      "sending": "Sending request…",
+      "sent": "Request sent!",
+      "sentText": "Your project details have been sent to Renarchi. You will receive a reply at the email address you provided.",
+      "notProvided": "Not provided",
+      "privacy": "By sending, you allow Renarchi to use these details to respond to your request. Submissions are processed by FormSubmit.",
+      "emailTitle": "QUOTE REQUEST — RENARCHI",
+      "emailIntro": "Hello, Renata! I would like a proposal for the project outlined below.",
+      "emailClosing": "I look forward to discussing the scope and receiving your proposal.",
+      "choose": "Choose an option to continue.",
+      "required": "Please enter an answer to continue.",
+      "emailError": "Enter a valid email address to receive your reply.",
+      "tooLong": "Your answer exceeds the character limit.",
+      "detailsFor": {
+        "interiors": "Which rooms would you like to transform? Tell us your ideas, needs and what you would like to keep.",
+        "renovation": "What would you like to renovate? Tell us which rooms are affected and what you hope to improve.",
+        "new": "What would you like to build? Describe the intended use, the rooms you need and what is already on the plot.",
+        "documents": "What documentation do you need? Tell us its purpose and whether you have plans or a property survey.",
+        "visualization": "What would you like to visualize in 3D? Tell us which rooms or façades, and whether you have plans or a model.",
+        "guidance": "Tell us what you would like to do with your space. What questions and needs would you like to discuss with Renata?"
+      },
+      "steps": [
+        {
+          "id": "service",
+          "label": "Requested service",
+          "question": "Hello! What kind of help are you looking for?",
+          "type": "choice",
+          "options": [
+            [
+              "interiors",
+              "Architecture and interiors"
+            ],
+            [
+              "renovation",
+              "Renovation"
+            ],
+            [
+              "new",
+              "New construction"
+            ],
+            [
+              "documents",
+              "Construction drawings / documentation"
+            ],
+            [
+              "visualization",
+              "3D modelling and visualization"
+            ],
+            [
+              "guidance",
+              "I need guidance"
+            ]
+          ]
+        },
+        {
+          "id": "property",
+          "label": "Property type",
+          "question": "What type of space is the project for?",
+          "type": "choice",
+          "options": [
+            [
+              "house",
+              "House"
+            ],
+            [
+              "apartment",
+              "Apartment"
+            ],
+            [
+              "shop",
+              "Shop / commercial space"
+            ],
+            [
+              "office",
+              "Office"
+            ],
+            [
+              "clinic",
+              "Clinic / practice"
+            ],
+            [
+              "other",
+              "Another type of space"
+            ]
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Location",
+          "question": "In which city and neighbourhood is the property? Include the country if outside Brazil.",
+          "type": "text",
+          "placeholder": "E.g. Jardim Primavera, Duque de Caxias, Brazil",
+          "max": 180
+        },
+        {
+          "id": "details",
+          "label": "Ideas and requirements",
+          "question": "Tell us about your project idea.",
+          "type": "textarea",
+          "placeholder": "Describe the rooms, requirements and ideas you have in mind.",
+          "max": 2500
+        },
+        {
+          "id": "area",
+          "label": "Approximate area",
+          "question": "What is the approximate size of the space? You can use square metres or square feet.",
+          "type": "text",
+          "placeholder": "E.g. 80 m²; or living room and kitchen, size not yet known",
+          "max": 180,
+          "optional": true
+        },
+        {
+          "id": "timeline",
+          "label": "Preferred timing",
+          "question": "When would you like to start? Renata will confirm availability.",
+          "type": "choice",
+          "options": [
+            [
+              "soon",
+              "As soon as possible"
+            ],
+            [
+              "three",
+              "Within the next 3 months"
+            ],
+            [
+              "six",
+              "In 3 to 6 months"
+            ],
+            [
+              "planning",
+              "I am exploring ideas"
+            ]
+          ]
+        },
+        {
+          "id": "budget",
+          "label": "Planned construction / renovation budget",
+          "question": "Do you have a budget range for the construction or renovation? This is optional and does not represent the architectural design fee.",
+          "type": "text",
+          "placeholder": "Enter a range and currency, if known.",
+          "max": 180,
+          "optional": true
+        },
+        {
+          "id": "name",
+          "label": "Name",
+          "question": "What is your name?",
+          "type": "text",
+          "autocomplete": "name",
+          "max": 100
+        },
+        {
+          "id": "email",
+          "label": "Email",
+          "question": "Which email address should Renarchi use to reply?",
+          "type": "email",
+          "autocomplete": "email",
+          "placeholder": "you@example.com",
+          "max": 254
+        },
+        {
+          "id": "phone",
+          "label": "WhatsApp",
+          "question": "Would you like to leave a WhatsApp number, including the country code? This is optional.",
+          "type": "tel",
+          "autocomplete": "tel",
+          "placeholder": "+55 21 99999-9999",
+          "max": 40,
+          "optional": true
+        }
+      ]
     }
   }
 }
