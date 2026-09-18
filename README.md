@@ -32,6 +32,7 @@ npm run test:dom
 npm run test:contact
 npm run test:quote
 npm run test:motion
+npm run test:carousel
 ```
 
 As verificações cobrem arquivos, links internos, imagens, traduções, metadados e lógica de navegação. O teste de DOM utiliza simulação; detalhes e limitações estão em [docs/VALIDACAO.md](docs/VALIDACAO.md).
@@ -102,3 +103,9 @@ Perguntas, opções e mensagens: `src/ui.json > quoteAssistant`. Fluxo e resumo:
 ## Créditos
 
 Conteúdo, imagens e informações profissionais de Renata Guimarães. As páginas de projetos preservam os créditos de colaboração e distinguem fotografias, renders e desenhos técnicos.
+
+## Movimento e navegação visual
+
+O cabeçalho usa vidro fosco em tons creme, com fundo opaco como alternativa em navegadores sem `backdrop-filter`. A página inicial apresenta os quatro projetos em destaque em um carrossel nativo, com setas, indicadores, teclado e gesto de deslizar. Sem JavaScript, a seleção continua disponível em grade. O carrossel não avança sozinho.
+
+O efeito de profundidade acompanha a rolagem na fachada de abertura e nas capas fotográficas dos projetos, com deslocamentos limitados. Desenhos técnicos mantêm a exibição integral. A rolagem vertical continua nativa; em telas pequenas ou com preferência por movimento reduzido, o parallax é desativado. `public/carousel.js` contém o carrossel; `public/app.js` controla os movimentos progressivos.

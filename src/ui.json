@@ -397,7 +397,15 @@
       "images": "imagens",
       "image": "imagem"
     },
-    "brandLine": "Arquitetura · Interiores · Cidades"
+    "brandLine": "Arquitetura · Interiores · Cidades",
+    "carousel": {
+      "previous": "Projetos anteriores",
+      "next": "Próximos projetos",
+      "label": "Navegar pelos projetos em destaque",
+      "item": "Projeto",
+      "of": "de",
+      "go": "Ir para o projeto"
+    }
   },
   "en": {
     "locale": "en",
@@ -797,6 +805,14 @@
       "images": "images",
       "image": "image"
     },
-    "brandLine": "Architecture · Interiors · Cities"
+    "brandLine": "Architecture · Interiors · Cities",
+    "carousel": {
+      "previous": "Previous projects",
+      "next": "Next projects",
+      "label": "Browse featured projects",
+      "item": "Project",
+      "of": "of",
+      "go": "Go to project"
+    }
   }
 }

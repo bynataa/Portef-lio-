@@ -139,21 +139,54 @@
     },{threshold:.12});
     revealTargets.forEach(element=>{if(!revealed.has(element))revealObserver.observe(element);});
   }
-  const header=document.querySelector('.site-header'),heroImage=document.querySelector('.hero-image-link img');
-  let scrollFrame=null,lastHeroShift=null;
+  const header=document.querySelector('.site-header');
+  const depthTargets=[...document.querySelectorAll('[data-depth] > img')].map(image=>({
+    image,host:image.parentElement,limit:image.parentElement.dataset.depth==='hero'?32:24,visible:true,shift:null
+  }));
+  const depthByHost=new Map(depthTargets.map(target=>[target.host,target]));
+  let scrollFrame=null,depthObserver=null;
+  const canMoveDepth=()=>depthTargets.length&&desktop?.matches&&!reducedMotion?.matches&&typeof browser?.requestAnimationFrame==='function'&&Number.isFinite(browser.innerHeight)&&browser.innerHeight>0;
+  function configureDepth(){
+    depthObserver?.disconnect?.();
+    depthTargets.forEach(target=>{target.visible=true;});
+    if(!canMoveDepth()||!browser?.IntersectionObserver)return;
+    if(!depthObserver)depthObserver=new browser.IntersectionObserver(entries=>{
+      if(!canMoveDepth())return;
+      let entered=false;
+      entries.forEach(({target,isIntersecting})=>{
+        const depth=depthByHost.get(target);
+        if(!depth)return;
+        depth.visible=isIntersecting;
+        if(isIntersecting)entered=true;
+      });
+      if(entered)scheduleScrollEffects();
+    },{threshold:0});
+    depthTargets.forEach(({host})=>depthObserver.observe(host));
+  }
   function updateScrollEffects(){
     if(scrollFrame!==null)browser?.cancelAnimationFrame?.(scrollFrame);
     scrollFrame=null;
     const scroll=browser?.scrollY??document.documentElement.scrollTop??0;
     header?.classList.toggle('is-scrolled',scroll>16);
-    const canMove=heroImage&&desktop?.matches&&!reducedMotion?.matches&&browser?.requestAnimationFrame;
-    if(!canMove){
-      if(lastHeroShift!==null){heroImage?.style.removeProperty('--hero-shift');lastHeroShift=null;}
+    if(!canMoveDepth()){
+      depthTargets.forEach(target=>{
+        if(target.shift!==null){target.image.style.removeProperty('--depth-shift');target.shift=null;}
+      });
       return;
     }
-    const shift=Math.max(-12,Math.min(12,scroll*.025));
-    // Once the small range is reached, scrolling does not keep writing styles.
-    if(shift!==lastHeroShift){heroImage.style.setProperty('--hero-shift',`${shift}px`);lastHeroShift=shift;}
+    const viewport=browser.innerHeight,updates=[];
+    depthTargets.forEach(target=>{
+      if(!target.visible||typeof target.host.getBoundingClientRect!=='function')return;
+      const rect=target.host.getBoundingClientRect();
+      if(!rect||![rect.top,rect.bottom,rect.height].every(Number.isFinite)||rect.height<=0||rect.bottom<=0||rect.top>=viewport)return;
+      // The 1.12 CSS scale provides 6% overscan on each edge; leave a 1% margin.
+      const limit=Math.min(target.limit,rect.height*.05);
+      const progress=(viewport-rect.top)/(viewport+rect.height);
+      const shift=Math.round(Math.max(-limit,Math.min(limit,(progress*2-1)*limit))*100)/100;
+      if(shift!==target.shift)updates.push({target,shift});
+    });
+    // Finish every geometry read before changing image styles.
+    updates.forEach(({target,shift})=>{target.image.style.setProperty('--depth-shift',`${shift}px`);target.shift=shift;});
   }
   function scheduleScrollEffects(){
     if(scrollFrame!==null)return;
@@ -161,10 +194,16 @@
     else updateScrollEffects();
   }
   configureReveal();
+  configureDepth();
   updateScrollEffects();
-  if(header||heroImage)browser?.addEventListener?.('scroll',scheduleScrollEffects,{passive:true});
-  desktop?.addEventListener?.('change',updateScrollEffects);
-  reducedMotion?.addEventListener?.('change',()=>{configureReveal();updateScrollEffects();});
+  if(header||depthTargets.length)browser?.addEventListener?.('scroll',scheduleScrollEffects,{passive:true});
+  if(depthTargets.length)browser?.addEventListener?.('resize',()=>{
+    // Recheck all hosts once after a resize, before observer notifications arrive.
+    depthTargets.forEach(target=>{target.visible=true;});
+    scheduleScrollEffects();
+  });
+  desktop?.addEventListener?.('change',()=>{configureDepth();updateScrollEffects();});
+  reducedMotion?.addEventListener?.('change',()=>{configureReveal();configureDepth();updateScrollEffects();});
   const filters=[...document.querySelectorAll('[data-filter]')],cards=[...document.querySelectorAll('[data-category]')],count=document.querySelector('.results-count');
   function filter(category,updateURL){
     if(!filters.some(b=>b.dataset.filter===category))category='all';

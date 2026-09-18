@@ -465,12 +465,14 @@ function collect(nodes,media=[]){
   }
 }
 collect(ast.children);
-function matchesMedia(condition,width,{reduced=false,pointer=width>800?'fine':'coarse'}={}){
+function matchesMedia(condition,width,{reduced=false,reducedTransparency=false,pointer=width>800?'fine':'coarse'}={}){
   if(condition==='print')return false;
-  if(condition.includes('prefers-reduced-motion'))return condition.includes('no-preference')?!reduced:reduced;
+  const motion=condition.includes('prefers-reduced-motion'),transparency=condition.includes('prefers-reduced-transparency');
+  if(motion&&(condition.includes('no-preference')?reduced:!reduced))return false;
+  if(transparency&&(condition.includes('no-preference')?reducedTransparency:!reducedTransparency))return false;
   const matches=[...condition.matchAll(/\((min|max)-width:\s*([\d.]+)px\)/g)];
   const inputs=[...condition.matchAll(/\((?:any-)?(hover|pointer):\s*(hover|none|fine|coarse)\)/g)];
-  if(!matches.length&&!inputs.length)throw new Error('Unsupported static query: '+condition);
+  if(!matches.length&&!inputs.length&&!motion&&!transparency)throw new Error('Unsupported static query: '+condition);
   return matches.every(([,type,limit])=>type==='max'?width<=Number(limit):width>=Number(limit))
     && inputs.every(([,type,value])=>type==='pointer'?pointer===value:(pointer==='fine'?'hover':'none')===value);
 }
@@ -504,6 +506,13 @@ test('Static CSS declares reduced-motion alternatives and keyboard focus indicat
   assert.equal(declarations('[hidden]',390).display,'none');
   assert.equal(declarations('img',390)['max-width'],'100%');
   assert.equal(declarations('body:not(.nav-ready) .main-nav',390).display,'flex','Mobile page destinations stay available without JavaScript');
+});
+
+test('Depth and glass alternatives respect combined viewport and accessibility preferences',()=>{
+  assert.match(declarations('[data-depth]>img',1440).transform,/scale\(1\.12\)/);
+  assert.equal(declarations('[data-depth]>img',390).transform,undefined);
+  assert.equal(declarations('[data-depth]>img',1440,{reduced:true}).transform,'none');
+  assert.equal(declarations('.site-header',1440,{reducedTransparency:true})['backdrop-filter'],'none');
 });
 
 report.summary={total:report.tests.length,passed:report.tests.filter(t=>t.status==='passed').length,failed:report.tests.filter(t=>t.status==='failed').length,pages:pages.length};

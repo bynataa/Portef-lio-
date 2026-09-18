@@ -889,3 +889,90 @@ h1 em, h2 em { color: var(--accent); font-weight: 400; }
  .hero-figure { position: relative; inset: auto; width: 70%; aspect-ratio: 843 / 897; }
  .hero-figure::after { display: none; }
 }
+
+/* Glass surfaces share the warm palette; opaque backgrounds remain the fallback. */
+.site-header { background: var(--paper); border-bottom-color: rgb(217 203 188 / 55%); }
+.site-header.is-scrolled { background: var(--paper); box-shadow: 0 8px 30px rgb(76 54 40 / 7%); }
+.nav-panel { border-color: rgb(217 203 188 / 70%); box-shadow: 0 16px 42px rgb(76 54 40 / 10%); }
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+ .site-header {
+  background: rgb(244 238 229 / 78%);
+  -webkit-backdrop-filter: blur(20px) saturate(115%);
+  backdrop-filter: blur(20px) saturate(115%);
+ }
+ .site-header.is-scrolled { background: rgb(244 238 229 / 82%); border-bottom-color: rgb(255 250 243 / 75%); }
+ .nav-panel {
+  background: rgb(255 250 243 / 94%);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+ }
+ .hero-image-action { background: rgb(244 238 229 / 84%); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+}
+
+/* The four featured projects become a native horizontal rail after enhancement. */
+.featured-track { scroll-margin-top: 135px; }
+.is-carousel-ready .featured-track {
+ display: flex;
+ gap: 32px;
+ overflow-x: auto;
+ overflow-y: hidden;
+ overscroll-behavior-x: contain;
+ scroll-snap-type: x mandatory;
+ scroll-padding-inline: 4px;
+ scrollbar-width: none;
+ padding: 8px 4px 12px;
+ margin-inline: -4px;
+ width: calc(100% + 8px);
+}
+.is-carousel-ready .featured-track::-webkit-scrollbar { display: none; }
+.is-carousel-ready .project-card { flex: 0 0 calc((100% - 32px) / 2); scroll-snap-align: start; }
+.is-carousel-ready .project-card:nth-child(even) { padding-top: 0; }
+.is-carousel-ready .project-image { aspect-ratio: 1.4; }
+.is-carousel-ready .project-card-main { outline-offset: -3px; }
+.is-carousel-ready .project-card-main:focus-visible { outline: 2px solid var(--accent); }
+.carousel-controls { display: grid; grid-template-columns: 46px 1fr auto 46px; align-items: center; gap: 18px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); }
+.carousel-arrow { display: inline-grid; place-items: center; width: 46px; height: 46px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: transparent; transition: background .2s ease, border-color .2s ease, color .2s ease; }
+.carousel-arrow:hover:not(:disabled) { color: var(--white); background: var(--ink); border-color: var(--ink); }
+.carousel-prev .arrow-icon { transform: rotate(180deg); }
+.carousel-dots { display: flex; align-items: center; justify-content: center; gap: 2px; }
+.carousel-dot { position: relative; display: grid; place-items: center; min-width: 44px; height: 44px; padding: 0; border: 0; background: transparent; }
+.carousel-dot::after { content: ''; width: 6px; height: 6px; border: 1px solid var(--accent); border-radius: 50%; background: transparent; transition: background .2s ease, width .2s ease; }
+.carousel-dot[aria-current="true"]::after { width: 23px; background: var(--accent); border-radius: 4px; }
+.carousel-status { color: var(--muted); font-size: 11px; letter-spacing: .04em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* Images move within their own frames; captions and drawings stay still. */
+.project-cover-media { width: fit-content; max-width: 100%; margin-inline: auto; overflow: hidden; }
+@media (min-width: 801px) and (prefers-reduced-motion: no-preference) {
+ [data-depth] > img { transform: translate3d(0, var(--depth-shift, 0px), 0) scale(1.12); }
+}
+@media (max-width: 800px) {
+ .main-nav { background: var(--paper); }
+ .nav-panel { box-shadow: none; }
+ .carousel-controls { margin-top: 20px; }
+}
+@media (max-width: 640px) {
+ .is-carousel-ready .featured-track { gap: 20px; }
+ .is-carousel-ready .project-card { flex-basis: 88%; }
+ .is-carousel-ready .project-image { aspect-ratio: 1.12; }
+ .is-carousel-ready .project-card h3 { font-size: 32px; }
+ .carousel-controls { grid-template-columns: 44px minmax(0,1fr) 44px; column-gap: 8px; row-gap: 2px; padding-top: 12px; }
+ .carousel-arrow { width: 44px; height: 44px; }
+ .carousel-controls > [data-carousel-next] { grid-column: 3; grid-row: 1; }
+ .carousel-status { grid-column: 2; grid-row: 1; justify-self: center; }
+ .carousel-dots { grid-column: 1 / -1; grid-row: 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+ [data-depth] > img { transform: none !important; }
+ .carousel-arrow, .carousel-dot::after { transition: none; }
+ .is-carousel-ready .featured-track { scroll-behavior: auto; }
+}
+@media (prefers-reduced-transparency: reduce) {
+ .site-header, .site-header.is-scrolled, .hero-image-action { background: var(--paper); -webkit-backdrop-filter: none; backdrop-filter: none; }
+ .nav-panel { background: var(--white); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@media print {
+ .site-header { -webkit-backdrop-filter: none; backdrop-filter: none; }
+ .is-carousel-ready .featured-track { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); overflow: visible; }
+ .carousel-controls { display: none !important; }
+ [data-depth] > img { transform: none !important; }
+}
