@@ -26,7 +26,7 @@ jobs:
       - name: Install validation dependencies
         run: npm ci
       - name: Build and validate
-        run: npm run build && npm run check && npm run test:dom
+        run: npm run build && npm run check && npm run test:dom && npm run test:contact
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site

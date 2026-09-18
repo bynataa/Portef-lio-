@@ -257,19 +257,15 @@ for(const file of pages) {
       assert.equal(zoom.disabled,true);
       assert.equal(zoom.getAttribute('aria-pressed'),'false');
     });
-    test(`${rel}: inquiry uses the confirmed WhatsApp number and localized project`,()=>{
+    test(`${rel}: project inquiry opens the contact window with the matching reference`,()=>{
       const env=environment(rel),lang=env.document.body.dataset.lang;
       const id=rel.split('/').at(-2),project=projects.find(p=>p.id===id);
       const cta=env.document.querySelector('a.project-inquiry');
-      assert.ok(cta);assert.ok(project);
+      assert.ok(cta.hasAttribute('data-contact-open'));
       assert.ok(cta.textContent.includes(ui[lang].projectInquiry));
-      const actual=new URL(cta.href),confirmed=new URL(site.whatsapp);
-      assert.equal(actual.origin,confirmed.origin);assert.equal(actual.pathname,confirmed.pathname);
-      assert.equal(actual.searchParams.get('text'),ui[lang].projectMessage.replace('{project}',project.title[lang]));
-      assert.ok(actual.searchParams.get('text').includes(project.title[lang]));
-      assert.equal(cta.getAttribute('target'),'_blank');
-      assert.ok(cta.rel.split(/\s+/).includes('noopener'));
-      assert.equal(env.document.querySelector('form'),null,'Contact stays in the selected messaging service');
+      assert.equal(new URL(cta.href).hash,'#contact-form');
+      assert.equal(env.document.querySelector('[name="Projeto"]').value,project.title[lang]);
+      assert.equal(env.document.querySelector('form').getAttribute('action'),`https://formsubmit.co/${site.email}`);
     });
   }
 
@@ -286,7 +282,7 @@ for(const lang of ['pt','en']) test(`${lang}: contact guidance and prepared mess
   assert.ok(whatsapp);
   assert.equal(new URL(whatsapp.href).pathname,new URL(site.whatsapp).pathname);
   assert.equal(new URL(whatsapp.href).searchParams.get('text'),t.contactMessage);
-  assert.equal(env.document.querySelector('form'),null);
+  assert.equal(env.document.querySelector('form').getAttribute('action'),`https://formsubmit.co/${site.email}`);
 });
 
 test('A returning visitor’s English preference redirects Portuguese home and preserves URL state',()=>{

@@ -149,7 +149,31 @@
     "zoomOut": "Ajustar à tela",
     "openImage": "Abrir imagem",
     "imageViewport": "Imagem ampliada. Use a rolagem, o toque ou as setas para explorar os detalhes.",
-    "documentSingular": "prancha"
+    "documentSingular": "prancha",
+    "contactForm": {
+      "launcher": "Mensagem / orçamento",
+      "eyebrow": "VAMOS CONVERSAR",
+      "title": "Conte a sua ideia.",
+      "intro": "Envie uma mensagem ou peça um orçamento. A Renarchi responde pelo e-mail informado.",
+      "close": "Fechar formulário",
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "WhatsApp (opcional)",
+      "kind": "Como podemos ajudar?",
+      "quote": "Pedir um orçamento",
+      "messageOption": "Enviar uma mensagem",
+      "message": "Sua mensagem",
+      "placeholder": "Conte sobre o espaço, a cidade e o que você tem em mente. Se souber, inclua a área e o prazo desejado.",
+      "reference": "Projeto de referência",
+      "send": "Enviar mensagem",
+      "sending": "Enviando…",
+      "success": "Mensagem enviada! A Renarchi retornará pelo e-mail informado.",
+      "error": "Não foi possível confirmar o envio. Seus dados foram mantidos. Tente novamente ou escreva por e-mail abaixo.",
+      "activation": "O formulário está aguardando ativação. Para falar com a Renarchi agora, use o e-mail abaixo.",
+      "privacy": "Seus dados serão usados para responder a este contato. O envio é processado pelo FormSubmit.",
+      "alternative": "Prefere escrever por e-mail?",
+      "required": "Nome, e-mail e mensagem são obrigatórios."
+    }
   },
   "en": {
     "locale": "en",
@@ -301,6 +325,30 @@
     "zoomOut": "Fit to screen",
     "openImage": "Open image",
     "imageViewport": "Enlarged image. Scroll, swipe or use the arrow keys to explore the details.",
-    "documentSingular": "sheet"
+    "documentSingular": "sheet",
+    "contactForm": {
+      "launcher": "Message / quote",
+      "eyebrow": "LET’S TALK",
+      "title": "Tell us your idea.",
+      "intro": "Send a message or request a quote. Renarchi will reply to the email address you provide.",
+      "close": "Close contact form",
+      "name": "Name",
+      "email": "Email",
+      "phone": "WhatsApp (optional)",
+      "kind": "How can we help?",
+      "quote": "Request a quote",
+      "messageOption": "Send a message",
+      "message": "Your message",
+      "placeholder": "Tell us about the space, its location and your ideas. If known, include the floor area and your preferred timeline.",
+      "reference": "Reference project",
+      "send": "Send message",
+      "sending": "Sending…",
+      "success": "Message sent! Renarchi will reply to the email address you provided.",
+      "error": "We could not confirm your submission. Your details have been kept. Try again or use the email link below.",
+      "activation": "This form is awaiting activation. To reach Renarchi now, use the email link below.",
+      "privacy": "Your details will be used to respond to this enquiry. Submissions are processed by FormSubmit.",
+      "alternative": "Prefer to email us?",
+      "required": "Name, email and message are required."
+    }
   }
 }

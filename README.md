@@ -29,6 +29,7 @@ Abra `http://localhost:4173`. Os arquivos do site são gerados em `dist/`. Encer
 ```bash
 npm run check
 npm run test:dom
+npm run test:contact
 ```
 
 As verificações cobrem arquivos, links internos, imagens, traduções, metadados e lógica de navegação. O teste de DOM utiliza simulação; detalhes e limitações estão em [docs/VALIDACAO.md](docs/VALIDACAO.md).
@@ -67,6 +68,16 @@ Prefira fotografias e renders originais à extração do PDF. Aumentar o tamanho
 Em **Settings → Pages → Build and deployment → Source**, selecione **GitHub Actions**. O workflow `.github/workflows/pages.yml` gera e publica o site a cada atualização na branch `main`. Se necessário, execute-o em **Actions → Portfólio · GitHub Pages → Run workflow**.
 
 Os arquivos publicados são gerados em `dist/`. O campo `url` de `src/site.json` deve corresponder ao endereço público para gerar canonical, hreflang, sitemap e prévias de compartilhamento corretamente.
+
+## Formulário de contato
+
+O botão flutuante “Mensagem / orçamento” abre um formulário PT/EN; a página de contato também oferece o formulário diretamente. Os pedidos seguem para `renarchi.urb@gmail.com`, definido em `src/site.json`, por meio do FormSubmit. O e-mail do visitante configura o Reply-To para responder pelo Gmail. Em páginas de projeto, a referência acompanha o pedido.
+
+**Ativação única:** após o primeiro envio, abra a mensagem do FormSubmit no e-mail destinatário (verifique também o spam) e confirme a ativação. Até essa confirmação, o recebimento não está habilitado. Faça um envio de teste depois de ativar para conferir a entrega. Não é necessário colocar a senha do Gmail no site.
+
+O formulário informa sucesso apenas após uma resposta positiva do serviço; erros preservam os dados e permitem nova tentativa. O envio depende da disponibilidade do FormSubmit e da ativação do destinatário. O campo `_honey` reduz envios automatizados. Sem JavaScript, a página de contato usa POST nativo, com a confirmação do próprio serviço.
+
+Interface e mensagens: `src/ui.json`. Comportamento: `public/contact.js`. Os testes simulam as respostas do serviço e não comprovam entrega à caixa de entrada.
 
 ## Créditos
 
