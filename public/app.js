@@ -63,7 +63,9 @@
       if(event.target===group.link&&desktop?.matches&&!group.suppressFocus)openGroup(group,'focus');
     });
     group.element.addEventListener('focusout',event=>{
-      if(!group.element.contains(event.relatedTarget)){group.suppressFocus=false;setGroup(group,false);}
+      // Touch browsers can blur a link without focusing the tapped button.
+      // A null destination is not evidence that the visitor left the menu.
+      if(event.relatedTarget&&!group.element.contains(event.relatedTarget)){group.suppressFocus=false;setGroup(group,false);}
     });
     group.element.addEventListener('keydown',event=>{
       if(event.key==='ArrowDown'&&(event.target===group.button||event.target===group.link)){
@@ -74,9 +76,13 @@
   menu?.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
   nav?.addEventListener('click',event=>{if(event.target.closest('a'))setMenu(false);});
   nav?.addEventListener('focusout',event=>{
-    if(!nav.contains(event.relatedTarget)&&!menu?.contains(event.relatedTarget))setMenu(false);
+    if(event.relatedTarget&&!nav.contains(event.relatedTarget)&&!menu?.contains(event.relatedTarget))setMenu(false);
   });
   document.addEventListener('click',event=>{
+    if(!nav?.contains(event.target)&&!menu?.contains(event.target))setMenu(false);
+  });
+  // Also dismiss when keyboard focus returns outside after an unfocused touch.
+  document.addEventListener('focusin',event=>{
     if(!nav?.contains(event.target)&&!menu?.contains(event.target))setMenu(false);
   });
   document.addEventListener('keydown',event=>{

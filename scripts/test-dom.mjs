@@ -64,6 +64,7 @@ function environment(file, {query='', hash='', storage=new Map(), brokenStorage=
     if(previous)dispatch(previous,'focusout',{relatedTarget:element});
     dispatch(element,'focusin',{relatedTarget:previous});
   };
+  const blur=()=>{const previous=focused;focused=null;if(previous)dispatch(previous,'focusout',{relatedTarget:null});};
   const media=new Map(),windowListeners=new Map(),timers=new Map(),observations=[];
   let timerID=0;
   const matchMedia=query=>{
@@ -123,7 +124,7 @@ function environment(file, {query='', hash='', storage=new Map(), brokenStorage=
     const event=new window.Event('keydown',{bubbles:true,cancelable:true});
     Object.defineProperty(event,'key',{value:key});element.dispatchEvent(event);return event;
   };
-  return {document,window,location,storage,navigation,click,key,loadImage,dispatch,matchMedia,flushTimers,observations,changeHash,get focused(){return focused;}};
+  return {document,window,location,storage,navigation,click,key,loadImage,dispatch,blur,matchMedia,flushTimers,observations,changeHash,get focused(){return focused;}};
 }
 const visibleCards = env=>[...env.document.querySelectorAll('[data-category]')].filter(card=>!card.hidden);
 
@@ -263,6 +264,44 @@ for(const lang of ['pt','en']) {
     env.dispatch(group,'pointerenter',{pointerType:'mouse'});
     panel.querySelector('a').focus();env.matchMedia('(min-width: 801px)').update(false);
     assert.equal(panel.hidden,true);assert.equal(env.focused,env.document.querySelector('.menu-toggle'),'Resizing does not leave focus hidden in a closed menu');
+  });
+  test(`${lang}: mobile touch blur cannot dismiss the menu before a disclosure tap`,()=>{
+    const env=environment(prefix+'index.html',{width:390,pointer:'coarse'});
+    const menu=env.document.querySelector('.menu-toggle'),nav=env.document.querySelector('#main-nav');
+    const groups=[...nav.querySelectorAll('[data-nav-group]')];
+    env.click(menu);
+    for(const group of groups){
+      const button=group.querySelector('.nav-disclosure'),panel=group.querySelector('.nav-panel');
+      // Safari may blur the current link without focusing the tapped button.
+      group.querySelector('.nav-link').focus();
+      env.dispatch(button,'pointerdown',{pointerType:'touch'});
+      env.blur();
+      assert.equal(menu.getAttribute('aria-expanded'),'true','A touch blur must not hide the pending tap target');
+      env.dispatch(button,'pointerup',{pointerType:'touch'});
+      env.click(button.querySelector('svg'));
+      assert.equal(panel.hidden,false,'Tapping the arrow opens its actual panel');
+      assert.equal(button.getAttribute('aria-expanded'),'true');
+      env.click(button.querySelector('svg'));
+      assert.equal(panel.hidden,true,'A second tap closes the panel');
+    }
+    env.blur();
+    env.click(menu);
+    assert.equal(menu.getAttribute('aria-expanded'),'false','The main menu closes on the first touch');
+    env.click(menu);env.click(groups[0].querySelector('.nav-disclosure'));
+    env.click(groups[0].querySelector('.nav-panel a'),{navigate:true});
+    assert.equal(menu.getAttribute('aria-expanded'),'false');
+    assert.equal(new URL(env.location.href).searchParams.get('category'),'residential');
+  });
+  test(`${lang}: a disclosure opened without focus still closes on keyboard focus outside`,()=>{
+    const env=environment(prefix+'index.html',{width:390,pointer:'coarse'});
+    const menu=env.document.querySelector('.menu-toggle');
+    const group=env.document.querySelector('[data-nav-group]'),panel=group.querySelector('.nav-panel');
+    env.click(menu);env.click(group.querySelector('.nav-disclosure'));env.blur();
+    env.document.querySelector('[data-set-lang="en"]').focus();
+    assert.equal(panel.hidden,true);assert.equal(menu.getAttribute('aria-expanded'),'false');
+    env.click(menu);env.click(group.querySelector('.nav-disclosure'));
+    env.click(env.document.querySelector('main'));
+    assert.equal(panel.hidden,true);assert.equal(menu.getAttribute('aria-expanded'),'false');
   });
   test(`${lang}: navigation keeps no-JavaScript destinations and contextual links match real content`,()=>{
     const {document}=parseHTML(fs.readFileSync(path.join(dist,prefix+'index.html'),'utf8'));
