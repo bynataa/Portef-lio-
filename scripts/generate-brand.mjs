@@ -58,14 +58,16 @@ for (const [variant, color] of Object.entries(palette)) {
   await sharp(Buffer.from(stacked)).resize(1024).png().toFile(path.join(brandDir,`renarchi-logo-${variant}.png`));
 }
 
-// The browser icon uses the complete client-supplied seal, without redrawing it.
+// Keep the seal's transparent exterior in every browser/install icon.
 const seal = await fs.readFile(path.join(brandDir, 'renarchi-seal.png'));
-const iconImage = await sharp(seal).resize(256, 256, { fit: 'contain' }).png().toBuffer();
+if (!(await sharp(seal).metadata()).hasAlpha) throw new Error('The seal must be a transparent PNG.');
+const iconFit = { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } };
+const iconImage = await sharp(seal).resize(256, 256, iconFit).png().toBuffer();
 const iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 256"><image width="256" height="256" xlink:href="data:image/png;base64,' + iconImage.toString('base64') + '"/></svg>\n';
 await fs.writeFile(path.join(publicDir, 'favicon.svg'), iconSvg);
 const pngs = new Map();
 for (const size of [16,32,48,180,192,512]) {
-  const buffer = await sharp(seal).resize(size,size,{fit:'contain'}).png().toBuffer();
+  const buffer = await sharp(seal).resize(size,size,iconFit).png().toBuffer();
   pngs.set(size,buffer);
   const filename = size===180?'apple-touch-icon.png':size>=192?`icon-${size}.png`:`favicon-${size}x${size}.png`;
   await fs.writeFile(path.join(publicDir,filename),buffer);
